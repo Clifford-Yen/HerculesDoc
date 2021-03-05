@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Domain Reduction Method (DRM) Implementation &#8212; Hercules  documentation</title>
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Welcome to Hercules’s documentation!" href="../index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Hercules’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Hercules  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Domain Reduction Method (DRM) Implementation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="domain-reduction-method-drm-implementation">
+<h1>Domain Reduction Method (DRM) Implementation<a class="headerlink" href="#domain-reduction-method-drm-implementation" title="Permalink to this headline">¶</a></h1>
+<p>Hercules is capable of implementing the Domain Reduction Method (DRM). You can implement it by setting the following lines in the input files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">implement_drm</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">drm_directory</span> <span class="o">=</span> <span class="n">directory_to_store_information_of_DRM</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">directory_to_store_information_of_DRM</span></code> mentioned above should be replace to the directory you want to store the DRM information. e.g., <code class="docutils literal notranslate"><span class="pre">drm_directory</span> <span class="pre">=</span> <span class="pre">outputfiles/DRM</span></code>, and folders named <code class="docutils literal notranslate"><span class="pre">part0</span></code>, <code class="docutils literal notranslate"><span class="pre">part1</span></code>, and <code class="docutils literal notranslate"><span class="pre">part2</span></code> should be created manually in this directory.</p>
+<p>There are three steps should be executed sequentially for implementing DRM in Hercules, which are part 0, part 1, and part 2.</p>
+<div class="section" id="part-0">
+<h2>Part 0<a class="headerlink" href="#part-0" title="Permalink to this headline">¶</a></h2>
+<p>In part 0, the information of the coordinates of the DRM box would be generated.</p>
+<p>To execute part 0 analysis, simply setting the following line in the input file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">which_drm_part</span> <span class="pre">=</span> <span class="pre">part1</span></code></p>
+<p>Since the information of the coordinates of the DRM box is the only data that are generated, the end time of the simulation can be set as a small value (e.g., 1 sec). You can do so by setting the following line in the input file.</p>
+<p><code class="docutils literal notranslate"><span class="pre">simulation_end_time_sec</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Domain Reduction Method (DRM) Implementation</a><ul>
+<li><a class="reference internal" href="#part-0">Part 0</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Welcome to Hercules’s documentation!</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst/overview.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../index.html" title="Welcome to Hercules’s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Hercules  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Domain Reduction Method (DRM) Implementation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Clifford Yen.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+    </div>
+  </body>
+</html>
