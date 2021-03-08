@@ -1,16 +1,17 @@
-.. Hercules documentation master file, created by
-   sphinx-quickstart on Wed Mar  3 21:44:37 2021.
+.. HerculesDoc documentation master file, created by
+   sphinx-quickstart on Mon Mar  8 22:05:31 2021.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Hercules's documentation!
-====================================
+Welcome to HerculesDoc's documentation!
+=======================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    rst/overview
+   rst/drm
 
 Indices and tables
 ==================
