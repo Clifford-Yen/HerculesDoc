@@ -4,7 +4,7 @@ Domain Reduction Method (DRM) Implementation
 
 Hercules is capable of implementing the Domain Reduction Method (DRM). You can implement it by setting the following lines in the input file. 
 
-.. code::
+.. code-block::
 
     implement_drm = yes
     drm_directory = directory_to_store_information_of_DRM
@@ -13,7 +13,7 @@ Hercules is capable of implementing the Domain Reduction Method (DRM). You can i
 
 There are three steps should be executed sequentially for implementing DRM in Hercules, which are part 0, part 1, and part 2. You can choose within these three parts by setting the value of ``which_drm_part`` in the input file. For example, setting the following line in the input file for running part 0 in Hercules:
 
-.. code::
+.. code-block::
     
     which_drm_part = part0
 
@@ -29,13 +29,13 @@ In part 0, the information of the coordinates of the DRM box would be generated.
 
 To execute part 0 analysis, simply setting the following line in the input file.
 
-.. code::
+.. code-block::
     
     which_drm_part = part0
 
 Since the information of the coordinates of the DRM box is the only data that are generated, the end time of the simulation can be set as a small value (e.g., 1 sec). You can do so by setting the following line in the input file.
 
-.. code::
+.. code-block::
     
     simulation_end_time_sec = 1
 
@@ -45,7 +45,7 @@ In part 1, the displacements of DRM nodes would be saved.
 
 To execute part 1 analysis, setting the following line in the input file.
 
-.. code::
+.. code-block::
     
     which_drm_part = part1
 
@@ -57,7 +57,7 @@ In part 2, Hercules no longer get the information from the source. Instead, it g
 
 To execute part 2 analysis, setting the following line in the input file.
 
-.. code::
+.. code-block::
     
     which_drm_part = part2
 
@@ -69,7 +69,7 @@ Defining the element size
 -------------------------
 Defining the element size (in meters) for elements in the DRM box by setting the following line in the input file.
 
-.. code::
+.. code-block::
     
     drm_edgesize = element_size_in_the_DRM_box
 
@@ -93,7 +93,7 @@ These parameters only used for part 2 analysis.
 
 You should set the same values for these two parameters, ``part1_delta_t`` and ``part1_simulation_time``, to ``simulation_delta_time_sec`` and ``simulation_end_time_sec``, respectively. You can do so by setting the following lines in the input file.
 
-.. code::
+.. code-block::
     
     part1_delta_t = delta_t_used_in_part1_in_second
     part1_simulation_time = simulation_time_used_in_part1_in_second
@@ -104,7 +104,7 @@ Print rate
 ----------
 You can change the print rate by setting ``drm_print_rate`` in the input file. For example, you can set the print rate to 1 (which means Hercules would store output data every time step) by setting the following line in the input file.
 
-.. code::
+.. code-block::
 
     drm_print_rate = 1
 
@@ -112,7 +112,7 @@ DRM offsets
 -----------
 DRM offsets are the distances (in meters) from the origin that is defined by parameters ``region_origin_latitude_deg`` and ``region_origin_longitude_deg``. You can define these parameters by setting the following lines in the input file.
 
-.. code::
+.. code-block::
 
     drm_offset_x = drm_offset_from_origin_in_x_direction
     drm_offset_y = drm_offset_from_origin_in_y_direction
@@ -127,7 +127,7 @@ DRM boundary
 ------------
 Dimensions in DRM boundary section are distances (in meters) from the box that is created with DRM offsets. There are five dimensions needed to be defined., which are ``min_x``, ``min_y``, ``max_x``, ``max_y``, and ``depth``. You can define these parameters by setting the following lines in the input file.
 
-.. code::
+.. code-block::
 
     drm_boundary =
         min_x    min_y    max_x    max_y    depth
