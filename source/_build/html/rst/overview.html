@@ -54,8 +54,8 @@
 <h2>Octree dimension<a class="headerlink" href="#octree-dimension" title="Permalink to this headline">¶</a></h2>
 <p>Since Hercules is an octree-based finite element simulator. All the dimensions in Hercules have to be “octree dimension.” That means all dimensions are related to the largest dimension of the domain. Specifically, dimensions have to be</p>
 <div class="math notranslate nohighlight">
-\[\frac{\text{(The largest dimension of the domain)}}{2^n}\]</div>
-<p>where n is a positive integer (up to 31).</p>
+\[\frac{\text{(The largest dimension of the domain)}}{2^n} \times m\]</div>
+<p>where m and n are positive integers (n is up to 31).</p>
 <p>This is why Hercules is so efficient (because all elements are cubical).</p>
 </div>
 </div>

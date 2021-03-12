@@ -12,6 +12,8 @@ Welcome to HerculesDoc's documentation!
 
    rst/overview
    rst/compiling
+   rst/running
+   rst/dimension
    rst/drm
 
 Indices and tables
