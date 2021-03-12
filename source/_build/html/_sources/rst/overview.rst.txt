@@ -18,8 +18,8 @@ Since Hercules is an octree-based finite element simulator. All the dimensions i
 
 .. math::
     
-    \frac{\text{(The largest dimension of the domain)}}{2^n}
+    \frac{\text{(The largest dimension of the domain)}}{2^n} \times m
 
-where n is a positive integer (up to 31).
+where m and n are positive integers (n is up to 31).
 
 This is why Hercules is so efficient (because all elements are cubical).
