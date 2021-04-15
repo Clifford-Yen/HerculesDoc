@@ -2,14 +2,13 @@
 Domain Reduction Method (DRM) Implementation
 ============================================
 
-Hercules is capable of implementing the Domain Reduction Method (DRM). You can implement it by setting the following lines in the input file. 
+Hercules is capable of implementing the Domain Reduction Method (DRM). You can implement it by setting 
 
 .. code-block::
 
     implement_drm = yes
-    drm_directory = directory_to_store_information_of_DRM
 
-``directory_to_store_information_of_DRM`` mentioned above should be replaced to the directory you want to store the DRM information. E.g., ``drm_directory = outputfiles/DRM``. And folders named ``part0``, ``part1``, and ``part2`` should be created manually in this directory.
+And set parameter ``drm_directory`` to the directory you want to store the DRM information. E.g., ``drm_directory = outputfiles/DRM``. And folders named ``part0``, ``part1``, and ``part2`` should be created manually in this directory.
 
 There are three steps should be executed sequentially for implementing DRM in Hercules, which are part 0, part 1, and part 2. You can choose within these three parts by setting the value of ``which_drm_part`` in the input file. For example, setting the following line in the input file for running part 0 in Hercules:
 
@@ -67,13 +66,9 @@ Other parameters
 
 Defining the element size
 -------------------------
-Defining the element size (in meters) for elements in the DRM box by setting the following line in the input file.
-
-.. code-block::
-    
-    drm_edgesize = element_size_in_the_DRM_box
-
-``element_size_in_the_DRM_box`` mentioned above should be replaced with the edge size you want to define for elements in the DRM box.
+``drm_edgesize``
+    * Type: Float
+    * Description: The element edge size (in meter) you want to define for elements in the DRM box.
 
 Note that all the dimensions in Hercules have to be "octree dimension." For more information, please refer to :ref:`Octree dimension`
 
@@ -102,22 +97,21 @@ You should set the same values for these two parameters, ``part1_delta_t`` and `
 
 Print rate
 ----------
-You can change the print rate by setting ``drm_print_rate`` in the input file. For example, you can set the print rate to 1 (which means Hercules would store output data every time step) by setting the following line in the input file.
-
-.. code-block::
-
-    drm_print_rate = 1
+``drm_print_rate``
+    * Type: Integer
+    * Description: The rate Hercules stores output data. For example, if you set :code:`drm_print_rate = 2`, it means Hercules would store output data every 2 :math:`\Delta t`.
 
 DRM offsets
 -----------
-DRM offsets are the distances (in meters) from the origin that is defined by parameters ``region_origin_latitude_deg`` and ``region_origin_longitude_deg``. You can define these parameters by setting the following lines in the input file.
+DRM offsets are the distances (in meter) from the origin that is defined by parameters ``region_origin_latitude_deg`` and ``region_origin_longitude_deg``. You can define these parameters by setting the following parameters.
 
-.. code-block::
+``drm_offset_x``
+    * Type: Float
+    * Description: The DRM offset (in meter) from the origin in x direction.
 
-    drm_offset_x = drm_offset_from_origin_in_x_direction
-    drm_offset_y = drm_offset_from_origin_in_y_direction
-
-``drm_offset_from_origin_in_x_direction`` and ``drm_offset_from_origin_in_y_direction`` mentioned above should be replaced with the DRM offsets from the origin in x and y direction in meters, respectively.
+``drm_offset_y``
+    * Type: Float
+    * Description: The DRM offset (in meter) from the origin in y direction.
 
 Note that x direction is north-south direction (north is positive), while y direction is east-west direction (east is positive). And both offsets are still :ref:`Octree dimension`.
 
@@ -125,11 +119,7 @@ DRM offsets create a box bigger than the DRM boundary. The space between these t
 
 DRM boundary
 ------------
-Dimensions in DRM boundary section are distances (in meters) from the box that is created with DRM offsets. There are five dimensions needed to be defined., which are ``min_x``, ``min_y``, ``max_x``, ``max_y``, and ``depth``. You can define these parameters by setting the following lines in the input file.
-
-.. code-block::
-
-    drm_boundary =
-        min_x    min_y    max_x    max_y    depth
-
-``min_x``, ``min_y``, ``max_x``, ``max_y``, and ``depth`` mentioned above should be replaced with the values (in meters) of corresponding dimensions. There is no restriction on how many spaces should be placed between each dimensions and before the ``min_x``.
+``drm_boundary``
+    * Type: Multiple numbers
+    * Format: ``min_x min_y max_x max_y depth``
+    * Description: Dimensions in DRM boundary section are distances (in meter) from the box that is created with DRM offsets. There are five dimensions needed to be defined., which are ``min_x``, ``min_y``, ``max_x``, ``max_y``, and ``depth``.

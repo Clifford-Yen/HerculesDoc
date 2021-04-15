@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Domain Reduction Method (DRM) Implementation" href="drm.html" />
-    <link rel="prev" title="Running" href="running.html" /> 
+    <link rel="prev" title="Material" href="material.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,9 +29,10 @@
           <a href="drm.html" title="Domain Reduction Method (DRM) Implementation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="running.html" title="Running"
+          <a href="material.html" title="Material"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Dimension</a></li> 
       </ul>
     </div>  
@@ -47,23 +48,41 @@
 <h2>Defining the domain<a class="headerlink" href="#defining-the-domain" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="domain-origin">
 <h3>Domain origin<a class="headerlink" href="#domain-origin" title="Permalink to this headline">¶</a></h3>
-<p>To define the domain origin, setting the following lines in the input file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">region_origin_latitude_deg</span> <span class="o">=</span> <span class="n">latitude_of_origin</span>
-<span class="n">region_origin_longitude_deg</span> <span class="o">=</span> <span class="n">longitude_of_origin</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">latitude_of_origin</span></code> and <code class="docutils literal notranslate"><span class="pre">longitude_of_origin</span></code> mentioned above should be replaced with the latitude and the longitude of the domain origin. This origin will be the left bottom corner of the domain.</p>
+<p>To define the domain origin, the following parameter should be set.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description: The latitude (in degree) of the origin. Note that the origin is the left bottom corner of the domain.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">region_origin_longitude_deg</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description: The longitude (in degree) of the origin. Note that the origin is the left bottom corner of the domain.</p></li>
+</ul>
+</dd>
+</dl>
 <p>Note that for <a class="reference internal" href="drm.html#part-2"><span class="std std-ref">Part 2</span></a> analysis, the origin here is the left bottom corner of the box that is created by <a class="reference internal" href="drm.html#drm-offsets"><span class="std std-ref">DRM offsets</span></a>.</p>
 </div>
 <div class="section" id="domain-dimension">
 <h3>Domain dimension<a class="headerlink" href="#domain-dimension" title="Permalink to this headline">¶</a></h3>
-<p>To define the domain dimension, setting the following lines in the input file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">region_length_east_m</span> <span class="o">=</span> <span class="n">length_to_the_east_boundary</span>
-<span class="n">region_length_north_m</span> <span class="o">=</span> <span class="n">length_to_the_north_boundary</span>
-<span class="n">region_depth_deep_m</span> <span class="o">=</span> <span class="n">depth_to_the_earth</span>
-</pre></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">length_to_the_east_boundary</span></code>, <code class="docutils literal notranslate"><span class="pre">length_to_the_north_boundary</span></code>, and <code class="docutils literal notranslate"><span class="pre">depth_to_the_earth</span></code> mentioned above should be replaced with the lengths (in meters) from origin to the east boundary, the north boundary, and to the depth limit.</p>
+<p>To define the domain dimension, the following parameter should be set.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">region_length_east_m</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description: The length (in meter) from the origin to the east boundary.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">region_length_north_m</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description: The length (in meter) from the origin to the north boundary.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">region_depth_deep_m</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description: The length (in meter) from the origin to the depth limit.</p></li>
+</ul>
+</dd>
+</dl>
 </div>
 </div>
 <div class="section" id="drm-dimensions">
@@ -93,8 +112,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="running.html"
-                        title="previous chapter">Running</a></p>
+  <p class="topless"><a href="material.html"
+                        title="previous chapter">Material</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="drm.html"
                         title="next chapter">Domain Reduction Method (DRM) Implementation</a></p>
@@ -129,9 +148,10 @@
           <a href="drm.html" title="Domain Reduction Method (DRM) Implementation"
              >next</a> |</li>
         <li class="right" >
-          <a href="running.html" title="Running"
+          <a href="material.html" title="Material"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Dimension</a></li> 
       </ul>
     </div>

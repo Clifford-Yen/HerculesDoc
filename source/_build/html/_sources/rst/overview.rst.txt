@@ -2,7 +2,7 @@
 Overview
 ========
 
-Hercules is an octree-based finite element earthquake simulator by the Quake Group at Carnegie Mellon. For more information and its source code, please visit `Hercules' Github page`_.
+Hercules is an octree-based finite element earthquake simulator developed by the Quake Group at Carnegie Mellon. Hercules is used to solve large-scale earthquake wave propagation problems. For more information and its source code, please visit `Hercules' Github page`_.
 
 .. _Hercules' Github page: https://github.com/CMU-Quake/hercules
 
