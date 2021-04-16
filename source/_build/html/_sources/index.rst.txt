@@ -13,7 +13,7 @@ Welcome to Hercules' documentation!
    rst/overview
    rst/compiling
    rst/running
-   rst/inputFile
+   rst/input/inputFile
 
 Indices and tables
 ==================
