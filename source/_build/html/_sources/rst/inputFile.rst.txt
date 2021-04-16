@@ -44,6 +44,9 @@ Similarly, there is no restriction on how many spaces should be placed before an
 
 Also, you can place parameters in any order in an input file. Just make sure you include all necessary parameters in the input file you are going to use.
 
+Parameters
+==========
+
 In sections below, we will explain each parameter with following format:
 
 ``parameter_name``
@@ -61,3 +64,4 @@ Although we plan to modify Hercules to make it possible to accept optional input
     material
     dimension
     drm
+    output

@@ -18,6 +18,10 @@ To define the domain origin, the following parameter should be set.
     * Type: Float
     * Description: The longitude (in degree) of the origin. Note that the origin is the left bottom corner of the domain. 
 
+``region_depth_shallow_m`` (Confirmation Needed)
+    * Type: Float
+    * Description: The starting depth (in meter) of the region.
+
 Note that for :ref:`Part 2` analysis, the origin here is the left bottom corner of the box that is created by :ref:`DRM offsets`.
 
 Domain dimension

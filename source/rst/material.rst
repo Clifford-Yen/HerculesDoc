@@ -10,19 +10,19 @@ Material
 
 .. ``monitor_file`` (Confirmation needed)
 ..     * Type: File path
-..     * Description: Path to a text file in which Hercules would write information as it runs for users to monitor jobs.
+..     * Description: The path to a text file in which Hercules would write information as it runs for users to monitor jobs.
 
 .. ``planes_input_file``
 ..     * Type: File path
-..     * Description: Path to plane input file (The input file itself). This should not be necessary and it will be deprecated in the future.
+..     * Description: The path to plane input file (The input file itself). This should not be necessary and it will be deprecated in the future.
 
 .. ``mesh_etree_output_file``
 ..     * Type: File path
-..     * Description: Path to mesh file in etree format.
+..     * Description: The path to mesh file in etree format.
 
 ``cvmdb_input_file``
     * Type: File path/profile
-    * Description: Path to the material information (crustal structure) database. A special way to assign the crustal structure is setting this parameter to "profile", i.e.
+    * Description: The path to the material information (crustal structure) database. A special way to assign the crustal structure is setting this parameter to "profile", i.e.
 
     .. code-block::
 

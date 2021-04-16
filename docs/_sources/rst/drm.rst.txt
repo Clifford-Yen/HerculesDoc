@@ -99,7 +99,7 @@ Print rate
 ----------
 ``drm_print_rate``
     * Type: Integer
-    * Description: The rate Hercules stores output data. For example, if you set :code:`drm_print_rate = 2`, it means Hercules would store output data every 2 :math:`\Delta t`.
+    * Description: The rate Hercules saves output data for DRM. For example, if you set :code:`drm_print_rate = 2`, it means Hercules would store output data every 2 :math:`\Delta t`.
 
 DRM offsets
 -----------
