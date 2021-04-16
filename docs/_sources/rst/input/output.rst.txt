@@ -2,10 +2,6 @@
 Output settings
 ===============
 
-.. ``parameter_name``
-..     * Type:
-..     * Description:
-
 ``output_mesh``
     * Type: Boolean (0 or 1)
     * Description: Whether Hercules should print the output information for the mesh.

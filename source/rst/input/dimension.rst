@@ -13,7 +13,6 @@ To define the domain origin, the following parameter should be set.
     * Type: Float
     * Description: The latitude (in degree) of the origin. Note that the origin is the left bottom corner of the domain. 
 
-
 ``region_origin_longitude_deg``
     * Type: Float
     * Description: The longitude (in degree) of the origin. Note that the origin is the left bottom corner of the domain. 

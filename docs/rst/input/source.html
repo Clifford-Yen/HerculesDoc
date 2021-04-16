@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Output settings &#8212; HerculesDoc  documentation</title>
+    <title>Source &#8212; HerculesDoc  documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     
@@ -16,7 +16,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Domain Reduction Method (DRM) Implementation" href="drm.html" /> 
+    <link rel="next" title="Time and Frequency" href="time.html" />
+    <link rel="prev" title="Output settings" href="output.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -25,11 +26,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="drm.html" title="Domain Reduction Method (DRM) Implementation"
+          <a href="time.html" title="Time and Frequency"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="Output settings"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Output settings</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Source</a></li> 
       </ul>
     </div>  
 
@@ -38,47 +42,24 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="output-settings">
-<h1>Output settings<a class="headerlink" href="#output-settings" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="source">
+<h1>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h1>
+<p>(Confirmation Needed) for all the section</p>
+<p>A source file stands for one event (earthquake). It contains multiple source points on the fault.</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">output_mesh</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
-<li><p>Description: Whether Hercules should print the output information for the mesh.</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">region_azimuth_leftface_deg</span></code></dt><dd><ul class="simple">
+<li><p>Type:</p></li>
+<li><p>Description:</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">output_displacement</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
-<li><p>Description: Whether Hercules should print the output information for the displacement.</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">output_velocity</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
-<li><p>Description: Whether Hercules should print the output information for the velocity.</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">output_parallel</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
-<li><p>Description: Whether Hercules should print the output information for the parallel.</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">simulation_output_rate</span></code></dt><dd><ul class="simple">
-<li><p>Type: Integer</p></li>
-<li><p>Description: The rate Hercules saves output data for the mesh, the displacement, and the velocity. For example, if you set <code class="code docutils literal notranslate"><span class="pre">simulation_output_rate</span> <span class="pre">=</span> <span class="pre">2</span></code>, it means Hercules would store output data every 2 time steps.</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">output_displacement_file</span></code></dt><dd><ul class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">source_directory</span></code></dt><dd><ul class="simple">
 <li><p>Type: File path</p></li>
-<li><p>Description: The path to the displacement output file.</p></li>
+<li><p>Description:</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">output_velocity_file</span></code></dt><dd><ul class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">source_directory_output</span></code></dt><dd><ul class="simple">
 <li><p>Type: File path</p></li>
-<li><p>Description: The path to the velocity output file.</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">output_stats_file</span></code></dt><dd><ul class="simple">
-<li><p>Type: File path</p></li>
-<li><p>Description: The path to the status output file.</p></li>
+<li><p>Description:</p></li>
 </ul>
 </dd>
 </dl>
@@ -92,12 +73,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="drm.html"
-                        title="previous chapter">Domain Reduction Method (DRM) Implementation</a></p>
+  <p class="topless"><a href="output.html"
+                        title="previous chapter">Output settings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="time.html"
+                        title="next chapter">Time and Frequency</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/rst/input/output.rst.txt"
+      <li><a href="../../_sources/rst/input/source.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -122,11 +106,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="drm.html" title="Domain Reduction Method (DRM) Implementation"
+          <a href="time.html" title="Time and Frequency"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="Output settings"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Output settings</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Source</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
