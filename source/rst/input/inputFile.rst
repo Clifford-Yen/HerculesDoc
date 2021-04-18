@@ -37,7 +37,9 @@ or
     parameter_name =
     parameter_value1 parameter_value2 parameter_value3
 
-A parameter value can be a number (either an integer or floating-point number), a path, a string, a boolean value (0 or 1), and a yes/no, etc. A parameter name can also takes multiple values, e.g. ``profile_layers``.
+A parameter value can be a number (either an integer or floating-point number), a path (of a file or a folder), a string, a boolean value (0 or 1), and a yes/no, etc. A parameter name can also takes multiple values, e.g. ``profile_layers``.
+
+(Confirmation Needed) For floating-point number, you can also use scientific notation. E.g., 1.0e-05.
 
 There is no any restriction on how many spaces should be placed between the parameter name, the equal sign, and the parameter value. If you want, you can indent the equal sign or the parameter value based on your preference.
 
@@ -52,7 +54,7 @@ In sections below, we will explain each parameter with following format:
 
 ``parameter_name``
     * Optional: Yes/No
-    * Type: Integer/Float/String/File path/Boolean/Yes or No/Multiple numbers
+    * Type: Integer/Float/String/Path/Boolean/Yes or No/Multiple numbers
     * Format: The format for each row below the ``parameter_name``. This column only appears when the type of the parameter is "Multiple numbers".
     * Description:
 
@@ -65,6 +67,10 @@ Although we plan to modify Hercules to make it possible to accept optional input
     material
     dimension
     output
+    damping
     source
     time
+    topography
+    building
+    analysis
     drm

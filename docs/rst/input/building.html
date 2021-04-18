@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Damping &#8212; HerculesDoc  documentation</title>
+    <title>Building &#8212; HerculesDoc  documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     
@@ -16,8 +16,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Source" href="source.html" />
-    <link rel="prev" title="Output settings" href="output.html" /> 
+    <link rel="next" title="Domain Reduction Method (DRM) Implementation" href="drm.html" />
+    <link rel="prev" title="Analysis" href="analysis.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,14 +26,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="source.html" title="Source"
+          <a href="drm.html" title="Domain Reduction Method (DRM) Implementation"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="output.html" title="Output settings"
+          <a href="analysis.html" title="Analysis"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Damping</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Building</a></li> 
       </ul>
     </div>  
 
@@ -42,57 +42,63 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="damping">
-<h1>Damping<a class="headerlink" href="#damping" title="Permalink to this headline">¶</a></h1>
-<p>(Confirmation Needed) for all the section</p>
+  <div class="section" id="building">
+<h1>Building<a class="headerlink" href="#building" title="Permalink to this headline">¶</a></h1>
+<p>(Confirmation Needed) for all the section.</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code></dt><dd><ul class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include_buildings</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to consider buildings in the simulation.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">number_of_buildings</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description: The number of buildings.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">min_octant_size_m</span></code></dt><dd><ul class="simple">
+<li><p>Type:</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">surface_shift_m</span></code></dt><dd><ul class="simple">
+<li><p>Type:</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">buildings_n_factor</span></code></dt><dd><ul class="simple">
+<li><p>Type:</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">consider_fixed_base</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_dt</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_dir</span></code></dt><dd><ul class="simple">
+<li><p>Type: Path</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_sufix</span></code></dt><dd><ul class="simple">
 <li><p>Type: String</p></li>
-<li><p>Description: The type of damping Hercules should use. Possible options include <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, etc.</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">simulation_velocity_profile_freq_hz</span></code></dt><dd><ul class="simple">
-<li><p>Type: Float</p></li>
 <li><p>Description:</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_startindex</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
 <li><p>Description:</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">use_infinite_qk</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean</p></li>
-<li><p>Description:</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_constant</span></code></dt><dd><ul class="simple">
-<li><p>Type:</p></li>
-<li><p>Description:</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_alpha</span></code></dt><dd><ul class="simple">
-<li><p>Type:</p></li>
-<li><p>Description:</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_beta</span></code></dt><dd><ul class="simple">
-<li><p>Type:</p></li>
-<li><p>Description:</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">the_threshold_damping</span></code></dt><dd><ul class="simple">
-<li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">the_threshold_Vp_over_Vs</span></code></dt><dd><ul class="simple">
-<li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">do_damping_statistics</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">building_properties</span></code></dt><dd><ul class="simple">
+<li><p>Type: Multiple numbers</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">min_x</span> <span class="pre">max_x</span> <span class="pre">min_y</span> <span class="pre">max_y</span> <span class="pre">depth</span> <span class="pre">height</span> <span class="pre">Vp_building</span> <span class="pre">Vs_building</span> <span class="pre">Rho_building</span> <span class="pre">Vp_foundation</span> <span class="pre">Vs_foundation</span> <span class="pre">Rho_foundation</span></code></p></li>
 <li><p>Description:</p></li>
 </ul>
 </dd>
@@ -107,15 +113,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="output.html"
-                        title="previous chapter">Output settings</a></p>
+  <p class="topless"><a href="analysis.html"
+                        title="previous chapter">Analysis</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="source.html"
-                        title="next chapter">Source</a></p>
+  <p class="topless"><a href="drm.html"
+                        title="next chapter">Domain Reduction Method (DRM) Implementation</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/rst/input/damping.rst.txt"
+      <li><a href="../../_sources/rst/input/building.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -140,14 +146,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="source.html" title="Source"
+          <a href="drm.html" title="Domain Reduction Method (DRM) Implementation"
              >next</a> |</li>
         <li class="right" >
-          <a href="output.html" title="Output settings"
+          <a href="analysis.html" title="Analysis"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Damping</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Building</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
