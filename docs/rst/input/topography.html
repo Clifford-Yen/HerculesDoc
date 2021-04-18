@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Source &#8212; HerculesDoc  documentation</title>
+    <title>Topography &#8212; HerculesDoc  documentation</title>
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
     
@@ -16,8 +16,8 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Time and Frequency" href="time.html" />
-    <link rel="prev" title="Damping" href="damping.html" /> 
+    <link rel="next" title="Analysis" href="analysis.html" />
+    <link rel="prev" title="Time and Frequency" href="time.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,14 +26,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="time.html" title="Time and Frequency"
+          <a href="analysis.html" title="Analysis"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="damping.html" title="Damping"
+          <a href="time.html" title="Time and Frequency"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Source</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Topography</a></li> 
       </ul>
     </div>  
 
@@ -42,24 +42,38 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="source">
-<h1>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="topography">
+<h1>Topography<a class="headerlink" href="#topography" title="Permalink to this headline">¶</a></h1>
 <p>(Confirmation Needed) for all the section</p>
-<p>A source file stands for one event (earthquake). It contains multiple source points on the fault.</p>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">region_azimuth_leftface_deg</span></code></dt><dd><ul class="simple">
-<li><p>Type:</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">include_topography</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to consider topography in the simulation.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">computation_method</span></code></dt><dd><ul class="simple">
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">vt</span></code>, etc.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">maximum_octant_level</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
 <li><p>Description:</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">source_directory</span></code></dt><dd><ul class="simple">
-<li><p>Type: Path</p></li>
+<dt><code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
 <li><p>Description:</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">source_directory_output</span></code></dt><dd><ul class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type_of_etree</span></code></dt><dd><ul class="simple">
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">sqd</span></code>, etc.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">topoprahy_directory</span></code></dt><dd><ul class="simple">
 <li><p>Type: Path</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: The path to the directory where the topography information is stored.</p></li>
 </ul>
 </dd>
 </dl>
@@ -73,15 +87,15 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="damping.html"
-                        title="previous chapter">Damping</a></p>
-  <h4>Next topic</h4>
   <p class="topless"><a href="time.html"
-                        title="next chapter">Time and Frequency</a></p>
+                        title="previous chapter">Time and Frequency</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="analysis.html"
+                        title="next chapter">Analysis</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="../../_sources/rst/input/source.rst.txt"
+      <li><a href="../../_sources/rst/input/topography.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
@@ -106,14 +120,14 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="time.html" title="Time and Frequency"
+          <a href="analysis.html" title="Analysis"
              >next</a> |</li>
         <li class="right" >
-          <a href="damping.html" title="Damping"
+          <a href="time.html" title="Time and Frequency"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Source</a></li> 
+        <li class="nav-item nav-item-this"><a href="">Topography</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

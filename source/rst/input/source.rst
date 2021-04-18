@@ -11,10 +11,10 @@ A source file stands for one event (earthquake). It contains multiple source poi
     * Description:
 
 ``source_directory``
-    * Type: File path
+    * Type: Path
     * Description:
 
 ``source_directory_output``
-    * Type: File path
+    * Type: Path
     * Description:
 

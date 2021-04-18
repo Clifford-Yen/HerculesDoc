@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Building" href="building.html" />
+    <link rel="prev" title="Topography" href="topography.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="building.html" title="Building"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="topography.html" title="Topography"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Analysis</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="analysis">
+<h1>Analysis<a class="headerlink" href="#analysis" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">stiffness_calculation_method</span></code></dt><dd><ul class="simple">
+<li><p>Type: String</p></li>
+<li><p>Description: The stiffness calculation method. Possible options include <code class="docutils literal notranslate"><span class="pre">conventional</span></code> and <code class="docutils literal notranslate"><span class="pre">effective</span></code>. However, we no longer use <code class="docutils literal notranslate"><span class="pre">conventional</span></code> in the recent projects since its performance is concerning, and this parameter is going to be deprecated (the value of it will be set as <code class="docutils literal notranslate"><span class="pre">effective</span></code> permanently) for the same reason.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">use_progressive_meshing</span></code></dt><dd><ul class="simple">
+<li><p>Type: Boolean</p></li>
+<li><p>Description: Whether to utilize progressive meshing technique. Since it will be more efficient with the utilization of progressive meshing, this parameter will be set as 1 (enabled) permanently and be deprecated in the future.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="nonlinear-analysis">
+<h2>Nonlinear Analysis<a class="headerlink" href="#nonlinear-analysis" title="Permalink to this headline">¶</a></h2>
+<p>(Confirmation Needed) for all the section.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to consider nonlinearity in the simulation.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">geostatic_loading_time_sec</span></code></dt><dd><ul class="simple">
+<li><p>Type:</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">geostatic_cushion_time_sec</span></code></dt><dd><ul class="simple">
+<li><p>Type:</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">approximate_geostatic_state</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether an initial stress state with <span class="math notranslate nohighlight">\(K_o = 1 - \sin\phi\)</span> as coefficient of lateral earth pressure at rest should be assumed.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">material_plasticity_type</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">rate_independant</span></code> and <code class="docutils literal notranslate"><span class="pre">rate_independant</span></code>. (“independant” seems like a typo.)</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">material_model</span></code></dt><dd><ul class="simple">
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include linear, <code class="docutils literal notranslate"><span class="pre">vonMises_EP</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_FAO</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_FAM</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BAH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BAE</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BOH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BOE</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_GQH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_MKZ</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_RO</span></code>, <code class="docutils literal notranslate"><span class="pre">DruckerPrager</span></code>, and <code class="docutils literal notranslate"><span class="pre">MohrCoulomb</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">error_tolerance</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">backbone_errTol</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">stiff_damp</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">freq_stiff_damp</span></code></dt><dd><ul class="simple">
+<li><p>Type:</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">tension_cutoff</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to remove tensile stresses or not. This parameter only affects Mohr-Coulomb and Drucker-Prager material models.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">material_properties_count</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">no_substeps</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">material_properties_list</span></code></dt><dd><ul class="simple">
+<li><p>Type: Multiple numbers</p></li>
+<li><p>Format:</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Analysis</a><ul>
+<li><a class="reference internal" href="#nonlinear-analysis">Nonlinear Analysis</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="topography.html"
+                        title="previous chapter">Topography</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="building.html"
+                        title="next chapter">Building</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/rst/input/analysis.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="building.html" title="Building"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="topography.html" title="Topography"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Analysis</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+    </div>
+  </body>
+</html>

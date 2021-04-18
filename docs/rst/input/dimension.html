@@ -74,12 +74,12 @@
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">region_length_east_m</span></code></dt><dd><ul class="simple">
 <li><p>Type: Float</p></li>
-<li><p>Description: The length (in meter) from the origin to the east boundary.</p></li>
+<li><p>Description: The length (in meter) from the origin to the local east boundary.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">region_length_north_m</span></code></dt><dd><ul class="simple">
 <li><p>Type: Float</p></li>
-<li><p>Description: The length (in meter) from the origin to the north boundary.</p></li>
+<li><p>Description: The length (in meter) from the origin to the local north boundary.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">region_depth_deep_m</span></code></dt><dd><ul class="simple">
@@ -89,6 +89,17 @@
 </dd>
 </dl>
 </div>
+</div>
+<div class="section" id="domain-surface-corners">
+<h2>Domain surface corners<a class="headerlink" href="#domain-surface-corners" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">domain_surface_corners</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<li><p>Type: Multiple numbers</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">longitude</span> <span class="pre">latitude</span></code></p></li>
+<li><p>Description: The coordinates (latitudes and longitudes) of four corners of the domain. The data should be written as many as four lines. (The first line contains the same information as parameters <code class="docutils literal notranslate"><span class="pre">region_origin_longitude_deg</span></code> and <code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code> define. And the rest of three corners should be defined counterclockwise.) These information are also contained in the source file. As a result, it might be deprecated in the future.</p></li>
+</ul>
+</dd>
+</dl>
 </div>
 <div class="section" id="drm-dimensions">
 <h2>DRM dimensions<a class="headerlink" href="#drm-dimensions" title="Permalink to this headline">¶</a></h2>
@@ -111,6 +122,7 @@
 <li><a class="reference internal" href="#domain-dimension">Domain dimension</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#domain-surface-corners">Domain surface corners</a></li>
 <li><a class="reference internal" href="#drm-dimensions">DRM dimensions</a></li>
 </ul>
 </li>

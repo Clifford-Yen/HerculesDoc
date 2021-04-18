@@ -29,15 +29,23 @@ To define the domain dimension, the following parameter should be set.
 
 ``region_length_east_m``
     * Type: Float
-    * Description: The length (in meter) from the origin to the east boundary.
+    * Description: The length (in meter) from the origin to the local east boundary.
 
 ``region_length_north_m``
     * Type: Float
-    * Description: The length (in meter) from the origin to the north boundary.
+    * Description: The length (in meter) from the origin to the local north boundary.
 
 ``region_depth_deep_m``
     * Type: Float
     * Description: The length (in meter) from the origin to the depth limit.
+
+
+Domain surface corners
+======================
+``domain_surface_corners`` (Confirmation Needed)
+    * Type: Multiple numbers
+    * Format: ``longitude latitude``
+    * Description: The coordinates (latitudes and longitudes) of four corners of the domain. The data should be written as many as four lines. (The first line contains the same information as parameters ``region_origin_longitude_deg`` and ``region_origin_latitude_deg`` define. And the rest of three corners should be defined counterclockwise.) These information are also contained in the source file. As a result, it might be deprecated in the future.
 
 
 DRM dimensions

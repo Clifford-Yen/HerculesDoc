@@ -72,7 +72,8 @@
 <span class="n">parameter_value1</span> <span class="n">parameter_value2</span> <span class="n">parameter_value3</span>
 </pre></div>
 </div>
-<p>A parameter value can be a number (either an integer or floating-point number), a path, a string, a boolean value (0 or 1), and a yes/no, etc. A parameter name can also takes multiple values, e.g. <code class="docutils literal notranslate"><span class="pre">profile_layers</span></code>.</p>
+<p>A parameter value can be a number (either an integer or floating-point number), a path (of a file or a folder), a string, a boolean value (0 or 1), and a yes/no, etc. A parameter name can also takes multiple values, e.g. <code class="docutils literal notranslate"><span class="pre">profile_layers</span></code>.</p>
+<p>(Confirmation Needed) For floating-point number, you can also use scientific notation. E.g., 1.0e-05.</p>
 <p>There is no any restriction on how many spaces should be placed between the parameter name, the equal sign, and the parameter value. If you want, you can indent the equal sign or the parameter value based on your preference.</p>
 <p>Similarly, there is no restriction on how many spaces should be placed before and among parameter values if the parameter name takes multiple values.</p>
 <p>Also, you can place parameters in any order in an input file. Just make sure you include all necessary parameters in the input file you are going to use.</p>
@@ -83,7 +84,7 @@
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">parameter_name</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Yes/No</p></li>
-<li><p>Type: Integer/Float/String/File path/Boolean/Yes or No/Multiple numbers</p></li>
+<li><p>Type: Integer/Float/String/Path/Boolean/Yes or No/Multiple numbers</p></li>
 <li><p>Format: The format for each row below the <code class="docutils literal notranslate"><span class="pre">parameter_name</span></code>. This column only appears when the type of the parameter is “Multiple numbers”.</p></li>
 <li><p>Description:</p></li>
 </ul>
@@ -96,12 +97,26 @@
 <li class="toctree-l1"><a class="reference internal" href="material.html">Material</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dimension.html">Dimension</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="dimension.html#defining-the-domain">Defining the domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimension.html#domain-surface-corners">Domain surface corners</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dimension.html#drm-dimensions">DRM dimensions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">Output settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output.html#output-mesh-coordinates-for-a-subdomain">Output mesh coordinates for a subdomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#output-for-stations">Output for stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#output-for-planes">Output for planes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#misc">Misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="damping.html">Damping</a></li>
 <li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time.html">Time and Frequency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topography.html">Topography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#nonlinear-analysis">Nonlinear Analysis</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="drm.html">Domain Reduction Method (DRM) Implementation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="drm.html#part-0-part-1-and-part-2">Part 0, part 1, and part 2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="drm.html#other-parameters">Other parameters</a></li>

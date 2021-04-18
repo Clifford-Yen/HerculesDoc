@@ -16,7 +16,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Source" href="source.html" />
+    <link rel="next" title="Damping" href="damping.html" />
     <link rel="prev" title="Dimension" href="dimension.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -26,7 +26,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="source.html" title="Source"
+          <a href="damping.html" title="Damping"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="dimension.html" title="Dimension"
@@ -46,22 +46,22 @@
 <h1>Output settings<a class="headerlink" href="#output-settings" title="Permalink to this headline">¶</a></h1>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">output_mesh</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
+<li><p>Type: Boolean</p></li>
 <li><p>Description: Whether Hercules should print the output information for the mesh.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">output_displacement</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
+<li><p>Type: Boolean</p></li>
 <li><p>Description: Whether Hercules should print the output information for the displacement.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">output_velocity</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
+<li><p>Type: Boolean</p></li>
 <li><p>Description: Whether Hercules should print the output information for the velocity.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">output_parallel</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
-<li><p>Type: Boolean (0 or 1)</p></li>
+<li><p>Type: Boolean</p></li>
 <li><p>Description: Whether Hercules should print the output information for the parallel.</p></li>
 </ul>
 </dd>
@@ -71,21 +71,117 @@
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">output_displacement_file</span></code></dt><dd><ul class="simple">
-<li><p>Type: File path</p></li>
+<li><p>Type: Path</p></li>
 <li><p>Description: The path to the displacement output file.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">output_velocity_file</span></code></dt><dd><ul class="simple">
-<li><p>Type: File path</p></li>
+<li><p>Type: Path</p></li>
 <li><p>Description: The path to the velocity output file.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">output_stats_file</span></code></dt><dd><ul class="simple">
-<li><p>Type: File path</p></li>
+<li><p>Type: Path</p></li>
 <li><p>Description: The path to the status output file.</p></li>
 </ul>
 </dd>
 </dl>
+<div class="section" id="output-mesh-coordinates-for-a-subdomain">
+<h2>Output mesh coordinates for a subdomain<a class="headerlink" href="#output-mesh-coordinates-for-a-subdomain" title="Permalink to this headline">¶</a></h2>
+<p>You can ask Hercules to store another mesh coordinates database which includes the information only within a specified subdomain. Here are the parameters you will need to set up if you want.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">mesh_coordinates_for_matlab</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to store an extra mesh coordinates database for the subdomain defined by the parameter <code class="docutils literal notranslate"><span class="pre">mesh_corners_matlab</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mesh_coordinates_directory_for_matlab</span></code></dt><dd><ul class="simple">
+<li><p>Type: Path</p></li>
+<li><p>Description: Path to the folder where Hercules should store the mesh coordinates database for the subdomain.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">mesh_corners_matlab</span></code></dt><dd><ul class="simple">
+<li><p>Type: Multiple Numbers</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">min_x</span> <span class="pre">min_y</span> <span class="pre">max_x</span> <span class="pre">max_y</span> <span class="pre">min_z</span> <span class="pre">max_z</span></code></p></li>
+<li><p>Description: Values used to define the boundaries of the subdomain. Note that X is in the vertical direction of the plan view.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="output-for-stations">
+<h2>Output for stations<a class="headerlink" href="#output-for-stations" title="Permalink to this headline">¶</a></h2>
+<p>The following parameters are used for the output for stations (observation points).</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">number_output_stations</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description: The number of output stations.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">output_stations_print_rate</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description: The rate Hercules saves output data for stations. For example, if you set <code class="code docutils literal notranslate"><span class="pre">output_stations_print_rate</span> <span class="pre">=</span> <span class="pre">2</span></code>, it means Hercules would store output data every 2 time steps.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">print_station_velocities</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to print the velocities at each station.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">print_station_accelerations</span></code></dt><dd><ul class="simple">
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to print the accelerations at each station.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">output_stations_directory</span></code></dt><dd><ul class="simple">
+<li><p>Type: Path</p></li>
+<li><p>Description: Path to the folder where Hercules should store the related information of stations.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">output_stations</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<li><p>Type: Multiple numbers</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">latitude</span> <span class="pre">longitude</span> <span class="pre">depth</span></code></p></li>
+<li><p>Description: The location information of stations. The data should be written as many lines as parameter <code class="docutils literal notranslate"><span class="pre">number_output_stations</span></code> defines. (The difference between engineering depth and bedrock depth needs to be explained.)</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="output-for-planes">
+<h2>Output for planes<a class="headerlink" href="#output-for-planes" title="Permalink to this headline">¶</a></h2>
+<p>A plane contains multiple grid points storing information like displacements on them. (Confirmation Needed) (Is displacement the only information stored in the plane file)</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">number_output_planes</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description: The number of output planes.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">output_planes_print_rate</span></code></dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description: The rate Hercules saves output data for planes. For example, if you set <code class="code docutils literal notranslate"><span class="pre">output_planes_print_rate</span> <span class="pre">=</span> <span class="pre">2</span></code>, it means Hercules would store output data every 2 time steps.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">output_planes_directory</span></code></dt><dd><ul class="simple">
+<li><p>Type: Path</p></li>
+<li><p>Description: Path to the folder where Hercules should store the planes database.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">output_planes</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<li><p>Type: Multiple numbers</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">x_lat</span> <span class="pre">y_lon</span> <span class="pre">z_depth</span> <span class="pre">dx</span> <span class="pre">nx</span> <span class="pre">dy</span> <span class="pre">ny</span> <span class="pre">strk</span> <span class="pre">dp</span></code></p></li>
+<li><p>Description: Values used to define the planes. <code class="docutils literal notranslate"><span class="pre">x_lat</span></code>, <code class="docutils literal notranslate"><span class="pre">y_lon</span></code>, and <code class="docutils literal notranslate"><span class="pre">z_depth</span></code> define the origin of a plane. <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code> are the spacing along X and Y directions. <code class="docutils literal notranslate"><span class="pre">nx</span></code> and <code class="docutils literal notranslate"><span class="pre">ny</span></code> are the number of grid points along X and Y directions. (<code class="docutils literal notranslate"><span class="pre">strk</span></code> and <code class="docutils literal notranslate"><span class="pre">dp</span></code> need to be explained.)</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="misc">
+<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">softening_factor</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<li><p>Type: Integer</p></li>
+<li><p>Description: Softening factor for the mesh.</p></li>
+</ul>
+</dd>
+</dl>
+</div>
 </div>
 
 
@@ -95,12 +191,23 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Output settings</a><ul>
+<li><a class="reference internal" href="#output-mesh-coordinates-for-a-subdomain">Output mesh coordinates for a subdomain</a></li>
+<li><a class="reference internal" href="#output-for-stations">Output for stations</a></li>
+<li><a class="reference internal" href="#output-for-planes">Output for planes</a></li>
+<li><a class="reference internal" href="#misc">Misc</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="dimension.html"
                         title="previous chapter">Dimension</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="source.html"
-                        title="next chapter">Source</a></p>
+  <p class="topless"><a href="damping.html"
+                        title="next chapter">Damping</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -129,7 +236,7 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="source.html" title="Source"
+          <a href="damping.html" title="Damping"
              >next</a> |</li>
         <li class="right" >
           <a href="dimension.html" title="Dimension"

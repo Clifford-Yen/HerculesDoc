@@ -32,3 +32,15 @@ Damping
     * Type:
     * Description:
 
+``the_threshold_damping``
+    * Type: Float
+    * Description:
+
+``the_threshold_Vp_over_Vs``
+    * Type: Float
+    * Description:
+
+``do_damping_statistics``
+    * Type: Boolean
+    * Description:
+
