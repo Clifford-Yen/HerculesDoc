@@ -103,7 +103,7 @@ A plane contains multiple grid points storing information like displacements on 
 ``output_planes`` (Confirmation Needed)
     * Type: Multiple numbers
     * Format: ``x_lat y_lon z_depth dx nx dy ny strk dp``
-    * Description: Values used to define the planes. ``x_lat``, ``y_lon``, and ``z_depth`` define the origin of a plane. ``dx`` and ``dy`` are the spacing along X and Y directions. ``nx`` and ``ny`` are the number of grid points along X and Y directions. (``strk`` and ``dp`` need to be explained.)
+    * Description: Values used to define the planes. ``x_lat``, ``y_lon``, and ``z_depth`` define the origin of a plane. ``dx`` and ``dy`` are the spacing along X and Y directions. ``nx`` and ``ny`` are the number of grid points along X and Y directions. ``strk`` is the strike angle (in degree) measured from the true north clockwise, and ``dp`` is the dip angle (in degree).
 
 
 Misc
