@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Compiling &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Running" href="running.html" />
+    <link rel="prev" title="Overview" href="overview.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="running.html" title="Running"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Compiling</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="compiling">
+<h1>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h1>
+<section id="prerequisites">
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>To compile Hercules, you need to have Open-MPI and GNU Scientific Library (GSL) installed. If you haven’t installed them, the easiest way to do so is installing them via <a class="reference external" href="https://brew.sh">Homebrew</a>. Assuming Homebrew is installed on your machine, all you need to do is typing the following commands in the terminal one by one.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew install open-mpi
+brew install gsl
+</pre></div>
+</div>
+</section>
+<section id="compiling-with-user-mk">
+<h2>Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code><a class="headerlink" href="#compiling-with-user-mk" title="Permalink to this headline">¶</a></h2>
+<p>Although there are some predefined system configurations in <code class="docutils literal notranslate"><span class="pre">system.mk</span></code>, it’s very likely you will find that it’s insufficient. As a result, it’s recommended to write your own <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> next to <code class="docutils literal notranslate"><span class="pre">system.mk</span></code> before you compile.</p>
+<p>For example, the following lines can be written into <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> and used for Macs.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
+# -----------------
+
+SYSTEM = MAC
+
+# Main compilation setup
+# ----------------------
+
+CFLAGS += -g -ggdb -O0
+
+# Compilation flags
+# -----------------
+
+# CVM and IO related:
+
+IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4000
+
+ifeq ($(SYSTEM), MAC)
+        MPI_DIR      = /usr/local/
+        MPI_INCLUDE  = $(MPI_DIR)/include/openmpi/ompi/mpi/cxx
+        CC           = $(MPI_DIR)/bin/mpicc
+        CXX          = $(MPI_DIR)/bin/mpicxx
+        LD           = $(MPI_DIR)/bin/mpicxx
+        CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+        CFLAGS      += -Wall
+        CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+        LDFLAGS     += /usr/local/lib/libgsl.a
+endif
+
+LDFLAGS += -lgslcblas
+LDFLAGS += -lgsl
+</pre></div>
+</div>
+</section>
+<section id="compiling-procedure">
+<h2>Compiling procedure<a class="headerlink" href="#compiling-procedure" title="Permalink to this headline">¶</a></h2>
+<p>To compile Hercules, make sure to <code class="code docutils literal notranslate"><span class="pre">cd</span></code> into Hercules’ folder and simply run the following lines in the terminal one by one.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
+<span class="n">make</span> <span class="n">cleanall</span>
+<span class="n">make</span>
+</pre></div>
+</div>
+<p>Now, you are all set.</p>
+</section>
+<section id="side-notes-for-m1-macs">
+<h2>Side notes for M1 Macs<a class="headerlink" href="#side-notes-for-m1-macs" title="Permalink to this headline">¶</a></h2>
+<p>If you are installing Hercules on Macs equipped with M1 SoC (the first Apple Silicon), here are some notes for you to install Hercules successfully.</p>
+<ul class="simple">
+<li><p>Install Open-MPI and GSL with native M1 support using natively M1 supported Homebrew. The installed Open-MPI and GSL should be located under <code class="code docutils literal notranslate"><span class="pre">/opt/homebrew/</span></code></p></li>
+<li><p>Change <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> accordingly</p></li>
+<li><p>(Optional) The last step of compiling procedure (<code class="code docutils literal notranslate"><span class="pre">make</span></code>) might need to be replaced with <code class="code docutils literal notranslate"><span class="pre">arch</span> <span class="pre">-arm64e</span> <span class="pre">make</span></code></p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for M1 Macs can be written as follows. (And yes, you can combine this section with the <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Intel-based Macs. Just make sure you set the correct <code class="code docutils literal notranslate"><span class="pre">SYSTEM</span></code> variable.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
+# -----------------
+
+SYSTEM = ARMMAC
+
+# Main compilation setup
+# ----------------------
+
+CFLAGS += -g -ggdb -O0
+
+# Compilation flags
+# -----------------
+
+# CVM and IO related:
+
+IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4000
+
+ifeq ($(SYSTEM), ARMMAC)
+        MPI_DIR      = /opt/homebrew
+        MPI_INCLUDE  = $(MPI_DIR)/include/openmpi/ompi/mpi/cxx
+        CC           = $(MPI_DIR)/bin/mpicc
+        CXX          = $(MPI_DIR)/bin/mpicxx
+        LD           = $(MPI_DIR)/bin/mpicxx
+        CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+        CFLAGS      += -Wall -I/opt/homebrew/include/
+        CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+        LDFLAGS     += -L/opt/homebrew/lib/
+endif
+
+LDFLAGS += -lgslcblas
+LDFLAGS += -lgsl
+</pre></div>
+</div>
+<p>Although there will be some warnings related to architecture issues, things will work as intended.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Compiling</a><ul>
+<li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li><a class="reference internal" href="#compiling-with-user-mk">Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code></a></li>
+<li><a class="reference internal" href="#compiling-procedure">Compiling procedure</a></li>
+<li><a class="reference internal" href="#side-notes-for-m1-macs">Side notes for M1 Macs</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="overview.html"
+                          title="previous chapter">Overview</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="running.html"
+                          title="next chapter">Running</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst/compiling.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="running.html" title="Running"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="overview.html" title="Overview"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Compiling</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>
