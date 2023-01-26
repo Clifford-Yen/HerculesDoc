@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Running &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Input file" href="input/inputFile.html" />
+    <link rel="prev" title="Compiling" href="compiling.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="input/inputFile.html" title="Input file"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="compiling.html" title="Compiling"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Running</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="running">
+<h1>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h1>
+<section id="basic-usage">
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<p>To run Hercules, the basic usage is</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>psolve inputFile.in
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">inputFile.in</span></code> mentioned above should be changed to your actual input file. The <code class="code docutils literal notranslate"><span class="pre">psolve</span></code> executable file is located in <code class="docutils literal notranslate"><span class="pre">quake/forward/</span></code> under the Hercules folder. Assuming your working directory is already changed to the Hercules folder, then the proper way to call <code class="code docutils literal notranslate"><span class="pre">psolve</span></code> is</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>quake/forward/psolve inputFile.in
+</pre></div>
+</div>
+<p>Alternatively, you could also add the <code class="docutils literal notranslate"><span class="pre">quake/forward/</span></code> to your system <code class="docutils literal notranslate"><span class="pre">$PATH</span></code>.</p>
+</section>
+<section id="running-with-open-mpi">
+<h2>Running with Open-MPI<a class="headerlink" href="#running-with-open-mpi" title="Permalink to this headline">¶</a></h2>
+<p>Now you should have Open-MPI installed on your machine, you can utilize the maximum power of your machine with the use of it. The basic usage with Open-MPI is</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -n numProcesses psolve inputFile.in
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">numProcesses</span></code> mentioned above should be changed to the number of processes (cores or threads, depending on your system). For example, assuming we want to run Hercules with 4 cores, and the current working directory is the Hercules folder, then the proper command is</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -n <span class="m">4</span> quake/forward/psolve inputFile.in
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Running</a><ul>
+<li><a class="reference internal" href="#basic-usage">Basic usage</a></li>
+<li><a class="reference internal" href="#running-with-open-mpi">Running with Open-MPI</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="compiling.html"
+                          title="previous chapter">Compiling</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="input/inputFile.html"
+                          title="next chapter">Input file</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst/running.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="input/inputFile.html" title="Input file"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="compiling.html" title="Compiling"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Running</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>
