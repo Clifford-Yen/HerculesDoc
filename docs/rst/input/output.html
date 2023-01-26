@@ -4,12 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Output settings &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -42,7 +43,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="output-settings">
+  <section id="output-settings">
 <h1>Output settings<a class="headerlink" href="#output-settings" title="Permalink to this headline">¶</a></h1>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">output_mesh</span></code></dt><dd><ul class="simple">
@@ -86,7 +87,7 @@
 </ul>
 </dd>
 </dl>
-<div class="section" id="output-mesh-coordinates-for-a-subdomain">
+<section id="output-mesh-coordinates-for-a-subdomain">
 <h2>Output mesh coordinates for a subdomain<a class="headerlink" href="#output-mesh-coordinates-for-a-subdomain" title="Permalink to this headline">¶</a></h2>
 <p>You can ask Hercules to store another mesh coordinates database which includes the information only within a specified subdomain. Here are the parameters you will need to set up if you want.</p>
 <dl class="simple">
@@ -107,8 +108,8 @@
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="output-for-stations">
+</section>
+<section id="output-for-stations">
 <h2>Output for stations<a class="headerlink" href="#output-for-stations" title="Permalink to this headline">¶</a></h2>
 <p>The following parameters are used for the output for stations (observation points).</p>
 <dl class="simple">
@@ -144,8 +145,8 @@
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="output-for-planes">
+</section>
+<section id="output-for-planes">
 <h2>Output for planes<a class="headerlink" href="#output-for-planes" title="Permalink to this headline">¶</a></h2>
 <p>A plane contains multiple grid points storing information like displacements on them. (Confirmation Needed) (Is displacement the only information stored in the plane file)</p>
 <dl class="simple">
@@ -167,12 +168,12 @@
 <dt><code class="docutils literal notranslate"><span class="pre">output_planes</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
 <li><p>Type: Multiple numbers</p></li>
 <li><p>Format: <code class="docutils literal notranslate"><span class="pre">x_lat</span> <span class="pre">y_lon</span> <span class="pre">z_depth</span> <span class="pre">dx</span> <span class="pre">nx</span> <span class="pre">dy</span> <span class="pre">ny</span> <span class="pre">strk</span> <span class="pre">dp</span></code></p></li>
-<li><p>Description: Values used to define the planes. <code class="docutils literal notranslate"><span class="pre">x_lat</span></code>, <code class="docutils literal notranslate"><span class="pre">y_lon</span></code>, and <code class="docutils literal notranslate"><span class="pre">z_depth</span></code> define the origin of a plane. <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code> are the spacing along X and Y directions. <code class="docutils literal notranslate"><span class="pre">nx</span></code> and <code class="docutils literal notranslate"><span class="pre">ny</span></code> are the number of grid points along X and Y directions. (<code class="docutils literal notranslate"><span class="pre">strk</span></code> and <code class="docutils literal notranslate"><span class="pre">dp</span></code> need to be explained.)</p></li>
+<li><p>Description: Values used to define the planes. <code class="docutils literal notranslate"><span class="pre">x_lat</span></code>, <code class="docutils literal notranslate"><span class="pre">y_lon</span></code>, and <code class="docutils literal notranslate"><span class="pre">z_depth</span></code> define the origin of a plane. <code class="docutils literal notranslate"><span class="pre">dx</span></code> and <code class="docutils literal notranslate"><span class="pre">dy</span></code> are the spacing along X and Y directions. <code class="docutils literal notranslate"><span class="pre">nx</span></code> and <code class="docutils literal notranslate"><span class="pre">ny</span></code> are the number of grid points along X and Y directions. <code class="docutils literal notranslate"><span class="pre">strk</span></code> is the strike angle (in degree) measured from the true north clockwise, and <code class="docutils literal notranslate"><span class="pre">dp</span></code> is the dip angle (in degree).</p></li>
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="misc">
+</section>
+<section id="misc">
 <h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">softening_factor</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
@@ -181,8 +182,8 @@
 </ul>
 </dd>
 </dl>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -191,8 +192,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Output settings</a><ul>
 <li><a class="reference internal" href="#output-mesh-coordinates-for-a-subdomain">Output mesh coordinates for a subdomain</a></li>
 <li><a class="reference internal" href="#output-for-stations">Output for stations</a></li>
@@ -202,12 +204,17 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="dimension.html"
-                        title="previous chapter">Dimension</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="damping.html"
-                        title="next chapter">Damping</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="dimension.html"
+                          title="previous chapter">Dimension</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="damping.html"
+                          title="next chapter">Damping</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -219,7 +226,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -247,8 +254,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

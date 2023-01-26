@@ -4,12 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Running &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -41,9 +42,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="running">
+  <section id="running">
 <h1>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="basic-usage">
+<section id="basic-usage">
 <h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
 <p>To run Hercules, the basic usage is</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>psolve inputFile.in
@@ -54,8 +55,8 @@
 </pre></div>
 </div>
 <p>Alternatively, you could also add the <code class="docutils literal notranslate"><span class="pre">quake/forward/</span></code> to your system <code class="docutils literal notranslate"><span class="pre">$PATH</span></code>.</p>
-</div>
-<div class="section" id="running-with-open-mpi">
+</section>
+<section id="running-with-open-mpi">
 <h2>Running with Open-MPI<a class="headerlink" href="#running-with-open-mpi" title="Permalink to this headline">¶</a></h2>
 <p>Now you should have Open-MPI installed on your machine, you can utilize the maximum power of your machine with the use of it. The basic usage with Open-MPI is</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -n numProcesses psolve inputFile.in
@@ -65,8 +66,8 @@
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -n <span class="m">4</span> quake/forward/psolve inputFile.in
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -75,8 +76,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Running</a><ul>
 <li><a class="reference internal" href="#basic-usage">Basic usage</a></li>
 <li><a class="reference internal" href="#running-with-open-mpi">Running with Open-MPI</a></li>
@@ -84,12 +86,17 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="compiling.html"
-                        title="previous chapter">Compiling</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="input/inputFile.html"
-                        title="next chapter">Input file</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="compiling.html"
+                          title="previous chapter">Compiling</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="input/inputFile.html"
+                          title="next chapter">Input file</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -101,7 +108,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -128,8 +135,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>
