@@ -4,12 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Damping &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -42,13 +43,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="damping">
+  <section id="damping">
 <h1>Damping<a class="headerlink" href="#damping" title="Permalink to this headline">¶</a></h1>
 <p>(Confirmation Needed) for all the section</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code></dt><dd><ul class="simple">
 <li><p>Type: String</p></li>
-<li><p>Description: The type of damping Hercules should use. Possible options include <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, etc.</p></li>
+<li><p>Description: The type of damping Hercules should use. Possible options include <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">none</span></code>, etc.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">simulation_velocity_profile_freq_hz</span></code></dt><dd><ul class="simple">
@@ -58,7 +59,7 @@
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code></dt><dd><ul class="simple">
 <li><p>Type: Boolean</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: If this parameter is set to <code class="docutils literal notranslate"><span class="pre">no</span></code> and <code class="docutils literal notranslate"><span class="pre">type_of_damping</span> <span class="pre">=</span> <span class="pre">bkt2</span></code>, it’s equivalent to <code class="docutils literal notranslate"><span class="pre">type_of_damping</span> <span class="pre">=</span> <span class="pre">none</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">use_infinite_qk</span></code></dt><dd><ul class="simple">
@@ -97,7 +98,7 @@
 </ul>
 </dd>
 </dl>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -106,12 +107,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="output.html"
-                        title="previous chapter">Output settings</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="source.html"
-                        title="next chapter">Source</a></p>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="output.html"
+                          title="previous chapter">Output settings</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="source.html"
+                          title="next chapter">Source</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -123,7 +128,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -151,8 +156,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

@@ -4,20 +4,22 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Domain Reduction Method (DRM) Implementation &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Building" href="building.html" /> 
+    <link rel="next" title="References" href="../references.html" />
+    <link rel="prev" title="Analysis" href="analysis.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,7 +28,10 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="building.html" title="Building"
+          <a href="../references.html" title="References"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="analysis.html" title="Analysis"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
@@ -39,7 +44,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="domain-reduction-method-drm-implementation">
+  <section id="domain-reduction-method-drm-implementation">
 <h1>Domain Reduction Method (DRM) Implementation<a class="headerlink" href="#domain-reduction-method-drm-implementation" title="Permalink to this headline">¶</a></h1>
 <p>Hercules is capable of implementing the Domain Reduction Method (DRM). You can implement it by setting</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">implement_drm</span> <span class="o">=</span> <span class="n">yes</span>
@@ -51,9 +56,9 @@
 </pre></div>
 </div>
 <p>Other parameters that are needed to be assigned for DRM will be explained in this documentation. Note that all the DRM parameters, except <code class="docutils literal notranslate"><span class="pre">which_drm_part</span></code>, should be the same for all three parts.</p>
-<div class="section" id="part-0-part-1-and-part-2">
+<section id="part-0-part-1-and-part-2">
 <h2>Part 0, part 1, and part 2<a class="headerlink" href="#part-0-part-1-and-part-2" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="part-0">
+<section id="part-0">
 <h3>Part 0<a class="headerlink" href="#part-0" title="Permalink to this headline">¶</a></h3>
 <p>In part 0, the information of the coordinates of the DRM box would be generated.</p>
 <p>To execute part 0 analysis, simply setting the following line in the input file.</p>
@@ -64,16 +69,16 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">simulation_end_time_sec</span> <span class="o">=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="part-1">
+</section>
+<section id="part-1">
 <h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
 <p>In part 1, the displacements of DRM nodes would be saved.</p>
 <p>To execute part 1 analysis, setting the following line in the input file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which_drm_part</span> <span class="o">=</span> <span class="n">part1</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="part-2">
+</section>
+<section id="part-2">
 <h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
 <p>If you are not going to run nonlinear analysis, you don’t need to run part 2 unless you want to store effective forces information for local use (e.g., for Abaqus).</p>
 <p>In part 2, Hercules no longer get the information from the source. Instead, it gets the information from the results that are calculated in part 0 and part 1.</p>
@@ -81,11 +86,11 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which_drm_part</span> <span class="o">=</span> <span class="n">part2</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="other-parameters">
+</section>
+</section>
+<section id="other-parameters">
 <h2>Other parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="defining-the-element-size">
+<section id="defining-the-element-size">
 <h3>Defining the element size<a class="headerlink" href="#defining-the-element-size" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_edgesize</span></code></dt><dd><ul class="simple">
@@ -95,8 +100,8 @@
 </dd>
 </dl>
 <p>Note that all the dimensions in Hercules have to be “octree dimension.” For more information, please refer to <a class="reference internal" href="../overview.html#octree-dimension"><span class="std std-ref">Octree dimension</span></a></p>
-</div>
-<div class="section" id="delta-t-and-simulation-time-for-part-1">
+</section>
+<section id="delta-t-and-simulation-time-for-part-1">
 <h3><span class="math notranslate nohighlight">\(\Delta t\)</span> and simulation time for part 1<a class="headerlink" href="#delta-t-and-simulation-time-for-part-1" title="Permalink to this headline">¶</a></h3>
 <p>These parameters only used for part 2 analysis.</p>
 <p>You should set the same values for these two parameters, <code class="docutils literal notranslate"><span class="pre">part1_delta_t</span></code> and <code class="docutils literal notranslate"><span class="pre">part1_simulation_time</span></code>, to <code class="docutils literal notranslate"><span class="pre">simulation_delta_time_sec</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_end_time_sec</span></code>, respectively. You can do so by setting the following lines in the input file.</p>
@@ -105,8 +110,8 @@
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">delta_t_used_in_part1_in_second</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_time_used_in_part1_in_second</span></code> mentioned above should be replaced with the <span class="math notranslate nohighlight">\(\Delta t\)</span> and the simulation end time that are used in part 1.</p>
-</div>
-<div class="section" id="print-rate">
+</section>
+<section id="print-rate">
 <h3>Print rate<a class="headerlink" href="#print-rate" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_print_rate</span></code></dt><dd><ul class="simple">
@@ -115,8 +120,8 @@
 </ul>
 </dd>
 </dl>
-</div>
-<div class="section" id="drm-offsets">
+</section>
+<section id="drm-offsets">
 <h3>DRM offsets<a class="headerlink" href="#drm-offsets" title="Permalink to this headline">¶</a></h3>
 <p>DRM offsets are the distances (in meter) from the origin that is defined by parameters <code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code> and <code class="docutils literal notranslate"><span class="pre">region_origin_longitude_deg</span></code>. You can define these parameters by setting the following parameters.</p>
 <dl class="simple">
@@ -133,8 +138,8 @@
 </dl>
 <p>Note that x direction is north-south direction (north is positive), while y direction is east-west direction (east is positive). And both offsets are still <a class="reference internal" href="../overview.html#octree-dimension"><span class="std std-ref">Octree dimension</span></a>.</p>
 <p>DRM offsets create a box bigger than the DRM boundary. The space between these two boundaries is used for the absorbing boundary conditions (ABCs).</p>
-</div>
-<div class="section" id="drm-boundary">
+</section>
+<section id="drm-boundary">
 <h3>DRM boundary<a class="headerlink" href="#drm-boundary" title="Permalink to this headline">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_boundary</span></code></dt><dd><ul class="simple">
@@ -144,9 +149,9 @@
 </ul>
 </dd>
 </dl>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -155,8 +160,9 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Domain Reduction Method (DRM) Implementation</a><ul>
 <li><a class="reference internal" href="#part-0-part-1-and-part-2">Part 0, part 1, and part 2</a><ul>
 <li><a class="reference internal" href="#part-0">Part 0</a></li>
@@ -176,9 +182,17 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="building.html"
-                        title="previous chapter">Building</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="analysis.html"
+                          title="previous chapter">Analysis</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../references.html"
+                          title="next chapter">References</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -190,7 +204,7 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -207,7 +221,10 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="building.html" title="Building"
+          <a href="../references.html" title="References"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="analysis.html" title="Analysis"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
@@ -215,8 +232,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@ Damping
 
 ``type_of_damping``
     * Type: String
-    * Description: The type of damping Hercules should use. Possible options include ``bkt2``, etc.
+    * Description: The type of damping Hercules should use. Possible options include ``bkt2``, ``none``, etc.
 
 ``simulation_velocity_profile_freq_hz``
     * Type: Float
@@ -14,7 +14,7 @@ Damping
 
 ``use_parametric_q_factor``
     * Type: Boolean
-    * Description:
+    * Description: If this parameter is set to ``no`` and ``type_of_damping = bkt2``, it's equivalent to ``type_of_damping = none``.
 
 ``use_infinite_qk``
     * Type: Boolean

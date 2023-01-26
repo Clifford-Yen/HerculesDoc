@@ -4,12 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Compiling &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -41,17 +42,17 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="compiling">
+  <section id="compiling">
 <h1>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="prerequisites">
+<section id="prerequisites">
 <h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>To compile Hercules, you need to have Open-MPI and GNU Scientific Library (GSL) installed. If you haven’t installed them, the easiest way to do so is installing them via <a class="reference external" href="https://brew.sh">Homebrew</a>. Assuming Homebrew is installed on your machine, all you need to do is typing the following commands in the terminal one by one.</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew install open-mpi
 brew install gsl
 </pre></div>
 </div>
-</div>
-<div class="section" id="compiling-with-user-mk">
+</section>
+<section id="compiling-with-user-mk">
 <h2>Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code><a class="headerlink" href="#compiling-with-user-mk" title="Permalink to this headline">¶</a></h2>
 <p>Although there are some predefined system configurations in <code class="docutils literal notranslate"><span class="pre">system.mk</span></code>, it’s very likely you will find that it’s insufficient. As a result, it’s recommended to write your own <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> next to <code class="docutils literal notranslate"><span class="pre">system.mk</span></code> before you compile.</p>
 <p>For example, the following lines can be written into <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> and used for Macs.</p>
@@ -88,8 +89,8 @@ LDFLAGS += -lgslcblas
 LDFLAGS += -lgsl
 </pre></div>
 </div>
-</div>
-<div class="section" id="compiling-procedure">
+</section>
+<section id="compiling-procedure">
 <h2>Compiling procedure<a class="headerlink" href="#compiling-procedure" title="Permalink to this headline">¶</a></h2>
 <p>To compile Hercules, make sure to <code class="code docutils literal notranslate"><span class="pre">cd</span></code> into Hercules’ folder and simply run the following lines in the terminal one by one.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
@@ -98,14 +99,14 @@ LDFLAGS += -lgsl
 </pre></div>
 </div>
 <p>Now, you are all set.</p>
-</div>
-<div class="section" id="side-notes-for-m1-macs">
+</section>
+<section id="side-notes-for-m1-macs">
 <h2>Side notes for M1 Macs<a class="headerlink" href="#side-notes-for-m1-macs" title="Permalink to this headline">¶</a></h2>
 <p>If you are installing Hercules on Macs equipped with M1 SoC (the first Apple Silicon), here are some notes for you to install Hercules successfully.</p>
 <ul class="simple">
 <li><p>Install Open-MPI and GSL with native M1 support using natively M1 supported Homebrew. The installed Open-MPI and GSL should be located under <code class="code docutils literal notranslate"><span class="pre">/opt/homebrew/</span></code></p></li>
 <li><p>Change <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> accordingly</p></li>
-<li><p>The last step of compiling procedure (<code class="code docutils literal notranslate"><span class="pre">make</span></code>) should be replaced with <code class="code docutils literal notranslate"><span class="pre">arch</span> <span class="pre">-arm64e</span> <span class="pre">make</span></code></p></li>
+<li><p>(Optional) The last step of compiling procedure (<code class="code docutils literal notranslate"><span class="pre">make</span></code>) might need to be replaced with <code class="code docutils literal notranslate"><span class="pre">arch</span> <span class="pre">-arm64e</span> <span class="pre">make</span></code></p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for M1 Macs can be written as follows. (And yes, you can combine this section with the <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Intel-based Macs. Just make sure you set the correct <code class="code docutils literal notranslate"><span class="pre">SYSTEM</span></code> variable.)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
@@ -132,9 +133,9 @@ ifeq ($(SYSTEM), ARMMAC)
         CXX          = $(MPI_DIR)/bin/mpicxx
         LD           = $(MPI_DIR)/bin/mpicxx
         CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
-        CFLAGS      += -Wall
+        CFLAGS      += -Wall -I/opt/homebrew/include/
         CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
-        LDFLAGS     += /opt/homebrew/lib/libgsl.a
+        LDFLAGS     += -L/opt/homebrew/lib/
 endif
 
 LDFLAGS += -lgslcblas
@@ -142,8 +143,8 @@ LDFLAGS += -lgsl
 </pre></div>
 </div>
 <p>Although there will be some warnings related to architecture issues, things will work as intended.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -152,8 +153,9 @@ LDFLAGS += -lgsl
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">Compiling</a><ul>
 <li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li><a class="reference internal" href="#compiling-with-user-mk">Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code></a></li>
@@ -163,12 +165,17 @@ LDFLAGS += -lgsl
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="overview.html"
-                        title="previous chapter">Overview</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="running.html"
-                        title="next chapter">Running</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="overview.html"
+                          title="previous chapter">Overview</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="running.html"
+                          title="next chapter">Running</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -180,7 +187,7 @@ LDFLAGS += -lgsl
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -207,8 +214,8 @@ LDFLAGS += -lgsl
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2021, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

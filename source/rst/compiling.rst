@@ -71,7 +71,7 @@ If you are installing Hercules on Macs equipped with M1 SoC (the first Apple Sil
 
 * Install Open-MPI and GSL with native M1 support using natively M1 supported Homebrew. The installed Open-MPI and GSL should be located under :code:`/opt/homebrew/`
 * Change ``user.mk`` accordingly
-* The last step of compiling procedure (:code:`make`) should be replaced with :code:`arch -arm64e make`
+* (Optional) The last step of compiling procedure (:code:`make`) might need to be replaced with :code:`arch -arm64e make`
 
 ``user.mk`` for M1 Macs can be written as follows. (And yes, you can combine this section with the ``user.mk`` for Intel-based Macs. Just make sure you set the correct :code:`SYSTEM` variable.)
 
@@ -101,9 +101,9 @@ If you are installing Hercules on Macs equipped with M1 SoC (the first Apple Sil
             CXX          = $(MPI_DIR)/bin/mpicxx
             LD           = $(MPI_DIR)/bin/mpicxx
             CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
-            CFLAGS      += -Wall
+            CFLAGS      += -Wall -I/opt/homebrew/include/
             CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
-            LDFLAGS     += /opt/homebrew/lib/libgsl.a
+            LDFLAGS     += -L/opt/homebrew/lib/
     endif
 
     LDFLAGS += -lgslcblas
