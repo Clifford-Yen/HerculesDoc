@@ -55,7 +55,7 @@ brew install gsl
 <section id="compiling-with-user-mk">
 <h2>Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code><a class="headerlink" href="#compiling-with-user-mk" title="Permalink to this headline">¶</a></h2>
 <p>Although there are some predefined system configurations in <code class="docutils literal notranslate"><span class="pre">system.mk</span></code>, it’s very likely you will find that it’s insufficient. As a result, it’s recommended to write your own <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> next to <code class="docutils literal notranslate"><span class="pre">system.mk</span></code> before you compile.</p>
-<p>For example, the following lines can be written into <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> and used for Macs.</p>
+<p>For example, the following lines can be written into <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> and used for Intel-based Macs.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
 # -----------------
 
@@ -64,31 +64,32 @@ SYSTEM = MAC
 # Main compilation setup
 # ----------------------
 
-CFLAGS += -g -ggdb -O0
+CFLAGS += -g -ggdb -O3
 
 # Compilation flags
 # -----------------
 
 # CVM and IO related:
 
-IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4000
+IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4
 
 ifeq ($(SYSTEM), MAC)
-        MPI_DIR      = /usr/local/
-        MPI_INCLUDE  = $(MPI_DIR)/include/openmpi/ompi/mpi/cxx
-        CC           = $(MPI_DIR)/bin/mpicc
-        CXX          = $(MPI_DIR)/bin/mpicxx
-        LD           = $(MPI_DIR)/bin/mpicxx
-        CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
-        CFLAGS      += -Wall
-        CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
-        LDFLAGS     += /usr/local/lib/libgsl.a
+    MPI_DIR      = /usr/local
+    MPI_INCLUDE  = $(MPI_DIR)/include/openmpi/ompi/mpi/cxx
+    CC           = $(MPI_DIR)/bin/mpicc
+    CXX          = $(MPI_DIR)/bin/mpicxx
+    LD           = $(MPI_DIR)/bin/mpicxx
+    CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+    CFLAGS      += -Wall
+    CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+    LDFLAGS     += $(MPI_DIR)/lib/libgsl.a
 endif
 
 LDFLAGS += -lgslcblas
 LDFLAGS += -lgsl
 </pre></div>
 </div>
+<p>Note that the indentation used in a makefile should be tabs, not spaces. If you copy the code block above, make sure to replace all spaces with tabs.</p>
 </section>
 <section id="compiling-procedure">
 <h2>Compiling procedure<a class="headerlink" href="#compiling-procedure" title="Permalink to this headline">¶</a></h2>
@@ -100,15 +101,15 @@ LDFLAGS += -lgsl
 </div>
 <p>Now, you are all set.</p>
 </section>
-<section id="side-notes-for-m1-macs">
-<h2>Side notes for M1 Macs<a class="headerlink" href="#side-notes-for-m1-macs" title="Permalink to this headline">¶</a></h2>
-<p>If you are installing Hercules on Macs equipped with M1 SoC (the first Apple Silicon), here are some notes for you to install Hercules successfully.</p>
+<section id="side-notes-for-apple-silicon-macs">
+<h2>Side notes for Apple Silicon Macs<a class="headerlink" href="#side-notes-for-apple-silicon-macs" title="Permalink to this headline">¶</a></h2>
+<p>If you are installing Hercules on Macs equipped with M1/M2 SoC (the Apple Silicon), here are some notes for you to install Hercules successfully.</p>
 <ul class="simple">
-<li><p>Install Open-MPI and GSL with native M1 support using natively M1 supported Homebrew. The installed Open-MPI and GSL should be located under <code class="code docutils literal notranslate"><span class="pre">/opt/homebrew/</span></code></p></li>
+<li><p>Install Open-MPI and GSL with native Apple Silicon support using natively supported Homebrew. The installed Open-MPI and GSL should be located under <code class="code docutils literal notranslate"><span class="pre">/opt/homebrew/</span></code></p></li>
 <li><p>Change <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> accordingly</p></li>
 <li><p>(Optional) The last step of compiling procedure (<code class="code docutils literal notranslate"><span class="pre">make</span></code>) might need to be replaced with <code class="code docutils literal notranslate"><span class="pre">arch</span> <span class="pre">-arm64e</span> <span class="pre">make</span></code></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for M1 Macs can be written as follows. (And yes, you can combine this section with the <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Intel-based Macs. Just make sure you set the correct <code class="code docutils literal notranslate"><span class="pre">SYSTEM</span></code> variable.)</p>
+<p><code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Apple Silicon Macs can be written as follows. (And yes, you can combine this section with the <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Intel-based Macs. Just make sure you set the correct <code class="code docutils literal notranslate"><span class="pre">SYSTEM</span></code> variable.)</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
 # -----------------
 
@@ -117,32 +118,32 @@ SYSTEM = ARMMAC
 # Main compilation setup
 # ----------------------
 
-CFLAGS += -g -ggdb -O0
+CFLAGS += -g -ggdb -O3
 
 # Compilation flags
 # -----------------
 
 # CVM and IO related:
 
-IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4000
+IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4
 
 ifeq ($(SYSTEM), ARMMAC)
-        MPI_DIR      = /opt/homebrew
-        MPI_INCLUDE  = $(MPI_DIR)/include/openmpi/ompi/mpi/cxx
-        CC           = $(MPI_DIR)/bin/mpicc
-        CXX          = $(MPI_DIR)/bin/mpicxx
-        LD           = $(MPI_DIR)/bin/mpicxx
-        CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
-        CFLAGS      += -Wall -I/opt/homebrew/include/
-        CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
-        LDFLAGS     += -L/opt/homebrew/lib/
+    MPI_DIR      = /opt/homebrew
+    MPI_INCLUDE  = $(MPI_DIR)/include/
+    CC           = $(MPI_DIR)/bin/mpicc
+    CXX          = $(MPI_DIR)/bin/mpicxx
+    LD           = $(MPI_DIR)/bin/mpicxx
+    CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+    CFLAGS      += -Wall -I$(MPI_DIR)/include/
+    CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+    LDFLAGS     += -L$(MPI_DIR)/lib/
 endif
 
 LDFLAGS += -lgslcblas
 LDFLAGS += -lgsl
 </pre></div>
 </div>
-<p>Although there will be some warnings related to architecture issues, things will work as intended.</p>
+<p>Although there will be some warnings, things will work as intended.</p>
 </section>
 </section>
 
@@ -160,7 +161,7 @@ LDFLAGS += -lgsl
 <li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li><a class="reference internal" href="#compiling-with-user-mk">Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code></a></li>
 <li><a class="reference internal" href="#compiling-procedure">Compiling procedure</a></li>
-<li><a class="reference internal" href="#side-notes-for-m1-macs">Side notes for M1 Macs</a></li>
+<li><a class="reference internal" href="#side-notes-for-apple-silicon-macs">Side notes for Apple Silicon Macs</a></li>
 </ul>
 </li>
 </ul>
