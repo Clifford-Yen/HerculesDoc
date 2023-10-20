@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Domain Reduction Method (DRM) Implementation &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=514cf933" />
     
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -45,7 +43,7 @@
           <div class="body" role="main">
             
   <section id="domain-reduction-method-drm-implementation">
-<h1>Domain Reduction Method (DRM) Implementation<a class="headerlink" href="#domain-reduction-method-drm-implementation" title="Permalink to this headline">¶</a></h1>
+<h1>Domain Reduction Method (DRM) Implementation<a class="headerlink" href="#domain-reduction-method-drm-implementation" title="Link to this heading">¶</a></h1>
 <p>Hercules is capable of implementing the Domain Reduction Method (DRM). You can implement it by setting</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">implement_drm</span> <span class="o">=</span> <span class="n">yes</span>
 </pre></div>
@@ -55,11 +53,29 @@
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which_drm_part</span> <span class="o">=</span> <span class="n">part0</span>
 </pre></div>
 </div>
-<p>Other parameters that are needed to be assigned for DRM will be explained in this documentation. Note that all the DRM parameters, except <code class="docutils literal notranslate"><span class="pre">which_drm_part</span></code>, should be the same for all three parts.</p>
+<p>Other parameters that are needed to be assigned for DRM will be explained in this documentation. Note that if <code class="docutils literal notranslate"><span class="pre">implement_drm</span> <span class="pre">=</span> <span class="pre">no</span></code> or it is not set (it is an optional parameter), then all the parameters related to DRM in the input file will be neglected, including</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">drm_directory</span>
+<span class="n">which_drm_part</span>
+<span class="n">drm_edgesize</span>
+<span class="n">part1_delta_t</span>
+<span class="n">part1_simulation_time</span>
+<span class="n">drm_print_rate</span>
+<span class="n">drm_offset_x</span>
+<span class="n">drm_offset_y</span>
+<span class="n">drm_boundary</span>
+<span class="n">DRMBox_Noelem_Halfwidth_EW</span>
+<span class="n">DRMBox_Noelem_Halfwidth_NS</span>
+<span class="n">DRMBox_Noelem_depth</span>
+<span class="n">DRMBox_element_size</span>
+<span class="n">DRM_xo</span>
+<span class="n">DRM_yo</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">implement_drm</span> <span class="pre">=</span> <span class="pre">yes</span></code>, all the DRM parameters, except <code class="docutils literal notranslate"><span class="pre">which_drm_part</span></code>, should be the same for all three parts.</p>
 <section id="part-0-part-1-and-part-2">
-<h2>Part 0, part 1, and part 2<a class="headerlink" href="#part-0-part-1-and-part-2" title="Permalink to this headline">¶</a></h2>
+<h2>Part 0, part 1, and part 2<a class="headerlink" href="#part-0-part-1-and-part-2" title="Link to this heading">¶</a></h2>
 <section id="part-0">
-<h3>Part 0<a class="headerlink" href="#part-0" title="Permalink to this headline">¶</a></h3>
+<h3>Part 0<a class="headerlink" href="#part-0" title="Link to this heading">¶</a></h3>
 <p>In part 0, the information of the coordinates of the DRM box would be generated.</p>
 <p>To execute part 0 analysis, simply setting the following line in the input file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which_drm_part</span> <span class="o">=</span> <span class="n">part0</span>
@@ -71,7 +87,7 @@
 </div>
 </section>
 <section id="part-1">
-<h3>Part 1<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h3>
+<h3>Part 1<a class="headerlink" href="#part-1" title="Link to this heading">¶</a></h3>
 <p>In part 1, the displacements of DRM nodes would be saved.</p>
 <p>To execute part 1 analysis, setting the following line in the input file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">which_drm_part</span> <span class="o">=</span> <span class="n">part1</span>
@@ -79,7 +95,7 @@
 </div>
 </section>
 <section id="part-2">
-<h3>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h3>
+<h3>Part 2<a class="headerlink" href="#part-2" title="Link to this heading">¶</a></h3>
 <p>If you are not going to run nonlinear analysis, you don’t need to run part 2 unless you want to store effective forces information for local use (e.g., for Abaqus).</p>
 <p>In part 2, Hercules no longer get the information from the source. Instead, it gets the information from the results that are calculated in part 0 and part 1.</p>
 <p>To execute part 2 analysis, setting the following line in the input file.</p>
@@ -89,11 +105,12 @@
 </section>
 </section>
 <section id="other-parameters">
-<h2>Other parameters<a class="headerlink" href="#other-parameters" title="Permalink to this headline">¶</a></h2>
+<h2>Other parameters<a class="headerlink" href="#other-parameters" title="Link to this heading">¶</a></h2>
 <section id="defining-the-element-size">
-<h3>Defining the element size<a class="headerlink" href="#defining-the-element-size" title="Permalink to this headline">¶</a></h3>
+<h3>Defining the element size<a class="headerlink" href="#defining-the-element-size" title="Link to this heading">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_edgesize</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
 <li><p>Description: The element edge size (in meter) you want to define for elements in the DRM box.</p></li>
 </ul>
@@ -102,7 +119,7 @@
 <p>Note that all the dimensions in Hercules have to be “octree dimension.” For more information, please refer to <a class="reference internal" href="../overview.html#octree-dimension"><span class="std std-ref">Octree dimension</span></a></p>
 </section>
 <section id="delta-t-and-simulation-time-for-part-1">
-<h3><span class="math notranslate nohighlight">\(\Delta t\)</span> and simulation time for part 1<a class="headerlink" href="#delta-t-and-simulation-time-for-part-1" title="Permalink to this headline">¶</a></h3>
+<h3><span class="math notranslate nohighlight">\(\Delta t\)</span> and simulation time for part 1<a class="headerlink" href="#delta-t-and-simulation-time-for-part-1" title="Link to this heading">¶</a></h3>
 <p>These parameters only used for part 2 analysis.</p>
 <p>You should set the same values for these two parameters, <code class="docutils literal notranslate"><span class="pre">part1_delta_t</span></code> and <code class="docutils literal notranslate"><span class="pre">part1_simulation_time</span></code>, to <code class="docutils literal notranslate"><span class="pre">simulation_delta_time_sec</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_end_time_sec</span></code>, respectively. You can do so by setting the following lines in the input file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">part1_delta_t</span> <span class="o">=</span> <span class="n">delta_t_used_in_part1_in_second</span>
@@ -112,9 +129,10 @@
 <p><code class="docutils literal notranslate"><span class="pre">delta_t_used_in_part1_in_second</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_time_used_in_part1_in_second</span></code> mentioned above should be replaced with the <span class="math notranslate nohighlight">\(\Delta t\)</span> and the simulation end time that are used in part 1.</p>
 </section>
 <section id="print-rate">
-<h3>Print rate<a class="headerlink" href="#print-rate" title="Permalink to this headline">¶</a></h3>
+<h3>Print rate<a class="headerlink" href="#print-rate" title="Link to this heading">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_print_rate</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Integer</p></li>
 <li><p>Description: The rate Hercules saves output data for DRM. For example, if you set <code class="code docutils literal notranslate"><span class="pre">drm_print_rate</span> <span class="pre">=</span> <span class="pre">2</span></code>, it means Hercules would store output data every 2 time step (<span class="math notranslate nohighlight">\(\Delta t\)</span>).</p></li>
 </ul>
@@ -122,15 +140,17 @@
 </dl>
 </section>
 <section id="drm-offsets">
-<h3>DRM offsets<a class="headerlink" href="#drm-offsets" title="Permalink to this headline">¶</a></h3>
+<h3>DRM offsets<a class="headerlink" href="#drm-offsets" title="Link to this heading">¶</a></h3>
 <p>DRM offsets are the distances (in meter) from the origin that is defined by parameters <code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code> and <code class="docutils literal notranslate"><span class="pre">region_origin_longitude_deg</span></code>. You can define these parameters by setting the following parameters.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_offset_x</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
 <li><p>Description: The DRM offset (in meter) from the origin in x direction.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">drm_offset_y</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
 <li><p>Description: The DRM offset (in meter) from the origin in y direction.</p></li>
 </ul>
@@ -140,9 +160,10 @@
 <p>DRM offsets create a box bigger than the DRM boundary. The space between these two boundaries is used for the absorbing boundary conditions (ABCs).</p>
 </section>
 <section id="drm-boundary">
-<h3>DRM boundary<a class="headerlink" href="#drm-boundary" title="Permalink to this headline">¶</a></h3>
+<h3>DRM boundary<a class="headerlink" href="#drm-boundary" title="Link to this heading">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_boundary</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Multiple numbers</p></li>
 <li><p>Format: <code class="docutils literal notranslate"><span class="pre">min_x</span> <span class="pre">min_y</span> <span class="pre">max_x</span> <span class="pre">max_y</span> <span class="pre">depth</span></code></p></li>
 <li><p>Description: Dimensions in DRM boundary section are distances (in meter) from the box that is created with DRM offsets. There are five dimensions needed to be defined., which are <code class="docutils literal notranslate"><span class="pre">min_x</span></code>, <code class="docutils literal notranslate"><span class="pre">min_y</span></code>, <code class="docutils literal notranslate"><span class="pre">max_x</span></code>, <code class="docutils literal notranslate"><span class="pre">max_y</span></code>, and <code class="docutils literal notranslate"><span class="pre">depth</span></code>.</p></li>
@@ -209,7 +230,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -232,8 +253,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

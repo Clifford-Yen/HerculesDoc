@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Material &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=514cf933" />
     
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -44,7 +42,9 @@
           <div class="body" role="main">
             
   <section id="material">
-<h1>Material<a class="headerlink" href="#material" title="Permalink to this headline">¶</a></h1>
+<h1>Material<a class="headerlink" href="#material" title="Link to this heading">¶</a></h1>
+<section id="one-dimensional-layered-profile">
+<h2>One-dimensional layered profile<a class="headerlink" href="#one-dimensional-layered-profile" title="Link to this heading">¶</a></h2>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">cvmdb_input_file</span></code></dt><dd><ul class="simple">
 <li><p>Type: Path/profile</p></li>
@@ -55,11 +55,6 @@
 </div>
 <ul class="simple">
 <li><p>By doing so, Hercules will use the crustal structure provided by parameters <code class="docutils literal notranslate"><span class="pre">number_profile_layers</span></code> and <code class="docutils literal notranslate"><span class="pre">profile_layers</span></code> in the same input file.</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">Istanbul_material_model</span></code></dt><dd><ul class="simple">
-<li><p>Type: Yes or No</p></li>
-<li><p>Description: Whether to use the material database developed for the Istanbul or not. If this parameter is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, Hercules will replace the crustal structure information in the region that is covered by the Istanbul material database. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter <code class="docutils literal notranslate"><span class="pre">cvmdb_input_file</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">number_profile_layers</span></code></dt><dd><ul class="simple">
@@ -75,6 +70,98 @@
 </dd>
 </dl>
 </section>
+<section id="istanbul-material-model">
+<h2>Istanbul material model<a class="headerlink" href="#istanbul-material-model" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">Istanbul_material_model</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to use the material database developed for the Istanbul or not. If this parameter is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, Hercules will replace the crustal structure information in the region that is covered by the Istanbul material database. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter <code class="docutils literal notranslate"><span class="pre">cvmdb_input_file</span></code>. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="basin-material-model">
+<h2>Basin material model<a class="headerlink" href="#basin-material-model" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">basin_material_model</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to use the material database developed for the Basin Material Model or not. If this parameter is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, Hercules will replace the crustal structure information in the region that is covered by the basin. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter <code class="docutils literal notranslate"><span class="pre">cvmdb_input_file</span></code>. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>. Note that either <code class="docutils literal notranslate"><span class="pre">Istanbul_material_model</span></code> or <code class="docutils literal notranslate"><span class="pre">basin_material_model</span></code> can be set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>. If both are set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, the Istanbul material model will be used.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">basin_input_file</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Path</p></li>
+<li><p>Description: The path to the basin input file. This parameter is required when <code class="docutils literal notranslate"><span class="pre">basin_material_model</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>. The basin input file is a text file that contains the information of the basin. The format of the basin input file is described in the section <a class="reference internal" href="#basin-input-file"><span class="std std-ref">Basin input file</span></a>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">basin_origin_latitude_deg</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: The latitude of the basin origin (in degree). Note that the origin is the left bottom corner of the domain of the basin. This parameter is required when <code class="docutils literal notranslate"><span class="pre">basin_material_model</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">basin_origin_longitude_deg</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: The longitude of the basin origin (in degree). Note that the origin is the left bottom corner of the domain of the basin. This parameter is required when <code class="docutils literal notranslate"><span class="pre">basin_material_model</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<section id="basin-input-file">
+<h3>Basin input file<a class="headerlink" href="#basin-input-file" title="Link to this heading">¶</a></h3>
+<p>The basin input file should be a text file (the extension is not important) that contains the information of the basin. The format of the basin input file is described below.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The first line: number_of_x_points number_of_y_points number_of_z_points</p></li>
+</ul>
+</div></blockquote>
+<p>Note the the number of z points should always be 1.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The second and the following lines: x y z</p></li>
+</ul>
+</div></blockquote>
+<p>Repeat the line with x points written in ascending order, then y points in ascending order, and z in ascending. The following is a complete basin input file example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6</span> <span class="mi">2</span> <span class="mi">1</span>
+<span class="mf">0.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mf">50.0</span> <span class="mf">0.0</span> <span class="mf">0.0</span>
+<span class="mf">100.0</span> <span class="mf">0.0</span> <span class="mf">3.0</span>
+<span class="mf">150.0</span> <span class="mf">0.0</span> <span class="mf">4.5</span>
+<span class="mf">200.0</span> <span class="mf">0.0</span> <span class="mf">5.0</span>
+<span class="mf">250.0</span> <span class="mf">0.0</span> <span class="mf">5.0</span>
+<span class="mf">0.0</span> <span class="mf">50.0</span> <span class="mf">0.0</span>
+<span class="mf">50.0</span> <span class="mf">50.0</span> <span class="mf">0.0</span>
+<span class="mf">100.0</span> <span class="mf">50.0</span> <span class="mf">2.8</span>
+<span class="mf">150.0</span> <span class="mf">50.0</span> <span class="mf">4.2</span>
+<span class="mf">200.0</span> <span class="mf">50.0</span> <span class="mf">4.8</span>
+<span class="mf">250.0</span> <span class="mf">50.0</span> <span class="mf">5.0</span>
+</pre></div>
+</div>
+<p>Note that the increment of x and y should be the same. The increment of z can be different. The unit of x, y, and z is meter.</p>
+<p>The total number of lines in the basin input file should be <code class="docutils literal notranslate"><span class="pre">number_of_x_points</span> <span class="pre">*</span> <span class="pre">number_of_y_points</span> <span class="pre">+</span> <span class="pre">1</span></code>. In the example above, the total number of lines is <code class="docutils literal notranslate"><span class="pre">13</span></code>.</p>
+</section>
+<section id="basin-c">
+<h3>basin.c<a class="headerlink" href="#basin-c" title="Link to this heading">¶</a></h3>
+<p>Unfortunately, we don’t have a universal way to read a text file to define the equations of the material properties used in the basin. Therefore, users have to modify the file <code class="docutils literal notranslate"><span class="pre">basin.c</span></code> to define these equations. The file <code class="docutils literal notranslate"><span class="pre">basin.c</span></code> is located in <code class="docutils literal notranslate"><span class="pre">/quake/forward</span></code> and contains a function <code class="docutils literal notranslate"><span class="pre">getBasinMaterialProperties</span></code> that defines these equations. The following is an example of <code class="docutils literal notranslate"><span class="pre">basin.c</span></code>:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;math.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&quot;basin.h&quot;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">getBasinMaterialProperties</span><span class="p">(</span><span class="n">cvmpayload_t</span><span class="w"> </span><span class="o">*</span><span class="n">g_props</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">z_m</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">g_props</span><span class="o">-&gt;</span><span class="n">rho</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2140.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">0.125</span><span class="o">*</span><span class="n">z_m</span><span class="p">;</span>
+<span class="w">    </span><span class="n">g_props</span><span class="o">-&gt;</span><span class="n">Vp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1000.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1.2</span><span class="o">*</span><span class="n">z_m</span><span class="p">;</span>
+<span class="w">    </span><span class="n">g_props</span><span class="o">-&gt;</span><span class="n">Vs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">320.0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">19.0</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z_m</span><span class="p">);</span>
+<span class="w">    </span><span class="n">g_props</span><span class="o">-&gt;</span><span class="n">Qs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.4</span><span class="o">*</span><span class="n">g_props</span><span class="o">-&gt;</span><span class="n">Vs</span><span class="p">;</span>
+<span class="w">    </span><span class="n">g_props</span><span class="o">-&gt;</span><span class="n">Qp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="o">*</span><span class="n">g_props</span><span class="o">-&gt;</span><span class="n">Qs</span><span class="p">;</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Note that you should re-compile Hercules after modifying <code class="docutils literal notranslate"><span class="pre">basin.c</span></code>.</p>
+</section>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -83,6 +170,22 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Material</a><ul>
+<li><a class="reference internal" href="#one-dimensional-layered-profile">One-dimensional layered profile</a></li>
+<li><a class="reference internal" href="#istanbul-material-model">Istanbul material model</a></li>
+<li><a class="reference internal" href="#basin-material-model">Basin material model</a><ul>
+<li><a class="reference internal" href="#basin-input-file">Basin input file</a></li>
+<li><a class="reference internal" href="#basin-c">basin.c</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="inputFile.html"
@@ -109,7 +212,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -132,8 +235,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

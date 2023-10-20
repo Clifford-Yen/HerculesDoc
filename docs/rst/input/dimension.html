@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Dimension &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=514cf933" />
     
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -44,11 +42,11 @@
           <div class="body" role="main">
             
   <section id="dimension">
-<h1>Dimension<a class="headerlink" href="#dimension" title="Permalink to this headline">¶</a></h1>
+<h1>Dimension<a class="headerlink" href="#dimension" title="Link to this heading">¶</a></h1>
 <section id="defining-the-domain">
-<h2>Defining the domain<a class="headerlink" href="#defining-the-domain" title="Permalink to this headline">¶</a></h2>
+<h2>Defining the domain<a class="headerlink" href="#defining-the-domain" title="Link to this heading">¶</a></h2>
 <section id="domain-origin">
-<h3>Domain origin<a class="headerlink" href="#domain-origin" title="Permalink to this headline">¶</a></h3>
+<h3>Domain origin<a class="headerlink" href="#domain-origin" title="Link to this heading">¶</a></h3>
 <p>To define the domain origin, the following parameter should be set.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code></dt><dd><ul class="simple">
@@ -61,16 +59,16 @@
 <li><p>Description: The longitude (in degree) of the origin. Note that the origin is the left bottom corner of the domain.</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">region_depth_shallow_m</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">region_depth_shallow_m</span></code></dt><dd><ul class="simple">
 <li><p>Type: Float</p></li>
 <li><p>Description: The starting depth (in meter) of the region.</p></li>
 </ul>
 </dd>
 </dl>
-<p>Note that for <a class="reference internal" href="drm.html#part-2"><span class="std std-ref">Part 2</span></a> analysis, the origin here is the left bottom corner of the box that is created by <a class="reference internal" href="drm.html#drm-offsets"><span class="std std-ref">DRM offsets</span></a>.</p>
+<p>Note that for DRM <a class="reference internal" href="drm.html#part-2"><span class="std std-ref">Part 2</span></a> analysis, the origin here is the left bottom corner of the box that is created by <a class="reference internal" href="drm.html#drm-offsets"><span class="std std-ref">DRM offsets</span></a>.</p>
 </section>
 <section id="domain-dimension">
-<h3>Domain dimension<a class="headerlink" href="#domain-dimension" title="Permalink to this headline">¶</a></h3>
+<h3>Domain dimension<a class="headerlink" href="#domain-dimension" title="Link to this heading">¶</a></h3>
 <p>To define the domain dimension, the following parameter should be set.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">region_length_east_m</span></code></dt><dd><ul class="simple">
@@ -92,18 +90,18 @@
 </section>
 </section>
 <section id="domain-surface-corners">
-<h2>Domain surface corners<a class="headerlink" href="#domain-surface-corners" title="Permalink to this headline">¶</a></h2>
+<h2>Domain surface corners<a class="headerlink" href="#domain-surface-corners" title="Link to this heading">¶</a></h2>
 <dl class="simple">
-<dt><code class="docutils literal notranslate"><span class="pre">domain_surface_corners</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">domain_surface_corners</span></code></dt><dd><ul class="simple">
 <li><p>Type: Multiple numbers</p></li>
 <li><p>Format: <code class="docutils literal notranslate"><span class="pre">longitude</span> <span class="pre">latitude</span></code></p></li>
-<li><p>Description: The coordinates (latitudes and longitudes) of four corners of the domain. The data should be written as many as four lines. (The first line contains the same information as parameters <code class="docutils literal notranslate"><span class="pre">region_origin_longitude_deg</span></code> and <code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code> define. And the rest of three corners should be defined counterclockwise.) These information are also contained in the source file. As a result, it might be deprecated in the future.</p></li>
+<li><p>Description: The coordinates (latitudes and longitudes) of four corners of the domain. The data should be written as many as four lines. The first line contains the same information as parameters <code class="docutils literal notranslate"><span class="pre">region_origin_longitude_deg</span></code> and <code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code> define. And the rest of three corners should be defined counterclockwise. Note: These information are also contained in the source file. As a result, it might be deprecated in the future.</p></li>
 </ul>
 </dd>
 </dl>
 </section>
 <section id="drm-dimensions">
-<h2>DRM dimensions<a class="headerlink" href="#drm-dimensions" title="Permalink to this headline">¶</a></h2>
+<h2>DRM dimensions<a class="headerlink" href="#drm-dimensions" title="Link to this heading">¶</a></h2>
 <p>For DRM (Domain Reduction Method) dimensions, check <a class="reference internal" href="drm.html#drm-offsets"><span class="std std-ref">DRM offsets</span></a> and <a class="reference internal" href="drm.html#drm-boundary"><span class="std std-ref">DRM boundary</span></a>.</p>
 </section>
 </section>
@@ -157,7 +155,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -180,8 +178,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>
