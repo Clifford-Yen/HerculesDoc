@@ -50,8 +50,7 @@ For example, the following lines can be written into ``user.mk`` and used for In
         LDFLAGS     += $(MPI_DIR)/lib/libgsl.a
     endif
 
-    LDFLAGS += -lgslcblas
-    LDFLAGS += -lgsl
+    LDFLAGS += -lgslcblas -lgsl
 
 Note that the indentation used in a makefile should be tabs, not spaces. If you copy the code block above, make sure to replace all spaces with tabs.
 
@@ -61,21 +60,20 @@ To compile Hercules, make sure to :code:`cd` into Hercules' folder and simply ru
 
 .. code-block::
 
-    make clean
     make cleanall
     make
 
 Now, you are all set.
 
 Side notes for Apple Silicon Macs
-======================
+=================================
 If you are installing Hercules on Macs equipped with M1/M2 SoC (the Apple Silicon), here are some notes for you to install Hercules successfully.
 
 * Install Open-MPI and GSL with native Apple Silicon support using natively supported Homebrew. The installed Open-MPI and GSL should be located under :code:`/opt/homebrew/`
 * Change ``user.mk`` accordingly
 * (Optional) The last step of compiling procedure (:code:`make`) might need to be replaced with :code:`arch -arm64e make`
 
-``user.mk`` for Apple Silicon Macs can be written as follows. (And yes, you can combine this section with the ``user.mk`` for Intel-based Macs. Just make sure you set the correct :code:`SYSTEM` variable.)
+``user.mk`` for Apple Silicon Macs can be written as follows.
 
 .. code-block::
 
@@ -108,7 +106,54 @@ If you are installing Hercules on Macs equipped with M1/M2 SoC (the Apple Silico
         LDFLAGS     += -L$(MPI_DIR)/lib/
     endif
 
-    LDFLAGS += -lgslcblas
-    LDFLAGS += -lgsl
+    LDFLAGS += -lgslcblas -lgsl
 
 Although there will be some warnings, things will work as intended.
+
+And yes, you can combine this section with the ``user.mk`` for Intel-based Macs. Just make sure you set the correct :code:`SYSTEM` variable. Alternatively, you can use :code:`uname -s` to determine the system type and :code:`uname -m` to determine the system architecture, and set the :code:`SYSTEM` and :code:`ARCH` variables accordingly. Here is an example:
+
+.. code-block::
+
+    # System definition
+    # -----------------
+
+    SYSTEM = $(shell uname -s | tr A-Z a-z)
+    ARCH   = $(shell uname -m | tr A-Z a-z)
+
+    # Main compilation setup
+    # ----------------------
+
+    CFLAGS += -g -ggdb -O3
+
+    # Compilation flags
+    # -----------------
+
+    # CVM and IO related:
+
+    IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4
+
+    ifeq ($(SYSTEM), darwin)
+        ifeq ($(ARCH), arm64)
+            MPI_DIR      = /opt/homebrew
+            MPI_INCLUDE  = $(MPI_DIR)/include/
+            CC           = $(MPI_DIR)/bin/mpicc
+            CXX          = $(MPI_DIR)/bin/mpicxx
+            LD           = $(MPI_DIR)/bin/mpicxx
+            CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+            CFLAGS      += -Wall -I$(MPI_DIR)/include/
+            CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+            LDFLAGS     += -L$(MPI_DIR)/lib/
+        else
+            MPI_DIR      = /usr/local
+            MPI_INCLUDE  = $(MPI_DIR)/include/openmpi/ompi/mpi/cxx
+            CC           = $(MPI_DIR)/bin/mpicc
+            CXX          = $(MPI_DIR)/bin/mpicxx
+            LD           = $(MPI_DIR)/bin/mpicxx
+            CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+            CFLAGS      += -Wall
+            CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+            LDFLAGS     += $(MPI_DIR)/lib/libgsl.a
+        endif
+    endif
+
+    LDFLAGS += -lgslcblas -lgsl

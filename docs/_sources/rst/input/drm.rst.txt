@@ -16,7 +16,27 @@ There are three steps should be executed sequentially for implementing DRM in He
     
     which_drm_part = part0
 
-Other parameters that are needed to be assigned for DRM will be explained in this documentation. Note that all the DRM parameters, except ``which_drm_part``, should be the same for all three parts.
+Other parameters that are needed to be assigned for DRM will be explained in this documentation. Note that if ``implement_drm = no`` or it is not set (it is an optional parameter), then all the parameters related to DRM in the input file will be neglected, including 
+
+.. code-block::
+
+    drm_directory
+    which_drm_part
+    drm_edgesize
+    part1_delta_t
+    part1_simulation_time
+    drm_print_rate
+    drm_offset_x
+    drm_offset_y
+    drm_boundary
+    DRMBox_Noelem_Halfwidth_EW
+    DRMBox_Noelem_Halfwidth_NS
+    DRMBox_Noelem_depth
+    DRMBox_element_size
+    DRM_xo
+    DRM_yo
+
+If ``implement_drm = yes``, all the DRM parameters, except ``which_drm_part``, should be the same for all three parts.
 
 
 Part 0, part 1, and part 2
@@ -67,6 +87,7 @@ Other parameters
 Defining the element size
 -------------------------
 ``drm_edgesize``
+    * Optional: Conditional
     * Type: Float
     * Description: The element edge size (in meter) you want to define for elements in the DRM box.
 
@@ -98,6 +119,7 @@ You should set the same values for these two parameters, ``part1_delta_t`` and `
 Print rate
 ----------
 ``drm_print_rate``
+    * Optional: Conditional
     * Type: Integer
     * Description: The rate Hercules saves output data for DRM. For example, if you set :code:`drm_print_rate = 2`, it means Hercules would store output data every 2 time step (:math:`\Delta t`).
 
@@ -106,10 +128,12 @@ DRM offsets
 DRM offsets are the distances (in meter) from the origin that is defined by parameters ``region_origin_latitude_deg`` and ``region_origin_longitude_deg``. You can define these parameters by setting the following parameters.
 
 ``drm_offset_x``
+    * Optional: Conditional
     * Type: Float
     * Description: The DRM offset (in meter) from the origin in x direction.
 
 ``drm_offset_y``
+    * Optional: Conditional
     * Type: Float
     * Description: The DRM offset (in meter) from the origin in y direction.
 
@@ -120,6 +144,7 @@ DRM offsets create a box bigger than the DRM boundary. The space between these t
 DRM boundary
 ------------
 ``drm_boundary``
+    * Optional: Conditional
     * Type: Multiple numbers
     * Format: ``min_x min_y max_x max_y depth``
     * Description: Dimensions in DRM boundary section are distances (in meter) from the box that is created with DRM offsets. There are five dimensions needed to be defined., which are ``min_x``, ``min_y``, ``max_x``, ``max_y``, and ``depth``.

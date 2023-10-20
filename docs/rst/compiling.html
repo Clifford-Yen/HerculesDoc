@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Compiling &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -43,17 +41,17 @@
           <div class="body" role="main">
             
   <section id="compiling">
-<h1>Compiling<a class="headerlink" href="#compiling" title="Permalink to this headline">¶</a></h1>
+<h1>Compiling<a class="headerlink" href="#compiling" title="Link to this heading">¶</a></h1>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h2>
 <p>To compile Hercules, you need to have Open-MPI and GNU Scientific Library (GSL) installed. If you haven’t installed them, the easiest way to do so is installing them via <a class="reference external" href="https://brew.sh">Homebrew</a>. Assuming Homebrew is installed on your machine, all you need to do is typing the following commands in the terminal one by one.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew install open-mpi
-brew install gsl
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew<span class="w"> </span>install<span class="w"> </span>open-mpi
+brew<span class="w"> </span>install<span class="w"> </span>gsl
 </pre></div>
 </div>
 </section>
 <section id="compiling-with-user-mk">
-<h2>Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code><a class="headerlink" href="#compiling-with-user-mk" title="Permalink to this headline">¶</a></h2>
+<h2>Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code><a class="headerlink" href="#compiling-with-user-mk" title="Link to this heading">¶</a></h2>
 <p>Although there are some predefined system configurations in <code class="docutils literal notranslate"><span class="pre">system.mk</span></code>, it’s very likely you will find that it’s insufficient. As a result, it’s recommended to write your own <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> next to <code class="docutils literal notranslate"><span class="pre">system.mk</span></code> before you compile.</p>
 <p>For example, the following lines can be written into <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> and used for Intel-based Macs.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
@@ -85,31 +83,29 @@ ifeq ($(SYSTEM), MAC)
     LDFLAGS     += $(MPI_DIR)/lib/libgsl.a
 endif
 
-LDFLAGS += -lgslcblas
-LDFLAGS += -lgsl
+LDFLAGS += -lgslcblas -lgsl
 </pre></div>
 </div>
 <p>Note that the indentation used in a makefile should be tabs, not spaces. If you copy the code block above, make sure to replace all spaces with tabs.</p>
 </section>
 <section id="compiling-procedure">
-<h2>Compiling procedure<a class="headerlink" href="#compiling-procedure" title="Permalink to this headline">¶</a></h2>
+<h2>Compiling procedure<a class="headerlink" href="#compiling-procedure" title="Link to this heading">¶</a></h2>
 <p>To compile Hercules, make sure to <code class="code docutils literal notranslate"><span class="pre">cd</span></code> into Hercules’ folder and simply run the following lines in the terminal one by one.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">clean</span>
-<span class="n">make</span> <span class="n">cleanall</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">cleanall</span>
 <span class="n">make</span>
 </pre></div>
 </div>
 <p>Now, you are all set.</p>
 </section>
 <section id="side-notes-for-apple-silicon-macs">
-<h2>Side notes for Apple Silicon Macs<a class="headerlink" href="#side-notes-for-apple-silicon-macs" title="Permalink to this headline">¶</a></h2>
+<h2>Side notes for Apple Silicon Macs<a class="headerlink" href="#side-notes-for-apple-silicon-macs" title="Link to this heading">¶</a></h2>
 <p>If you are installing Hercules on Macs equipped with M1/M2 SoC (the Apple Silicon), here are some notes for you to install Hercules successfully.</p>
 <ul class="simple">
 <li><p>Install Open-MPI and GSL with native Apple Silicon support using natively supported Homebrew. The installed Open-MPI and GSL should be located under <code class="code docutils literal notranslate"><span class="pre">/opt/homebrew/</span></code></p></li>
 <li><p>Change <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> accordingly</p></li>
 <li><p>(Optional) The last step of compiling procedure (<code class="code docutils literal notranslate"><span class="pre">make</span></code>) might need to be replaced with <code class="code docutils literal notranslate"><span class="pre">arch</span> <span class="pre">-arm64e</span> <span class="pre">make</span></code></p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Apple Silicon Macs can be written as follows. (And yes, you can combine this section with the <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Intel-based Macs. Just make sure you set the correct <code class="code docutils literal notranslate"><span class="pre">SYSTEM</span></code> variable.)</p>
+<p><code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Apple Silicon Macs can be written as follows.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
 # -----------------
 
@@ -139,11 +135,56 @@ ifeq ($(SYSTEM), ARMMAC)
     LDFLAGS     += -L$(MPI_DIR)/lib/
 endif
 
-LDFLAGS += -lgslcblas
-LDFLAGS += -lgsl
+LDFLAGS += -lgslcblas -lgsl
 </pre></div>
 </div>
 <p>Although there will be some warnings, things will work as intended.</p>
+<p>And yes, you can combine this section with the <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> for Intel-based Macs. Just make sure you set the correct <code class="code docutils literal notranslate"><span class="pre">SYSTEM</span></code> variable. Alternatively, you can use <code class="code docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-s</span></code> to determine the system type and <code class="code docutils literal notranslate"><span class="pre">uname</span> <span class="pre">-m</span></code> to determine the system architecture, and set the <code class="code docutils literal notranslate"><span class="pre">SYSTEM</span></code> and <code class="code docutils literal notranslate"><span class="pre">ARCH</span></code> variables accordingly. Here is an example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
+# -----------------
+
+SYSTEM = $(shell uname -s | tr A-Z a-z)
+ARCH   = $(shell uname -m | tr A-Z a-z)
+
+# Main compilation setup
+# ----------------------
+
+CFLAGS += -g -ggdb -O3
+
+# Compilation flags
+# -----------------
+
+# CVM and IO related:
+
+IO_CPPFLAGS = -DUSECVMDB -DSCEC  -DPROCPERNODE=4
+
+ifeq ($(SYSTEM), darwin)
+    ifeq ($(ARCH), arm64)
+        MPI_DIR      = /opt/homebrew
+        MPI_INCLUDE  = $(MPI_DIR)/include/
+        CC           = $(MPI_DIR)/bin/mpicc
+        CXX          = $(MPI_DIR)/bin/mpicxx
+        LD           = $(MPI_DIR)/bin/mpicxx
+        CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+        CFLAGS      += -Wall -I$(MPI_DIR)/include/
+        CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+        LDFLAGS     += -L$(MPI_DIR)/lib/
+    else
+        MPI_DIR      = /usr/local
+        MPI_INCLUDE  = $(MPI_DIR)/include/openmpi/ompi/mpi/cxx
+        CC           = $(MPI_DIR)/bin/mpicc
+        CXX          = $(MPI_DIR)/bin/mpicxx
+        LD           = $(MPI_DIR)/bin/mpicxx
+        CXXFLAGS    += -DMPICH_IGNORE_CXX_SEEK
+        CFLAGS      += -Wall
+        CPPFLAGS    += -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+        LDFLAGS     += $(MPI_DIR)/lib/libgsl.a
+    endif
+endif
+
+LDFLAGS += -lgslcblas -lgsl
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -193,7 +234,7 @@ LDFLAGS += -lgsl
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -215,8 +256,8 @@ LDFLAGS += -lgsl
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>

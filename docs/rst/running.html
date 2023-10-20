@@ -1,19 +1,17 @@
-
 <!DOCTYPE html>
 
-<html>
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Running &#8212; HerculesDoc  documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -43,27 +41,27 @@
           <div class="body" role="main">
             
   <section id="running">
-<h1>Running<a class="headerlink" href="#running" title="Permalink to this headline">¶</a></h1>
+<h1>Running<a class="headerlink" href="#running" title="Link to this heading">¶</a></h1>
 <section id="basic-usage">
-<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h2>
+<h2>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading">¶</a></h2>
 <p>To run Hercules, the basic usage is</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>psolve inputFile.in
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>psolve<span class="w"> </span>inputFile.in
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">inputFile.in</span></code> mentioned above should be changed to your actual input file. The <code class="code docutils literal notranslate"><span class="pre">psolve</span></code> executable file is located in <code class="docutils literal notranslate"><span class="pre">quake/forward/</span></code> under the Hercules folder. Assuming your working directory is already changed to the Hercules folder, then the proper way to call <code class="code docutils literal notranslate"><span class="pre">psolve</span></code> is</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>quake/forward/psolve inputFile.in
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>quake/forward/psolve<span class="w"> </span>inputFile.in
 </pre></div>
 </div>
 <p>Alternatively, you could also add the <code class="docutils literal notranslate"><span class="pre">quake/forward/</span></code> to your system <code class="docutils literal notranslate"><span class="pre">$PATH</span></code>.</p>
 </section>
 <section id="running-with-open-mpi">
-<h2>Running with Open-MPI<a class="headerlink" href="#running-with-open-mpi" title="Permalink to this headline">¶</a></h2>
+<h2>Running with Open-MPI<a class="headerlink" href="#running-with-open-mpi" title="Link to this heading">¶</a></h2>
 <p>Now you should have Open-MPI installed on your machine, you can utilize the maximum power of your machine with the use of it. The basic usage with Open-MPI is</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -n numProcesses psolve inputFile.in
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>-n<span class="w"> </span>numProcesses<span class="w"> </span>psolve<span class="w"> </span>inputFile.in
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">numProcesses</span></code> mentioned above should be changed to the number of processes (cores or threads, depending on your system). For example, assuming we want to run Hercules with 4 cores, and the current working directory is the Hercules folder, then the proper command is</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun -n <span class="m">4</span> quake/forward/psolve inputFile.in
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">4</span><span class="w"> </span>quake/forward/psolve<span class="w"> </span>inputFile.in
 </pre></div>
 </div>
 </section>
@@ -113,7 +111,7 @@
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -135,8 +133,8 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
 </html>
