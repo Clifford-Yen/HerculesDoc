@@ -12,6 +12,7 @@
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -43,56 +44,59 @@
             
   <section id="damping">
 <h1>Damping<a class="headerlink" href="#damping" title="Link to this heading">¶</a></h1>
-<p>(Confirmation Needed) for all the section</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code></dt><dd><ul class="simple">
 <li><p>Type: String</p></li>
-<li><p>Description: The type of damping Hercules should use. Possible options include <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">none</span></code>, etc.</p></li>
+<li><p>Description: The type of damping Hercules should use. Possible options include <code class="docutils literal notranslate"><span class="pre">rayleigh</span></code>, <code class="docutils literal notranslate"><span class="pre">mass</span></code>, <code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, and <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">simulation_velocity_profile_freq_hz</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
 <li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is only effective when <code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code> is set to <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, or <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>. It can be a floating number from <code class="docutils literal notranslate"><span class="pre">0.0</span></code> to <code class="docutils literal notranslate"><span class="pre">simulation_wave_max_freq_hz</span></code>. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean</p></li>
-<li><p>Description: If this parameter is set to <code class="docutils literal notranslate"><span class="pre">no</span></code> and <code class="docutils literal notranslate"><span class="pre">type_of_damping</span> <span class="pre">=</span> <span class="pre">bkt2</span></code>, it’s equivalent to <code class="docutils literal notranslate"><span class="pre">type_of_damping</span> <span class="pre">=</span> <span class="pre">none</span></code>.</p></li>
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code> is set to <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, or <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>.</p></li>
 </ul>
 </dd>
+</dl>
+<dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">use_infinite_qk</span></code></dt><dd><ul class="simple">
-<li><p>Type: Boolean</p></li>
-<li><p>Description:</p></li>
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code> is set to <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, or <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_constant</span></code></dt><dd><ul class="simple">
-<li><p>Type:</p></li>
-<li><p>Description:</p></li>
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_alpha</span></code></dt><dd><ul class="simple">
-<li><p>Type:</p></li>
-<li><p>Description:</p></li>
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_beta</span></code></dt><dd><ul class="simple">
-<li><p>Type:</p></li>
-<li><p>Description:</p></li>
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">the_threshold_damping</span></code></dt><dd><ul class="simple">
 <li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
-</ul>
-</dd>
-<dt><code class="docutils literal notranslate"><span class="pre">the_threshold_Vp_over_Vs</span></code></dt><dd><ul class="simple">
-<li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: The threshold to limit the <span class="math notranslate nohighlight">\(\zeta\)</span> damping ratio. If the computed <span class="math notranslate nohighlight">\(\zeta\)</span> is larger than this threshold, it will be set to this threshold.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">do_damping_statistics</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
 <li><p>Type: Boolean</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: Whether Hercules should print damping statistics to the standard output (usually the command line window running Hercules). This is an optional parameter and the default value is False (<code class="docutils literal notranslate"><span class="pre">do_damping_statistics</span> <span class="pre">=</span> <span class="pre">0</span></code>).</p></li>
 </ul>
 </dd>
 </dl>

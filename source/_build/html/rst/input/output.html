@@ -98,6 +98,18 @@
 <li><p>Description: The path to the stats output file. This parameter is only effective when <code class="docutils literal notranslate"><span class="pre">output_parallel</span></code> is set to True (<code class="docutils literal notranslate"><span class="pre">output_parallel</span> <span class="pre">=</span> <span class="pre">1</span></code>). If <code class="docutils literal notranslate"><span class="pre">output_stats_file</span></code> is not set when <code class="docutils literal notranslate"><span class="pre">output_parallel</span> <span class="pre">=</span> <span class="pre">1</span></code>, Hercules will print the output summary stats to the file with the default file name <code class="docutils literal notranslate"><span class="pre">output-stats.txt</span></code>.</p></li>
 </ul>
 </dd>
+<dt><code class="docutils literal notranslate"><span class="pre">monitor_file</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Path</p></li>
+<li><p>Description: The path to a text file in which Hercules would write information as it runs for users to monitor the progress of the running job. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">monitor.txt</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">print_matrix_k</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether Hercules should print the stiffness matrix to the standard output (usually the command line window running Hercules). This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
+</ul>
+</dd>
 </dl>
 <section id="output-mesh-coordinates-for-a-subdomain">
 <h2>Output mesh coordinates for a subdomain<a class="headerlink" href="#output-mesh-coordinates-for-a-subdomain" title="Link to this heading">¶</a></h2>
@@ -175,6 +187,12 @@
 <li><p>Optional: Yes</p></li>
 <li><p>Type: Integer</p></li>
 <li><p>Description: The number of output planes. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">planes_input_file</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Path</p></li>
+<li><p>Description: The path to plane input file. The plane information is usually written in the same parameter input file for running Hercules. So, chances are this path is the same as the path to the parameter input file. Nevertheless, it is possible to write the plane information in a separate file. This parameter is required if <code class="docutils literal notranslate"><span class="pre">number_output_planes</span></code> is bigger than <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">output_planes_print_rate</span></code></dt><dd><ul class="simple">

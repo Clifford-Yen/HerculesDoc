@@ -12,6 +12,7 @@
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -48,7 +49,7 @@
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">cvmdb_input_file</span></code></dt><dd><ul class="simple">
 <li><p>Type: Path/profile</p></li>
-<li><p>Description: The path to the material information (crustal structure) database. A special way to assign the crustal structure is setting this parameter to “profile”, i.e.</p></li>
+<li><p>Description: The path to the material information (crustal structure) database. A special way to assign the crustal structure is setting this parameter to <code class="docutils literal notranslate"><span class="pre">profile</span></code>, i.e.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cvmdb_input_file</span> <span class="o">=</span> <span class="n">profile</span>
 </pre></div>
@@ -161,6 +162,22 @@
 <p>Note that you should re-compile Hercules after modifying <code class="docutils literal notranslate"><span class="pre">basin.c</span></code>.</p>
 </section>
 </section>
+<section id="misc">
+<h2>Misc<a class="headerlink" href="#misc" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">softening_factor</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: The softening factor used to adjust material properties according to the element size. A factor of 1 means perfect compliance between the mesh and the elements’ material properties resulting in strong changes to the results. A factor of 4 tends to double the simulation <span class="math notranslate nohighlight">\(\Delta t\)</span> without affecting too much the results. Testing is needed, and it’s recommended to use a factor larger than 4. The possible value for this parameter is 0 and any floating number larger than 1. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">0</span></code>, which asks Hercules not to change material properties with softening factor.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">the_threshold_Vp_over_Vs</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description: The threshold to limit the <span class="math notranslate nohighlight">\(V_p/V_s\)</span> ratio. If the computed <span class="math notranslate nohighlight">\(V_p/V_s\)</span> is larger than this threshold, <span class="math notranslate nohighlight">\(V_p\)</span> will be set to this threshold multiplied by <span class="math notranslate nohighlight">\(V_s\)</span> when correcting material properties for mesh elements and in the calculation of the first Lamé parameter <span class="math notranslate nohighlight">\(\lambda\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
 </section>
 
 
@@ -181,6 +198,7 @@
 <li><a class="reference internal" href="#basin-c">basin.c</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#misc">Misc</a></li>
 </ul>
 </li>
 </ul>
