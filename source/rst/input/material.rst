@@ -8,20 +8,12 @@ Material
 ..     * Type:
 ..     * Description:
 
-.. ``monitor_file`` (Confirmation needed)
-..     * Type: Path
-..     * Description: The path to a text file in which Hercules would write information as it runs for users to monitor jobs.
-
-.. ``planes_input_file``
-..     * Type: Path
-..     * Description: The path to plane input file (The input file itself). This should not be necessary and it will be deprecated in the future.
-
 One-dimensional layered profile
 ===============================
 
 ``cvmdb_input_file``
     * Type: Path/profile
-    * Description: The path to the material information (crustal structure) database. A special way to assign the crustal structure is setting this parameter to "profile", i.e.
+    * Description: The path to the material information (crustal structure) database. A special way to assign the crustal structure is setting this parameter to ``profile``, i.e.
 
     .. code-block::
 
@@ -131,3 +123,15 @@ Unfortunately, we don't have a universal way to read a text file to define the e
     }
 
 Note that you should re-compile Hercules after modifying ``basin.c``.
+
+
+Misc
+====
+``softening_factor``
+    * Optional: Yes
+    * Type: Float
+    * Description: The softening factor used to adjust material properties according to the element size. A factor of 1 means perfect compliance between the mesh and the elements' material properties resulting in strong changes to the results. A factor of 4 tends to double the simulation :math:`\Delta t` without affecting too much the results. Testing is needed, and it's recommended to use a factor larger than 4. The possible value for this parameter is 0 and any floating number larger than 1. This is an optional parameter and the default value is ``0``, which asks Hercules not to change material properties with softening factor.
+
+``the_threshold_Vp_over_Vs``
+    * Type: Float
+    * Description: The threshold to limit the :math:`V_p/V_s` ratio. If the computed :math:`V_p/V_s` is larger than this threshold, :math:`V_p` will be set to this threshold multiplied by :math:`V_s` when correcting material properties for mesh elements and in the calculation of the first Lamé parameter :math:`\lambda`.

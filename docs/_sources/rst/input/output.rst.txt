@@ -47,6 +47,16 @@ Output settings
     * Type: Path
     * Description: The path to the stats output file. This parameter is only effective when ``output_parallel`` is set to True (``output_parallel = 1``). If ``output_stats_file`` is not set when ``output_parallel = 1``, Hercules will print the output summary stats to the file with the default file name ``output-stats.txt``.
 
+``monitor_file``
+    * Optional: Yes
+    * Type: Path
+    * Description: The path to a text file in which Hercules would write information as it runs for users to monitor the progress of the running job. This is an optional parameter and the default value is ``monitor.txt``.
+
+``print_matrix_k``
+    * Optional: Yes
+    * Type: Yes or No
+    * Description: Whether Hercules should print the stiffness matrix to the standard output (usually the command line window running Hercules). This is an optional parameter and the default value is ``no``.
+
 
 Output mesh coordinates for a subdomain
 =======================================
@@ -116,6 +126,11 @@ A plane contains multiple grid points storing displacements on them.
     * Type: Integer
     * Description: The number of output planes. This is an optional parameter and the default value is ``0``.
 
+``planes_input_file``
+    * Optional: Conditional
+    * Type: Path
+    * Description: The path to plane input file. The plane information is usually written in the same parameter input file for running Hercules. So, chances are this path is the same as the path to the parameter input file. Nevertheless, it is possible to write the plane information in a separate file. This parameter is required if ``number_output_planes`` is bigger than ``0``.
+
 ``output_planes_print_rate``
     * Optional: Conditional
     * Type: Integer
@@ -151,9 +166,3 @@ Hercules can generate checkpoint files during the simulation. Checkpoint files c
     * Optional: Conditional
     * Type: Path
     * Description: Path to the folder where Hercules should store or read the checkpoint files. This parameter is required if ``checkpointing_rate`` is bigger than ``0`` or ``use_checkpoint`` is set to True (``use_checkpoint = 1``).
-
-.. Misc
-.. ====
-.. ``softening_factor`` (Confirmation Needed)
-..     * Type: Integer
-..     * Description: Softening factor for the mesh.
