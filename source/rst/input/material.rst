@@ -33,46 +33,46 @@ One-dimensional layered profile
     * Description: The crustal structure information defined for a layered half-space. The data should be written as many lines as parameter ``number_profile_layers`` defines. ``z_top`` is the depth (in meter), ``Vp`` and ``Vs`` are velocities for compressional and shear waves (in meter/second), ``rho`` is the density (in kg/meter :superscript:`3`), and ``Qp`` and ``Qs`` are Q factor damping.
 
 
-Istanbul material model
+Istanbul velocity model
 =======================
 
-``Istanbul_material_model``
+``Istanbul_velocity_model``
     * Optional: Yes
     * Type: Yes or No
-    * Description: Whether to use the material database developed for the Istanbul or not. If this parameter is set to ``yes``, Hercules will replace the crustal structure information in the region that is covered by the Istanbul material database. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter ``cvmdb_input_file``. This is an optional parameter and the default value is ``no``.
+    * Description: Whether to use the velocity model developed for the Istanbul or not. If this parameter is set to ``yes``, Hercules will replace the crustal structure information in the region that is covered by the Istanbul velocity model. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter ``cvmdb_input_file``. This is an optional parameter and the default value is ``no``.
 
 
-Basin material model
+Basin velocity model
 ====================
 
-``basin_material_model``
+``basin_velocity_model``
     * Optional: Yes
     * Type: Yes or No
-    * Description: Whether to use the material database developed for the Basin Material Model or not. If this parameter is set to ``yes``, Hercules will replace the crustal structure information in the region that is covered by the basin. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter ``cvmdb_input_file``. This is an optional parameter and the default value is ``no``. Note that either ``Istanbul_material_model`` or ``basin_material_model`` can be set to ``yes``. If both are set to ``yes``, the Istanbul material model will be used.
+    * Description: Whether to use the velocity model developed for a basin. If this parameter is set to ``yes``, Hercules will replace the crustal structure information within the basin. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter ``cvmdb_input_file``. This is an optional parameter and the default value is ``no``. Note that either ``Istanbul_velocity_model`` or ``basin_velocity_model`` can be set to ``yes``. If both are set to ``yes``, the Istanbul velocity model will be used.
 
 
 ``basin_input_file``
     * Optional: Conditional
     * Type: Path
-    * Description: The path to the basin input file. This parameter is required when ``basin_material_model`` is set to ``yes``. The basin input file is a text file that contains the information of the basin. The format of the basin input file is described in the section :ref:`Basin input file`.
+    * Description: The path to the basin input file. This parameter is required when ``basin_velocity_model`` is set to ``yes``. The basin input file is a text file that describes the boundary of the basin. The format of the basin input file is described in the section :ref:`Basin input file`.
 
 
 ``basin_origin_latitude_deg``
     * Optional: Conditional
     * Type: Float
-    * Description: The latitude of the basin origin (in degree). Note that the origin is the left bottom corner of the domain of the basin. This parameter is required when ``basin_material_model`` is set to ``yes``.
+    * Description: The latitude of the basin origin (in degree). Note that the origin is the left bottom corner of the domain of the basin. This parameter is required when ``basin_velocity_model`` is set to ``yes``.
 
 
 ``basin_origin_longitude_deg``
     * Optional: Conditional
     * Type: Float
-    * Description: The longitude of the basin origin (in degree). Note that the origin is the left bottom corner of the domain of the basin. This parameter is required when ``basin_material_model`` is set to ``yes``.
+    * Description: The longitude of the basin origin (in degree). Note that the origin is the left bottom corner of the domain of the basin. This parameter is required when ``basin_velocity_model`` is set to ``yes``.
 
 
 Basin input file
 ----------------
 
-The basin input file should be a text file (the extension is not important) that contains the information of the basin. The format of the basin input file is described below.
+The basin input file should be a text file (the extension is not important) that describes the boundary of the basin. The format of the basin input file is described below.
 
     * The first line: number_of_x_points number_of_y_points number_of_z_points
 
@@ -80,7 +80,7 @@ Note the the number of z points should always be 1.
 
     * The second and the following lines: x y z
     
-Repeat the line with x points written in ascending order, then y points in ascending order, and z in ascending. The following is a complete basin input file example:
+Repeat the line with x points written in ascending order, then y points in ascending order, and z in ascending. The following is a working basin input file example:
 
 .. code-block::
 

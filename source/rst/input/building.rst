@@ -19,6 +19,8 @@ Building
     * Type: Float
     * Description: The minimum octant size for buildings. This parameter is required if ``include_buildings`` is set to ``yes``.
 
+.. TODO: is this surface shift upward or downward?
+
 ``surface_shift_m``
     * Optional: Conditional
     * Type: Float
