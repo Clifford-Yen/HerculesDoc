@@ -38,6 +38,7 @@ Other parameters that are needed to be assigned for DRM will be explained in thi
 
 If ``implement_drm = yes``, all the DRM parameters, except ``which_drm_part``, should be the same for all three parts.
 
+.. TODO: it seems other parameters can be changed for different parts. For the 57 scenarios Doriam run (Wenyang said those are run by Doriam, not him), the domain actually shrink to a smaller region in part2 (the DRM box is always the same). Need to check and test this.
 
 Part 0, part 1, and part 2
 ==========================
@@ -92,16 +93,6 @@ Defining the element size
     * Description: The element edge size (in meter) you want to define for elements in the DRM box.
 
 Note that all the dimensions in Hercules have to be "octree dimension." For more information, please refer to :ref:`Octree dimension`
-
-.. That means all dimensions are related to the largest dimension of the domain. Specifically, dimensions have to be 
-
-.. .. math::
-    
-..     \frac{\text{(The largest dimension of the domain)}}{2^n}
-
-.. where n is a positive integer (up to 31).
-
-.. This is why Hercules is so efficient (because all elements are cubical).
 
 :math:`\Delta t` and simulation time for part 1
 -----------------------------------------------
