@@ -43,36 +43,47 @@
             
   <section id="topography">
 <h1>Topography<a class="headerlink" href="#topography" title="Link to this heading">¶</a></h1>
-<p>(Confirmation Needed) for all the section</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">include_topography</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
 <li><p>Type: Yes or No</p></li>
-<li><p>Description: Whether to consider topography in the simulation.</p></li>
+<li><p>Description: Whether to consider topography in the simulation. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">computation_method</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: String</p></li>
-<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">vt</span></code>, etc.</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">vt</span></code> and <code class="docutils literal notranslate"><span class="pre">fem</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
+</dl>
+<dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">maximum_octant_level</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Integer</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: The maximum octant level allowed. It can be a integer between 1 and 30. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
+</dl>
+<dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: The base z coordinate of the topography. It can be any float number bigger then <code class="docutils literal notranslate"><span class="pre">0</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">type_of_etree</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: String</p></li>
-<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">sqd</span></code>, etc.</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">sqd</span></code> and <code class="docutils literal notranslate"><span class="pre">full</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">topoprahy_directory</span></code></dt><dd><ul class="simple">
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">topography_directory</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Path</p></li>
-<li><p>Description: The path to the directory where the topography information is stored.</p></li>
+<li><p>Description: The path to the directory where the topography information is stored. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 </dl>

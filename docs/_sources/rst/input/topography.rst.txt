@@ -2,29 +2,38 @@
 Topography
 ==========
 
-(Confirmation Needed) for all the section
-
 ``include_topography``
+    * Optional: Yes
     * Type: Yes or No
-    * Description: Whether to consider topography in the simulation.
+    * Description: Whether to consider topography in the simulation. This is an optional parameter and the default value is ``no``.
 
 ``computation_method``
+    * Optional: Conditional
     * Type: String
-    * Description: Possible options include ``vt``, etc.
+    * Description: Possible options include ``vt`` and ``fem``. This parameter is required if ``include_topography`` is set to ``yes``.
+
+.. TODO: The differences between vt and fem have to be explained.
 
 ``maximum_octant_level``
+    * Optional: Conditional
     * Type: Integer
-    * Description:
+    * Description: The maximum octant level allowed. It can be a integer between 1 and 30. This parameter is required if ``include_topography`` is set to ``yes``.
+
+.. TODO: octant level has to be explained.
 
 ``topographybase_zcoord``
+    * Optional: Conditional
     * Type: Float
-    * Description:
+    * Description: The base z coordinate of the topography. It can be any float number bigger then ``0``. This parameter is required if ``include_topography`` is set to ``yes``.
 
 ``type_of_etree``
+    * Optional: Conditional
     * Type: String
-    * Description: Possible options include ``sqd``, etc.
+    * Description: Possible options include ``sqd`` and ``full``. This parameter is required if ``include_topography`` is set to ``yes``.
 
-``topoprahy_directory``
+.. TODO: The differences between sqd and full have to be explained.
+
+``topography_directory``
+    * Optional: Conditional
     * Type: Path
-    * Description: The path to the directory where the topography information is stored.
-
+    * Description: The path to the directory where the topography information is stored. This parameter is required if ``include_topography`` is set to ``yes``.
