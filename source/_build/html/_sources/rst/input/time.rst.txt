@@ -3,8 +3,9 @@ Time and Frequency
 ==================
 
 ``simulation_start_time_sec``
+    * Optional: Yes
     * Type: Float
-    * Description: The start time (in second) for the simulation.
+    * Description: The start time (in second) for the simulation. This is an optional parameter and the default value is ``0``.
 
 ``simulation_end_time_sec``
     * Type: Float
@@ -22,7 +23,7 @@ Time and Frequency
     * Type: Integer
     * Description: The number of nodes per wavelength.
 
-``simulation_shear_velocity_min`` (Confirmation Needed)
+``simulation_shear_velocity_min``
     * Type: Float
     * Description: The minimum shear velocity. Shear velocities in the simulation that are smaller than this value will be replaced with it.
 

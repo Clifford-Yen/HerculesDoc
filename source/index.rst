@@ -15,6 +15,7 @@ Welcome to Hercules' documentation!
    rst/running
    rst/input/inputFile
    rst/references
+   rst/miscellaneous
 
 Indices and tables
 ==================
