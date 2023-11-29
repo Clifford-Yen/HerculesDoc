@@ -4,7 +4,7 @@ Input file
 
 Basic rules
 ===========
-When you open a Hercules' input file, you will see lines like
+When you open a Hercules' parameter input file, you will see lines like
 
 .. code-block::
 
@@ -71,6 +71,7 @@ In addition, since some parameters are not useful or not really necessary at thi
     material
     dimension
     output
+    planewaves
     damping
     source
     time

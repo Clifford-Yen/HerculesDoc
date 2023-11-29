@@ -2,6 +2,8 @@
 Damping
 =======
 
+(This section is under construction.)
+
 .. TODO: Adding a description of different types of damping and their related calculations.
 
 ``type_of_damping``

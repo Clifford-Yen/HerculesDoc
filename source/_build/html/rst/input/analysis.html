@@ -46,91 +46,108 @@
 <h1>Analysis<a class="headerlink" href="#analysis" title="Link to this heading">¶</a></h1>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">stiffness_calculation_method</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
 <li><p>Type: String</p></li>
-<li><p>Description: The stiffness calculation method. Possible options include <code class="docutils literal notranslate"><span class="pre">conventional</span></code> and <code class="docutils literal notranslate"><span class="pre">effective</span></code>. However, we no longer use <code class="docutils literal notranslate"><span class="pre">conventional</span></code> in the recent projects since its performance is concerning, and this parameter is going to be deprecated (the value of it will be set as <code class="docutils literal notranslate"><span class="pre">effective</span></code> permanently) for the same reason.</p></li>
+<li><p>Description: The stiffness calculation method. Possible options include <code class="docutils literal notranslate"><span class="pre">conventional</span></code> and <code class="docutils literal notranslate"><span class="pre">effective</span></code>. However, we no longer use <code class="docutils literal notranslate"><span class="pre">conventional</span></code> in the recent projects since its performance is concerning, and this parameter is going to be deprecated (the value of it will be set as <code class="docutils literal notranslate"><span class="pre">effective</span></code> permanently) for the same reason. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">effective</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">use_progressive_meshing</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
 <li><p>Type: Boolean</p></li>
-<li><p>Description: Whether to utilize progressive meshing technique. Since it will be more efficient with the utilization of progressive meshing, this parameter will be set as 1 (enabled) permanently and be deprecated in the future.</p></li>
+<li><p>Description: Whether to utilize progressive meshing technique. Since it will be more efficient with the utilization of progressive meshing, this parameter will be set as 1 (enabled) permanently and be deprecated in the future. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
 <section id="nonlinear-analysis">
 <h2>Nonlinear Analysis<a class="headerlink" href="#nonlinear-analysis" title="Link to this heading">¶</a></h2>
-<p>(Confirmation Needed) for all the section.</p>
+<p>(This section is under construction.)</p>
+<p>The current version of Hercules can only perform nonlinear analysis with <a class="reference internal" href="material.html#istanbul-velocity-model"><span class="std std-ref">Istanbul velocity model</span></a> enabled.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
 <li><p>Type: Yes or No</p></li>
-<li><p>Description: Whether to consider nonlinearity in the simulation.</p></li>
+<li><p>Description: Whether to consider nonlinearity in the simulation. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">geostatic_loading_time_sec</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type:</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">geostatic_cushion_time_sec</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type:</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">approximate_geostatic_state</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Yes or No</p></li>
-<li><p>Description: Whether an initial stress state with <span class="math notranslate nohighlight">\(K_o = 1 - \sin\phi\)</span> as coefficient of lateral earth pressure at rest should be assumed.</p></li>
+<li><p>Description: Whether an initial stress state with <span class="math notranslate nohighlight">\(K_o = 1 - \sin\phi\)</span> as coefficient of lateral earth pressure at rest should be assumed. This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
-<dt><code class="docutils literal notranslate"><span class="pre">material_plasticity_type</span></code> (Confirmation Needed)</dt><dd><ul class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">material_plasticity_type</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: String</p></li>
-<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">rate_independant</span></code> and <code class="docutils literal notranslate"><span class="pre">rate_independant</span></code>. (“independant” seems like a typo.)</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">rate_dependent</span></code> and <code class="docutils literal notranslate"><span class="pre">rate_independent</span></code>. This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">material_model</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: String</p></li>
-<li><p>Description: Possible options include linear, <code class="docutils literal notranslate"><span class="pre">vonMises_EP</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_FAO</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_FAM</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BAH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BAE</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BOH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_BOE</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_GQH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_MKZ</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_RO</span></code>, <code class="docutils literal notranslate"><span class="pre">DruckerPrager</span></code>, and <code class="docutils literal notranslate"><span class="pre">MohrCoulomb</span></code>.</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">linear</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_ep</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_fa</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_faM</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_baE</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_baH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_GQH</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_MKZ</span></code>, <code class="docutils literal notranslate"><span class="pre">vonMises_RO</span></code>, <code class="docutils literal notranslate"><span class="pre">MohrCoulomb</span></code>, and <code class="docutils literal notranslate"><span class="pre">DruckerPrager</span></code>. This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">error_tolerance</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">backbone_errTol</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">stiff_damp</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">freq_stiff_damp</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type:</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">tension_cutoff</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Yes or No</p></li>
-<li><p>Description: Whether to remove tensile stresses or not. This parameter only affects Mohr-Coulomb and Drucker-Prager material models.</p></li>
+<li><p>Description: Whether to remove tensile stresses or not. This parameter only affects Mohr-Coulomb and Drucker-Prager material models. This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">material_properties_count</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Integer</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">no_substeps</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Integer</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">material_properties_list</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
 <li><p>Type: Multiple numbers</p></li>
 <li><p>Format:</p></li>
-<li><p>Description:</p></li>
+<li><p>Description: This parameter is required when <code class="docutils literal notranslate"><span class="pre">include_nonlinear_analysis</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
