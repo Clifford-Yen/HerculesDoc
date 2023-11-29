@@ -2,42 +2,53 @@
 Analysis
 ========
 ``stiffness_calculation_method``
+    * Optional: Yes
     * Type: String
-    * Description: The stiffness calculation method. Possible options include ``conventional`` and ``effective``. However, we no longer use ``conventional`` in the recent projects since its performance is concerning, and this parameter is going to be deprecated (the value of it will be set as ``effective`` permanently) for the same reason.
+    * Description: The stiffness calculation method. Possible options include ``conventional`` and ``effective``. However, we no longer use ``conventional`` in the recent projects since its performance is concerning, and this parameter is going to be deprecated (the value of it will be set as ``effective`` permanently) for the same reason. This is an optional parameter and the default value is ``effective``.
 
 ``use_progressive_meshing``
+    * Optional: Yes
     * Type: Boolean
-    * Description: Whether to utilize progressive meshing technique. Since it will be more efficient with the utilization of progressive meshing, this parameter will be set as 1 (enabled) permanently and be deprecated in the future.
+    * Description: Whether to utilize progressive meshing technique. Since it will be more efficient with the utilization of progressive meshing, this parameter will be set as 1 (enabled) permanently and be deprecated in the future. This is an optional parameter and the default value is ``1``.
 
+.. TODO: Actually, from the source code, it seems that this parameter is not a boolean but an integer, and it's the number of the iterations to progressively mesh the model with different frequencies. But I can't see the effect when this number is more than 1 with a minimum working case.
 
 Nonlinear Analysis
 ==================
 
-(Confirmation Needed) for all the section.
+(This section is under construction.)
+
+The current version of Hercules can only perform nonlinear analysis with :ref:`Istanbul velocity model` enabled.
 
 ``include_nonlinear_analysis``
+    * Optional: Yes
     * Type: Yes or No
-    * Description: Whether to consider nonlinearity in the simulation.
+    * Description: Whether to consider nonlinearity in the simulation. This is an optional parameter and the default value is ``no``.
 
 ``geostatic_loading_time_sec``
+    * Optional: Conditional
     * Type:
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``geostatic_cushion_time_sec``
+    * Optional: Conditional
     * Type:
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``approximate_geostatic_state``
+    * Optional: Conditional
     * Type: Yes or No
-    * Description: Whether an initial stress state with :math:`K_o = 1 - \sin\phi` as coefficient of lateral earth pressure at rest should be assumed.
+    * Description: Whether an initial stress state with :math:`K_o = 1 - \sin\phi` as coefficient of lateral earth pressure at rest should be assumed. This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
-``material_plasticity_type`` (Confirmation Needed)
+``material_plasticity_type``
+    * Optional: Conditional
     * Type: String
-    * Description: Possible options include ``rate_independant`` and ``rate_independant``. ("independant" seems like a typo.)
+    * Description: Possible options include ``rate_dependent`` and ``rate_independent``. This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``material_model``
+    * Optional: Conditional
     * Type: String
-    * Description: Possible options include linear, ``vonMises_EP``, ``vonMises_FAO``, ``vonMises_FAM``, ``vonMises_BAH``, ``vonMises_BAE``, ``vonMises_BOH``, ``vonMises_BOE``, ``vonMises_GQH``, ``vonMises_MKZ``, ``vonMises_RO``, ``DruckerPrager``, and ``MohrCoulomb``.
+    * Description: Possible options include ``linear``, ``vonMises_ep``, ``vonMises_fa``, ``vonMises_faM``, ``vonMises_baE``, ``vonMises_baH``, ``vonMises_GQH``, ``vonMises_MKZ``, ``vonMises_RO``, ``MohrCoulomb``, and ``DruckerPrager``. This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 .. Notes: vonMises_FAO and  vonMises_FAM  use kinematic hardening modulus to simulate clays in undrained conditions (very rapid phenomena).
        vonMises_FAO: Original Frederich-Armstrong formulation. Gamma0 is obtained from the modulus reductions curves. Gamma0 defines the maximum linear elastic shear stress “So=G*Gamma0”.
@@ -53,35 +64,43 @@ Nonlinear Analysis
 
 
 ``error_tolerance``
+    * Optional: Conditional
     * Type: Float
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``backbone_errTol``
+    * Optional: Conditional
     * Type: Float
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``stiff_damp``
+    * Optional: Conditional
     * Type: Float
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``freq_stiff_damp``
+    * Optional: Conditional
     * Type:
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``tension_cutoff``
+    * Optional: Conditional
     * Type: Yes or No
-    * Description: Whether to remove tensile stresses or not. This parameter only affects Mohr-Coulomb and Drucker-Prager material models.
+    * Description: Whether to remove tensile stresses or not. This parameter only affects Mohr-Coulomb and Drucker-Prager material models. This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``material_properties_count``
+    * Optional: Conditional
     * Type: Integer
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``no_substeps``
+    * Optional: Conditional
     * Type: Integer
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 
 ``material_properties_list``
+    * Optional: Conditional
     * Type: Multiple numbers
     * Format: 
-    * Description:
+    * Description: This parameter is required when ``include_nonlinear_analysis`` is set to ``yes``.
 

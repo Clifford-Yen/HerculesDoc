@@ -2,7 +2,7 @@
 Source
 ======
 
-(Confirmation Needed) for all the section
+(This section is under construction.)
 
 A source file stands for one event (earthquake). It contains multiple source points on the fault.
 

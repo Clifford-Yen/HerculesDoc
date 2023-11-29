@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plane Waves &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=514cf933" />
+    
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Damping" href="damping.html" />
+    <link rel="prev" title="Output settings" href="output.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="damping.html" title="Damping"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="Output settings"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Plane Waves</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="plane-waves">
+<h1>Plane Waves<a class="headerlink" href="#plane-waves" title="Link to this heading">¶</a></h1>
+<p>(This section is under construction.)</p>
+<section id="incident-plane-waves">
+<h2>Incident Plane Waves<a class="headerlink" href="#incident-plane-waves" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type_of_wave</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">SV</span></code> and <code class="docutils literal notranslate"><span class="pre">P</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DRMBox_Noelem_Halfwidth_EW</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DRMBox_Noelem_Halfwidth_NS</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DRMBox_Noelem_depth</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DRMBox_element_size</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DRM_xo</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">DRM_yo</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fnc_type</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">RICKER</span></code> and <code class="docutils literal notranslate"><span class="pre">time_hist</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">planewave_strike</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">planewave_Z_angle</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Ts</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fc</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">Uo</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ug_alongstrike</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Path</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code> and <code class="docutils literal notranslate"><span class="pre">fnc_type</span> <span class="pre">=</span> <span class="pre">time_hist</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ug_alongnormal</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Path</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>, <code class="docutils literal notranslate"><span class="pre">fnc_type</span> <span class="pre">=</span> <span class="pre">time_hist</span></code>, and <code class="docutils literal notranslate"><span class="pre">no_components</span> <span class="pre">=</span> <span class="pre">2</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">no_components</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Integer</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">ug_timestep</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_incident_planewaves</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="homogeneous-half-space">
+<h2>Homogeneous Half-space<a class="headerlink" href="#homogeneous-half-space" title="Link to this heading">¶</a></h2>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">etreeBox_xo</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">etreeBox_yo</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">etreeBox_lengthEW</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">etreeBox_lengthNS</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">etreeBox_depth</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hmgHS_Vs</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hmgHS_Vp</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">hmgHS_rho</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_hmg_halfspace</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Plane Waves</a><ul>
+<li><a class="reference internal" href="#incident-plane-waves">Incident Plane Waves</a></li>
+<li><a class="reference internal" href="#homogeneous-half-space">Homogeneous Half-space</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="output.html"
+                          title="previous chapter">Output settings</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="damping.html"
+                          title="next chapter">Damping</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/rst/input/planewaves.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="damping.html" title="Damping"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="output.html" title="Output settings"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Plane Waves</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
