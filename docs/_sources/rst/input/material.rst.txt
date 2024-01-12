@@ -106,7 +106,7 @@ The total number of lines in the basin input file should be ``number_of_x_points
 basin.c
 -------
 
-Unfortunately, we don't have a universal way to read a text file to define the equations of the material properties used in the basin. Therefore, users have to modify the file ``basin.c`` to define these equations. The file ``basin.c`` is located in ``/quake/forward`` and contains a function ``getBasinMaterialProperties`` that defines these equations. The following is an example of ``basin.c``:
+Unfortunately, we don't have a universal way to read a text file to define the equations of the material properties used in the basin. Therefore, users have to modify the file ``basin.c`` to define these equations. The file ``basin.c`` is located in ``./quake/forward`` and contains a function ``getBasinMaterialProperties`` that defines these equations. The following is an example of ``basin.c``:
 
 .. code-block:: c
 
