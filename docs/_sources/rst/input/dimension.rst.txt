@@ -39,6 +39,9 @@ To define the domain dimension, the following parameter should be set.
     * Type: Float
     * Description: The length (in meter) from the origin to the depth limit.
 
+Note that all these dimensions have to be :ref:`Octree dimension` and integer.
+
+.. TODO: Have to investigate why they have to be integers (if they are not, the program will use a ton of memory and not running at all).
 
 Domain surface corners
 ======================
