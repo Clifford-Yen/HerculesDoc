@@ -17,9 +17,7 @@ Topography
 ``maximum_octant_level``
     * Optional: Conditional
     * Type: Integer
-    * Description: The maximum octant level allowed. It can be a integer between 1 and 30. This parameter is required if ``include_topography`` is set to ``yes``.
-
-.. TODO: octant level has to be explained.
+    * Description: The maximum octant level allowed. It can be a integer between 1 and 30. As mentioned in :ref:`Time and Frequency`, the minimum element size is calculated as :math:`h_{min} = \frac{V_{S, min}}{N_p f_{max}}`. A proper value for ``maximum_octant_level`` should satisfy the condition :math:`\frac{\text{(The largest dimension of the domain)}}{2^n} < h_{min}`. This parameter is required if ``include_topography`` is set to ``yes``.
 
 ``topographybase_zcoord``
     * Optional: Conditional

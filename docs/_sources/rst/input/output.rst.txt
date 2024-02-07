@@ -70,13 +70,13 @@ You can ask Hercules to store another mesh coordinates database which includes t
 ``mesh_coordinates_directory_for_matlab``
     * Optional: Conditional
     * Type: Path
-    * Description: Path to the folder where Hercules should store the mesh coordinates database for the subdomain. This parameter is required if ``mesh_coordinates_for_matlab`` is set to True (``mesh_coordinates_for_matlab = 1``).
+    * Description: Path to the folder where Hercules should store the mesh coordinates database for the subdomain. This parameter is required if ``mesh_coordinates_for_matlab`` is set to ``yes``.
 
 ``mesh_corners_matlab``
     * Optional: Conditional
     * Type: Multiple Numbers
     * Format: ``min_x min_y max_x max_y min_z max_z``
-    * Description: Values used to define the boundaries of the subdomain. Note that X is in the vertical direction of the plan view. This parameter is required if ``mesh_coordinates_for_matlab`` is set to True (``mesh_coordinates_for_matlab = 1``).
+    * Description: Values used to define the boundaries of the subdomain. Note that X is in the vertical direction of the plan view. This parameter is required if ``mesh_coordinates_for_matlab`` is set to ``yes``.
 
 
 Output for stations

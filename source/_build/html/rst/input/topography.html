@@ -12,6 +12,7 @@
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=888ff710"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -61,11 +62,9 @@
 <dt><code class="docutils literal notranslate"><span class="pre">maximum_octant_level</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
 <li><p>Type: Integer</p></li>
-<li><p>Description: The maximum octant level allowed. It can be a integer between 1 and 30. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+<li><p>Description: The maximum octant level allowed. It can be a integer between 1 and 30. As mentioned in <a class="reference internal" href="time.html#time-and-frequency"><span class="std std-ref">Time and Frequency</span></a>, the minimum element size is calculated as <span class="math notranslate nohighlight">\(h_{min} = \frac{V_{S, min}}{N_p f_{max}}\)</span>. A proper value for <code class="docutils literal notranslate"><span class="pre">maximum_octant_level</span></code> should satisfy the condition <span class="math notranslate nohighlight">\(\frac{\text{(The largest dimension of the domain)}}{2^n} &lt; h_{min}\)</span>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
-</dl>
-<dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
