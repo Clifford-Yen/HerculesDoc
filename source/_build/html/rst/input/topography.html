@@ -65,10 +65,12 @@
 <li><p>Description: The maximum octant level allowed. It can be a integer between 1 and 30. As mentioned in <a class="reference internal" href="time.html#time-and-frequency"><span class="std std-ref">Time and Frequency</span></a>, the minimum element size is calculated as <span class="math notranslate nohighlight">\(h_{min} = \frac{V_{S, min}}{N_p f_{max}}\)</span>. A proper value for <code class="docutils literal notranslate"><span class="pre">maximum_octant_level</span></code> should satisfy the condition <span class="math notranslate nohighlight">\(\frac{\text{(The largest dimension of the domain)}}{2^n} &lt; h_{min}\)</span>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
+</dl>
+<dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
 <li><p>Type: Float</p></li>
-<li><p>Description: The base z coordinate of the topography. It can be any float number bigger then <code class="docutils literal notranslate"><span class="pre">0</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+<li><p>Description: The base z coordinate of the topography. It should be a floating number bigger than <code class="docutils literal notranslate"><span class="pre">0</span></code> that satisfy the condition <span class="math notranslate nohighlight">\(z_b = \frac{\text{(The largest dimension of the domain)}}{2^n} &gt; e_h\)</span>, where <span class="math notranslate nohighlight">\(z_b\)</span> is <code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code> and <span class="math notranslate nohighlight">\(e_h\)</span> is the highest elevation in the domain. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">type_of_etree</span></code></dt><dd><ul class="simple">
