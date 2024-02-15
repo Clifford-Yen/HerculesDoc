@@ -78,6 +78,8 @@ You can ask Hercules to store another mesh coordinates database which includes t
     * Format: ``min_x min_y max_x max_y min_z max_z``
     * Description: Values used to define the boundaries of the subdomain. Note that X is in the vertical direction of the plan view. This parameter is required if ``mesh_coordinates_for_matlab`` is set to ``yes``.
 
+To better understand the format of the output files for mesh coordinates, refer to the section :ref:`Mesh coordinates output for a subdomain`.
+
 
 Output for stations
 ===================
@@ -115,6 +117,8 @@ The following parameters are used for the output for stations (observation point
     * Description: The location information of stations. The data should be written as many lines as parameter ``number_output_stations`` defines. This parameter is required if ``number_output_stations`` is bigger than ``0``. Note that if the number of listed ``output_stations`` is more than ``number_output_stations``, Hercules will only use the first ``number_output_stations`` stations.
 
     .. TODO: The difference between engineering depth and bedrock depth needs to be explained.
+
+To better understand the format of the output files for stations, refer to the section :ref:`Station outputs`.
 
 
 Output for planes
