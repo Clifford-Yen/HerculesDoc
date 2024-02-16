@@ -15,7 +15,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="References" href="../references.html" />
+    <link rel="next" title="Plane outputs" href="planes.html" />
     <link rel="prev" title="Mesh coordinates output for a subdomain" href="mesh.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -25,7 +25,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../references.html" title="References"
+          <a href="planes.html" title="Plane outputs"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="mesh.html" title="Mesh coordinates output for a subdomain"
@@ -43,7 +43,7 @@
             
   <section id="station-outputs">
 <h1>Station outputs<a class="headerlink" href="#station-outputs" title="Link to this heading">¶</a></h1>
-<p>When <code class="docutils literal notranslate"><span class="pre">number_output_stations</span></code> is set to a positive integer, Hercules will generate responses at the stations (observation points) specified by the parameter <code class="docutils literal notranslate"><span class="pre">output_stations</span></code>. For definition of the related parameters, see the section <a class="reference internal" href="../input/output.html#output-for-stations"><span class="std std-ref">Output for stations</span></a>.</p>
+<p>When <code class="docutils literal notranslate"><span class="pre">number_output_stations</span></code> is set to a positive integer, Hercules will generate responses at the stations (observation points) specified by the parameter <code class="docutils literal notranslate"><span class="pre">output_stations</span></code>. For the definition of the related parameters, see the section <a class="reference internal" href="../input/output.html#output-for-stations"><span class="std std-ref">Output for stations</span></a>.</p>
 <p>In the folder defined by the parameter <code class="docutils literal notranslate"><span class="pre">output_stations_directory</span></code>, Hercules will create files with the name <code class="docutils literal notranslate"><span class="pre">station.X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the station number. For example, if <code class="docutils literal notranslate"><span class="pre">number_output_stations</span></code> is set to 3 and <code class="docutils literal notranslate"><span class="pre">output_stations</span></code> are properly defined, Hercules will create files <code class="docutils literal notranslate"><span class="pre">station.0</span></code>, <code class="docutils literal notranslate"><span class="pre">station.1</span></code> and <code class="docutils literal notranslate"><span class="pre">station.2</span></code>. Where <code class="docutils literal notranslate"><span class="pre">station.0</span></code> contains the responses at the first station defined in <code class="docutils literal notranslate"><span class="pre">output_stations</span></code> (the first line after <code class="docutils literal notranslate"><span class="pre">output_stations</span></code>), <code class="docutils literal notranslate"><span class="pre">station.1</span></code> contains the responses at the second station defined in <code class="docutils literal notranslate"><span class="pre">output_stations</span></code> and so on. All the <code class="docutils literal notranslate"><span class="pre">station.X</span></code> files are ASCII files. Below is an example of a <code class="docutils literal notranslate"><span class="pre">station.X</span></code> file with both <code class="docutils literal notranslate"><span class="pre">print_station_velocities</span></code> and <code class="docutils literal notranslate"><span class="pre">print_station_accelerations</span></code> set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  Time(s)         X|(m)         Y-(m)         Z.(m)       X|(m/s)       Y-(m/s)       Z.(m/s)      X|(m/s2)      Y-(m/s2)      Z.(m/s2)</span>
   <span class="mf">0.000000</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>  <span class="mf">0.000000e+00</span>
@@ -54,7 +54,7 @@
   <span class="mf">0.100000</span> <span class="o">-</span><span class="mf">1.863683e-21</span>  <span class="mf">3.730192e-22</span> <span class="o">-</span><span class="mf">6.838559e-21</span> <span class="o">-</span><span class="mf">1.201724e-19</span>  <span class="mf">2.193821e-20</span> <span class="o">-</span><span class="mf">4.447519e-19</span> <span class="o">-</span><span class="mf">8.072487e-18</span>  <span class="mf">1.370998e-18</span> <span class="o">-</span><span class="mf">3.067975e-17</span>
 </pre></div>
 </div>
-<p>Note that the time step in <code class="docutils literal notranslate"><span class="pre">station.X</span></code> files is defined by the parameter <code class="docutils literal notranslate"><span class="pre">output_stations_print_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_delta_time_sec</span></code>.</p>
+<p>Note that the time step in the <code class="docutils literal notranslate"><span class="pre">station.X</span></code> files is defined by the parameters <code class="docutils literal notranslate"><span class="pre">output_stations_print_rate</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_delta_time_sec</span></code>.</p>
 </section>
 
 
@@ -71,8 +71,8 @@
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="../references.html"
-                          title="next chapter">References</a></p>
+    <p class="topless"><a href="planes.html"
+                          title="next chapter">Plane outputs</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -102,7 +102,7 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../references.html" title="References"
+          <a href="planes.html" title="Plane outputs"
              >next</a> |</li>
         <li class="right" >
           <a href="mesh.html" title="Mesh coordinates output for a subdomain"

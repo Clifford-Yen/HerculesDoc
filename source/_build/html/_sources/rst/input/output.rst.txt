@@ -118,7 +118,7 @@ The following parameters are used for the output for stations (observation point
 
     .. TODO: The difference between engineering depth and bedrock depth needs to be explained.
 
-To better understand the format of the output files for stations, refer to the section :ref:`Station outputs`.
+To better understand the format of the station output files, refer to the section :ref:`Station outputs`.
 
 
 Output for planes
@@ -150,6 +150,8 @@ A plane contains multiple grid points storing displacements on them.
     * Type: Multiple numbers
     * Format: ``x_lat y_lon z_depth dx nx dy ny strk dp``
     * Description: Values used to define the planes. ``x_lat``, ``y_lon``, and ``z_depth`` define the origin of a plane. ``dx`` and ``dy`` are the spacing along X and Y directions. ``nx`` and ``ny`` are the number of grid points along X and Y directions. ``strk`` is the strike angle (in degree) measured from the true north clockwise, and ``dp`` is the dip angle (in degree). This parameter is required if ``number_output_planes`` is bigger than ``0``. Note that if the number of listed ``output_planes`` is more than ``number_output_planes``, Hercules will only use the first ``number_output_planes`` planes.
+
+To better understand the format of the plane output files, refer to the section :ref:`Plane outputs`.
 
 
 Checkpoint
