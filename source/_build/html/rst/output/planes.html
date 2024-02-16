@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Plane outputs &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=514cf933" />
+    
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="References" href="../references.html" />
+    <link rel="prev" title="Station outputs" href="stations.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../references.html" title="References"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="stations.html" title="Station outputs"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="outputFile.html" accesskey="U">Output file</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Plane outputs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="plane-outputs">
+<h1>Plane outputs<a class="headerlink" href="#plane-outputs" title="Link to this heading">¶</a></h1>
+<p>Once the parameter <code class="docutils literal notranslate"><span class="pre">number_output_planes</span></code> is set to a positive integer, Hercules will generate displacement history at grid points defined by <code class="docutils literal notranslate"><span class="pre">output_planes</span></code>. For the definition of the related parameters, see the section <a class="reference internal" href="../input/output.html#output-for-planes"><span class="std std-ref">Output for planes</span></a>.</p>
+<p>In the folder defined by <code class="docutils literal notranslate"><span class="pre">output_planes_directory</span></code>, Hercules will create files with the name <code class="docutils literal notranslate"><span class="pre">planedisplacements.X</span></code> where <code class="docutils literal notranslate"><span class="pre">X</span></code> is the number of the plane. <code class="docutils literal notranslate"><span class="pre">planedisplacements.X</span></code> is a binary file.</p>
+<section id="planedisplacements-x">
+<h2>planedisplacements.X<a class="headerlink" href="#planedisplacements-x" title="Link to this heading">¶</a></h2>
+<p>Hercules writes the displacement history at the grid points defined by <code class="docutils literal notranslate"><span class="pre">output_planes</span></code>. The file is a binary file written in double precision.</p>
+<p>The first three numbers are the displacements in the x, y, and z directions at the first grid point (the origin of the defined plane) at the first time step. The next three numbers are the displacements in the x, y, and z directions at the second grid point, which has the same x coordinate and different y coordinate with one <code class="docutils literal notranslate"><span class="pre">dy</span></code> away from the first grid point along the y direction, at the first time step.</p>
+<p>It continues to write the displacements at the grid points along the y direction until the last grid point along the y direction. After writing displacements along this first row, Hercules moves on to write displacement along the second row (one <code class="docutils literal notranslate"><span class="pre">dx</span></code> away from the first row along the x direction) and so on.</p>
+<p>After writing the displacements at the last grid point, Hercules moves on to the next time step and writes the displacements for all the grid points again.</p>
+<p>Similar to the output for mesh coordinates, you can also use NumPy to read the binary file. The following code reads the displacement history at the grid points on the first plane.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;planedisplacements.0&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">fromfile</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">number_of_time_steps</span><span class="p">,</span> <span class="n">number_of_grid_points</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>The variable <code class="docutils literal notranslate"><span class="pre">number_of_time_steps</span></code> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\frac{\text{simulation_end_time_sec}}{\text{simulation_delta_time_sec} \times \text{output_planes_print_rate}}\]</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">simulation_end_time_sec</span></code>, <code class="docutils literal notranslate"><span class="pre">simulation_delta_time_sec</span></code>, and <code class="docutils literal notranslate"><span class="pre">output_planes_print_rate</span></code> are the parameters defined in the parameter input file. The variable <code class="docutils literal notranslate"><span class="pre">number_of_grid_points</span></code> is defined as <code class="docutils literal notranslate"><span class="pre">nx</span></code> times <code class="docutils literal notranslate"><span class="pre">ny</span></code>, which are the number of grid points along the x and y directions as defined in <code class="docutils literal notranslate"><span class="pre">output_planes</span></code>, respectively.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Plane outputs</a><ul>
+<li><a class="reference internal" href="#planedisplacements-x">planedisplacements.X</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="stations.html"
+                          title="previous chapter">Station outputs</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="../references.html"
+                          title="next chapter">References</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/rst/output/planes.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../references.html" title="References"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="stations.html" title="Station outputs"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="outputFile.html" >Output file</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Plane outputs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

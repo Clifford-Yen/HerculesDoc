@@ -2,7 +2,7 @@
 Mesh coordinates output for a subdomain
 =======================================
 
-Once the parameter ``mesh_coordinates_for_matlab`` is set to ``yes`` in the parameter input file, Hercules will output the mesh coordinates and the velocity profile (material properties) of each element in a subdomain defined by the parameter ``mesh_corners_matlab``. For definition of the related parameters, see the section :ref:`Output mesh coordinates for a subdomain`.
+Once the parameter ``mesh_coordinates_for_matlab`` is set to ``yes`` in the parameter input file, Hercules will output the mesh coordinates and the velocity profile (material properties) of each element in a subdomain defined by the parameter ``mesh_corners_matlab``. For the definition of the related parameters, see the section :ref:`Output mesh coordinates for a subdomain`.
 
 In the folder defined by the parameter ``mesh_coordinates_directory_for_matlab``, Hercules will create files with the names ``mesh_coordinates.X`` and ``mesh_data.X`` where ``X`` is the rank number when running Hercules with MPI. For example, if the number of processors when running Hercules is 4, Hercules will create files named ``mesh_coordinates.0``, ``mesh_coordinates.1``, ``mesh_coordinates.2``, and ``mesh_coordinates.3``. The same rule applies to the file ``mesh_data.X``. Both ``mesh_coordinates.X`` and ``mesh_data.X`` are binary files. 
 
