@@ -8,7 +8,7 @@ In the folder defined by the parameter ``mesh_coordinates_directory_for_matlab``
 
 mesh_coordinates.X
 ------------------
-Hercules writes the coordinates of each node in the subdomain sequentially. The first three numbers are the x, y, and z coordinates of the first node of the first element. The next three numbers are the x, y, and z coordinates of the second node of the first element, and so on. Hercules uses 8-node hexahedral elements, and the coordinates of the nodes are written in double precision.
+Hercules writes the coordinates of each node in the subdomain sequentially. The first four numbers are the global element ID, the x, y, and z coordinates of the first node of the first element. The next four numbers are the global element ID, the x, y, and z coordinates of the second node of the first element, and so on. Hercules uses 8-node hexahedral elements. The global element ID is written in 64-bit integer, and the coordinates of the nodes are written in double precision.
 
 To read the file ``mesh_coordinates.X`` (``mesh_coordinates.0``, for example), you can use the following Python code:
 
@@ -16,15 +16,14 @@ To read the file ``mesh_coordinates.X`` (``mesh_coordinates.0``, for example), y
 
     import numpy as np
     with open('mesh_coordinates.0', 'rb') as f:
-        data = np.fromfile(f, dtype=np.float64)
-        data = data.reshape(-1, 3)
+        data = np.fromfile(f, dtype=[('geid', np.int64), ('x', np.float64), ('y', np.float64), ('z', np.float64)])
 
-Then for each row in the array ``data``, the first, second, and third numbers are the x, y, and z coordinates of the node, respectively. The first eight rows are the coordinates of the eight nodes of the first element, the next eight rows are the coordinates of the eight nodes of the second element, and so on.
+Then for each entity in the array ``data``, the first number is the global element ID, and the second, third, and fourth numbers are the x, y, and z coordinates of the node, respectively. The first eight entities are the eight nodes of the first element with the same global element ID, the next eight entities are the eight nodes of the second element with another global element ID, and so on.
 
 
 mesh_data.X
 -----------
-Hercules writes the velocity profile of each element in the subdomain sequentially. The first three numbers are :math:`V_s`, :math:`V_p`, and :math:`\rho` of the first element. The next three numbers are :math:`V_s`, :math:`V_p`, and :math:`\rho` of the second element, and so on. The velocity profile of each element is written in single precision.
+Hercules writes the velocity profile of each element in the subdomain sequentially. The first four numbers are the global element ID, the :math:`V_s`, :math:`V_p`, and :math:`\rho` of the first element. The next four numbers are the global element ID, the :math:`V_s`, :math:`V_p`, and :math:`\rho` of the second element, and so on. The global element ID is written in 64-bit integer, and the velocity profile of each element is written in single precision.
 
 To read the file ``mesh_data.X`` (``mesh_data.0``, for example), you can use the following Python code:
 
@@ -32,7 +31,6 @@ To read the file ``mesh_data.X`` (``mesh_data.0``, for example), you can use the
 
     import numpy as np
     with open('mesh_data.0', 'rb') as f:
-        data = np.fromfile(f, dtype=np.float32)
-        data = data.reshape(-1, 3)
+        data = np.fromfile(f, dtype=[('geid', np.int64), ('Vs', np.float32), ('Vp', np.float32), ('rho', np.float32)])
 
-Then for each row in the array ``data``, the first, second, and third numbers are :math:`V_s`, :math:`V_p`, and :math:`\rho` of the element, respectively. The first row is the velocity profile of the first element, the next row is the velocity profile of the second element, and so on.
+Then for each entity in the array ``data``, the first number is the global element ID, and the second, third, and fourth numbers are the :math:`V_s`, :math:`V_p`, and :math:`\rho` of the element, respectively. The first entity is the velocity profile of the first element, the next entity is the velocity profile of the second element, and so on.
