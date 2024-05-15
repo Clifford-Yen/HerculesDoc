@@ -8,7 +8,7 @@ Hercules is capable of implementing the Domain Reduction Method (DRM). You can i
 
     implement_drm = yes
 
-And set parameter ``drm_directory`` to the directory you want to store the DRM information. E.g., ``drm_directory = outputfiles/DRM``. And folders named ``part0``, ``part1``, and ``part2`` should be created manually in this directory.
+And set parameter ``drm_directory`` to the directory you want to store the DRM information. If you do not set ``drm_directory``, the default setting is ``drm_directory = outputfiles/DRM``. Folders named ``part0``, ``part1``, and ``part2`` will be created automatically in this directory when you run the corresponding part of DRM simulation.
 
 There are three steps should be executed sequentially for implementing DRM in Hercules, which are part 0, part 1, and part 2. You can choose within these three parts by setting the value of ``which_drm_part`` in the input file. For example, setting the following line in the input file for running part 0 in Hercules:
 

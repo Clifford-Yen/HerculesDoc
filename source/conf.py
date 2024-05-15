@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'HerculesDoc'
-copyright = '2023, Clifford Yen, University of California, Los Angeles'
+copyright = '2021-2024, Clifford Yen, University of California, Los Angeles'
 author = 'Clifford Yen'
 
 
