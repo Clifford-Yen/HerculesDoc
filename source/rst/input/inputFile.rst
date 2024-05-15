@@ -58,7 +58,9 @@ In sections below, we will explain each parameter with following format:
     * Format: The format for each row below the ``parameter_name``. This column only appears when the type of the parameter is "Multiple numbers".
     * Description:
 
-Note that Hercules would not create a new folder for you if you specify a path that does not exist. You need to create the folder(s) before running Hercules if you specify a file path other than just the file name (which will be created in the working directory).
+Hercules would create a new folder for you if the specified path does not exist and the folder is used for outputs. If you notice it does not work for some parameters for outputs, please report it on the `GitHub`_ page.
+
+.. _GitHub: https://github.com/Clifford-Yen/hercules
 
 When Hercules were first developed, it does not accept optional inputs. As a result, most of the parameters explained in sections below are mandatory, and the "Optional" column will only be included for a few of the optional parameters. Another label for the "Optional" column is "Conditional", which means the parameter will be required if you specify a certain value for another parameter. For example, if you specify ``output_displacement = yes``, you will need to specify ``output_displacement_file`` as well. In this case, the "Optional" column for ``output_displacement_file`` will be "Conditional".
 

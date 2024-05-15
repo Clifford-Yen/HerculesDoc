@@ -89,7 +89,7 @@
 </ul>
 </dd>
 </dl>
-<p>Note that Hercules would not create a new folder for you if you specify a path that does not exist. You need to create the folder(s) before running Hercules if you specify a file path other than just the file name (which will be created in the working directory).</p>
+<p>Hercules would create a new folder for you if the specified path does not exist and the folder is used for outputs. If you notice it does not work for some parameters for outputs, please report it on the <a class="reference external" href="https://github.com/Clifford-Yen/hercules">GitHub</a> page.</p>
 <p>When Hercules were first developed, it does not accept optional inputs. As a result, most of the parameters explained in sections below are mandatory, and the “Optional” column will only be included for a few of the optional parameters. Another label for the “Optional” column is “Conditional”, which means the parameter will be required if you specify a certain value for another parameter. For example, if you specify <code class="docutils literal notranslate"><span class="pre">output_displacement</span> <span class="pre">=</span> <span class="pre">yes</span></code>, you will need to specify <code class="docutils literal notranslate"><span class="pre">output_displacement_file</span></code> as well. In this case, the “Optional” column for <code class="docutils literal notranslate"><span class="pre">output_displacement_file</span></code> will be “Conditional”.</p>
 <p>In addition, since some parameters are not useful or not really necessary at this point, this documentation will only cover essential parameters. If you can not understand the usage of a parameter and can not find the explanation of it in this documentation, please feel free to leave it as is.</p>
 <div class="toctree-wrapper compound">
@@ -121,7 +121,11 @@
 <li class="toctree-l2"><a class="reference internal" href="planewaves.html#homogeneous-half-space">Homogeneous Half-space</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="damping.html">Damping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="damping.html">Damping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="damping.html#rayleigh-damping">Rayleigh Damping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damping.html#mass-damping">Mass Damping</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
 <li class="toctree-l1"><a class="reference internal" href="time.html">Time and Frequency</a></li>
 <li class="toctree-l1"><a class="reference internal" href="topography.html">Topography</a></li>
@@ -206,7 +210,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2023, Clifford Yen, University of California, Los Angeles.
+    &#169; Copyright 2021-2024, Clifford Yen, University of California, Los Angeles.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
   </body>
