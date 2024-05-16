@@ -62,6 +62,11 @@ Output settings
     * Type: Path
     * Description: The path to the file where Hercules should store the solver communication schedule summary. This is an optional parameter and the default value is ``stat_sched.txt``.
 
+``stat_topo_filename``
+    * Optional: Yes
+    * Type: Path
+    * Description: The path to the file where Hercules should store the statistics of the topography. This is an optional parameter and the default value is ``stat_topo.txt``.
+
 ``print_matrix_k``
     * Optional: Yes
     * Type: Yes or No
