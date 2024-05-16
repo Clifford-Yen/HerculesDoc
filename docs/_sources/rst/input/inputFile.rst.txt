@@ -43,7 +43,7 @@ For floating-point number, you can also use scientific notation. E.g., 1.0e-05.
 
 There is no any restriction on how many spaces should be placed between the parameter name, the equal sign, and the parameter value. If you want, you can indent the equal sign or the parameter value based on your preference.
 
-Similarly, there is no restriction on how many spaces should be placed before and among parameter values if the parameter name takes multiple values.
+Similarly, there is no restriction on how many spaces should be placed before and among parameter values if the parameter name takes multiple values. However, for parameters that take only one value, spaces are not allowed in the parameter value as they would be considered as delimiters.
 
 Also, you can place parameters in any order in an input file. Just make sure you include all necessary parameters in the input file you are going to use.
 
