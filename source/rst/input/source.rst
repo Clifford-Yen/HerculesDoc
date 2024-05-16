@@ -15,6 +15,7 @@ A source file stands for one event (earthquake). It contains multiple source poi
     * Description:
 
 ``source_directory_output``
+    * Optional: Yes
     * Type: Path
-    * Description:
+    * Description: The directory where Hercules can use to store source-related temporary files. This is an optional parameter and the default value is ``outputfiles/srctmp``.
 
