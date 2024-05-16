@@ -36,6 +36,6 @@ Topography
 .. TODO: The differences between sqd and full have to be explained.
 
 ``topography_directory``
-    * Optional: Conditional
+    * Optional: Yes
     * Type: Path
-    * Description: The path to the directory where the topography information is stored. This parameter is required if ``include_topography`` is set to ``yes``.
+    * Description: The path to the directory where the topography information is stored. This is an optional parameter and the default value is ``inputfiles/topography``.
