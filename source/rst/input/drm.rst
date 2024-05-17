@@ -40,7 +40,7 @@ If ``implement_drm = yes``, all the DRM parameters, except ``which_drm_part``, s
 
 .. TODO: it seems other parameters can be changed for different parts. For the 57 scenarios Doriam run (Wenyang said those are run by Doriam, not him), the domain actually shrink to a smaller region in part2 (the DRM box is always the same). Need to check and test this.
 
-Part 0, part 1, and part 2
+Part 0, Part 1, and Part 2
 ==========================
 
 Part 0
@@ -82,19 +82,19 @@ To execute part 2 analysis, setting the following line in the input file.
     which_drm_part = part2
 
 
-Other parameters
+Other Parameters
 ================
 
-Defining the element size
+Defining the Element Size
 -------------------------
 ``drm_edgesize``
     * Optional: Conditional
     * Type: Float
     * Description: The element edge size (in meter) you want to define for elements in the DRM box.
 
-Note that all the dimensions in Hercules have to be "octree dimension." For more information, please refer to :ref:`Octree dimension`
+Note that all the dimensions in Hercules have to be "octree dimension." For more information, please refer to :ref:`Octree Dimension`
 
-:math:`\Delta t` and simulation time for part 1
+:math:`\Delta t` and Simulation Time for Part 1
 -----------------------------------------------
 These parameters only used for part 2 analysis.
 
@@ -107,14 +107,14 @@ You should set the same values for these two parameters, ``part1_delta_t`` and `
 
 ``delta_t_used_in_part1_in_second`` and ``simulation_time_used_in_part1_in_second`` mentioned above should be replaced with the :math:`\Delta t` and the simulation end time that are used in part 1.
 
-Print rate
+Print Rate
 ----------
 ``drm_print_rate``
     * Optional: Conditional
     * Type: Integer
     * Description: The rate Hercules saves output data for DRM. For example, if you set :code:`drm_print_rate = 2`, it means Hercules would store output data every 2 time step (:math:`\Delta t`).
 
-DRM offsets
+DRM Offsets
 -----------
 DRM offsets are the distances (in meter) from the origin that is defined by parameters ``region_origin_latitude_deg`` and ``region_origin_longitude_deg``. You can define these parameters by setting the following parameters.
 
@@ -128,11 +128,12 @@ DRM offsets are the distances (in meter) from the origin that is defined by para
     * Type: Float
     * Description: The DRM offset (in meter) from the origin in y direction.
 
-Note that x direction is north-south direction (north is positive), while y direction is east-west direction (east is positive). And both offsets are still :ref:`Octree dimension`.
+Note that x direction is north-south direction (north is positive), while y direction is east-west direction (east is positive). And both offsets are still :ref:`Octree Dimension`.
 
 DRM offsets create a box bigger than the DRM boundary. The space between these two boundaries is used for the absorbing boundary conditions (ABCs).
 
-DRM boundary
+
+DRM Boundary
 ------------
 ``drm_boundary``
     * Optional: Conditional

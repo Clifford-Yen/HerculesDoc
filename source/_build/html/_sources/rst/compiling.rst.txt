@@ -54,7 +54,7 @@ For example, the following lines can be written into ``user.mk`` and used for In
 
 Note that the indentation used in a makefile should be tabs, not spaces. If you copy the code block above, make sure to replace all spaces with tabs.
 
-Compiling procedure
+Compiling Procedure
 ===================
 To compile Hercules, make sure to :code:`cd` into Hercules' folder and simply run the following lines in the terminal one by one.
 
@@ -65,7 +65,7 @@ To compile Hercules, make sure to :code:`cd` into Hercules' folder and simply ru
 
 Now, you are all set.
 
-Side notes for Apple Silicon Macs
+Side Notes for Apple Silicon Macs
 =================================
 If you are installing Hercules on ARM-based Macs, which are equipped with M1/M2/M3 SoC (the Apple Silicon), here are some notes for you to install Hercules successfully.
 

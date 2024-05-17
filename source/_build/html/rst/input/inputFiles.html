@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Input Files &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=514cf933" />
+    
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Material" href="material.html" />
+    <link rel="prev" title="Folder Structure" href="../folderStructure.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="material.html" title="Material"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../folderStructure.html" title="Folder Structure"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Input Files</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="input-files">
+<h1>Input Files<a class="headerlink" href="#input-files" title="Link to this heading">¶</a></h1>
+<section id="basic-rules">
+<h2>Basic Rules<a class="headerlink" href="#basic-rules" title="Link to this heading">¶</a></h2>
+<p>When you open a Hercules’ parameter input file, you will see lines like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">planes_input_file</span> <span class="o">=</span> <span class="n">inputfiles</span><span class="o">/</span><span class="n">parameters</span><span class="o">.</span><span class="ow">in</span>
+<span class="n">Istanbul_material_model</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">output_mesh</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">type_of_damping</span> <span class="o">=</span> <span class="n">bkt2</span>
+<span class="n">region_origin_latitude_deg</span>  <span class="o">=</span> <span class="mf">40.69146389</span>
+<span class="n">number_profile_layers</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">profile_layers</span> <span class="o">=</span>
+      <span class="mi">0</span>     <span class="mi">2880</span>   <span class="mi">1800</span>    <span class="mi">2200</span>     <span class="mi">100</span>     <span class="mi">100</span>
+   <span class="mi">1000</span>     <span class="mi">3600</span>   <span class="mi">2250</span>    <span class="mi">2300</span>     <span class="mi">100</span>     <span class="mi">100</span>
+   <span class="mi">2000</span>     <span class="mi">4000</span>   <span class="mi">2500</span>    <span class="mi">2350</span>     <span class="mi">100</span>     <span class="mi">100</span>
+   <span class="mi">3000</span>     <span class="mi">4320</span>   <span class="mi">2700</span>    <span class="mi">2400</span>     <span class="mi">100</span>     <span class="mi">100</span>
+   <span class="mi">4000</span>     <span class="mi">4640</span>   <span class="mi">2900</span>    <span class="mi">2450</span>     <span class="mi">100</span>     <span class="mi">100</span>
+   <span class="mi">5000</span>     <span class="mi">5770</span>   <span class="mi">3490</span>    <span class="mi">2600</span>     <span class="mi">100</span>     <span class="mi">100</span>
+  <span class="mi">10000</span>     <span class="mi">6390</span>   <span class="mi">3500</span>    <span class="mi">2700</span>     <span class="mi">100</span>     <span class="mi">100</span>
+  <span class="mi">20000</span>     <span class="mi">6790</span>   <span class="mi">3920</span>    <span class="mi">2800</span>     <span class="mi">100</span>     <span class="mi">100</span>
+</pre></div>
+</div>
+<p>As you can see, the basic rule for writing an input file is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameter_name</span> <span class="o">=</span> <span class="n">parameter_value</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parameter_name</span> <span class="o">=</span>
+<span class="n">parameter_value1</span> <span class="n">parameter_value2</span> <span class="n">parameter_value3</span>
+</pre></div>
+</div>
+<p>A parameter value can be a number (either an integer or floating-point number), a path (of a file or a folder), a string, a boolean value (0 or 1), and a yes/no, etc. A parameter name can also takes multiple values, e.g. <code class="docutils literal notranslate"><span class="pre">profile_layers</span></code>.</p>
+<p>For floating-point number, you can also use scientific notation. E.g., 1.0e-05.</p>
+<p>There is no any restriction on how many spaces should be placed between the parameter name, the equal sign, and the parameter value. If you want, you can indent the equal sign or the parameter value based on your preference.</p>
+<p>Similarly, there is no restriction on how many spaces should be placed before and among parameter values if the parameter name takes multiple values. However, for parameters that take only one value, spaces are not allowed in the parameter value as they would be considered as delimiters.</p>
+<p>Also, you can place parameters in any order in an input file. Just make sure you include all necessary parameters in the input file you are going to use.</p>
+</section>
+<section id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">¶</a></h2>
+<p>In sections below, we will explain each parameter with following format:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">parameter_name</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes/Conditional/No</p></li>
+<li><p>Type: Integer/Float/String/Path/Boolean/Yes or No/Multiple numbers</p></li>
+<li><p>Format: The format for each row below the <code class="docutils literal notranslate"><span class="pre">parameter_name</span></code>. This column only appears when the type of the parameter is “Multiple numbers”.</p></li>
+<li><p>Description:</p></li>
+</ul>
+</dd>
+</dl>
+<p>Hercules would create a new folder for you if the specified path does not exist and the folder is used for outputs. If you notice it does not work for some parameters for outputs, please report it on the <a class="reference external" href="https://github.com/Clifford-Yen/hercules">GitHub</a> page.</p>
+<p>When Hercules were first developed, it does not accept optional inputs. As a result, most of the parameters explained in sections below are mandatory, and the “Optional” column will only be included for a few of the optional parameters. Another label for the “Optional” column is “Conditional”, which means the parameter will be required if you specify a certain value for another parameter. For example, if you specify <code class="docutils literal notranslate"><span class="pre">output_displacement</span> <span class="pre">=</span> <span class="pre">yes</span></code>, you will need to specify <code class="docutils literal notranslate"><span class="pre">output_displacement_file</span></code> as well. In this case, the “Optional” column for <code class="docutils literal notranslate"><span class="pre">output_displacement_file</span></code> will be “Conditional”.</p>
+<p>In addition, since some parameters are not useful or not really necessary at this point, this documentation will only cover essential parameters. If you can not understand the usage of a parameter and can not find the explanation of it in this documentation, please feel free to leave it as is.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">You can find parameters used in input files in the following sections:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="material.html">Material</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="material.html#one-dimensional-layered-profile">One-Dimensional Layered Profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="material.html#istanbul-velocity-model">Istanbul Velocity Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="material.html#basin-velocity-model">Basin Velocity Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="material.html#d-velocity-model">3D Velocity Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="material.html#misc">Misc</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="dimension.html">Dimension</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dimension.html#defining-the-domain">Defining the Domain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimension.html#domain-surface-corners">Domain Surface Corners</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dimension.html#drm-dimensions">DRM Dimensions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">Output Settings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="output.html#output-mesh-coordinates-for-a-subdomain">Output Mesh Coordinates for A Subdomain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#output-for-stations">Output for Stations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#output-for-planes">Output for Planes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#checkpoint">Checkpoint</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="planewaves.html">Plane Waves</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="planewaves.html#incident-plane-waves">Incident Plane Waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="planewaves.html#homogeneous-half-space">Homogeneous Half-space</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="damping.html">Damping</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="damping.html#rayleigh-damping">Rayleigh Damping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="damping.html#mass-damping">Mass Damping</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="source.html">Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="time.html">Time and Frequency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topography.html">Topography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="topography.html#topography-in">topography.in</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="building.html">Building</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analysis.html">Analysis</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="analysis.html#nonlinear-analysis">Nonlinear Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="drm.html">Domain Reduction Method (DRM) Implementation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="drm.html#part-0-part-1-and-part-2">Part 0, Part 1, and Part 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="drm.html#other-parameters">Other Parameters</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Input Files</a><ul>
+<li><a class="reference internal" href="#basic-rules">Basic Rules</a></li>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../folderStructure.html"
+                          title="previous chapter">Folder Structure</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="material.html"
+                          title="next chapter">Material</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/rst/input/inputFiles.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="material.html" title="Material"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../folderStructure.html" title="Folder Structure"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Input Files</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2021-2024, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

@@ -8,7 +8,7 @@ Material
 ..     * Type:
 ..     * Description:
 
-One-dimensional layered profile
+One-Dimensional Layered Profile
 ===============================
 
 ``cvmdb_input_file``
@@ -33,7 +33,7 @@ One-dimensional layered profile
     * Description: The crustal structure information defined for a layered half-space. The data should be written as many lines as parameter ``number_profile_layers`` defines. ``z_top`` is the depth (in meter), ``Vp`` and ``Vs`` are velocities for compressional and shear waves (in meter/second), ``rho`` is the density (in kg/meter :superscript:`3`), and ``Qp`` and ``Qs`` are Q factor damping.
 
 
-Istanbul velocity model
+Istanbul Velocity Model
 =======================
 
 ``Istanbul_velocity_model``
@@ -42,7 +42,7 @@ Istanbul velocity model
     * Description: Whether to use the velocity model developed for the Istanbul or not. If this parameter is set to ``yes``, Hercules will replace the crustal structure information in the region that is covered by the Istanbul velocity model. For the rest of the region, the material information is still provided by the database or the profile that is assigned with the parameter ``cvmdb_input_file``. This is an optional parameter and the default value is ``no``. 
 
 
-Basin velocity model
+Basin Velocity Model
 ====================
 
 ``basin_velocity_model``
@@ -54,7 +54,7 @@ Basin velocity model
 ``basin_input_file``
     * Optional: Conditional
     * Type: Path
-    * Description: The path to the basin input file. This parameter is required when ``basin_velocity_model`` is set to ``yes``. The basin input file is a text file that describes the boundary of the basin. The format of the basin input file is described in the section :ref:`Basin input file`.
+    * Description: The path to the basin input file. This parameter is required when ``basin_velocity_model`` is set to ``yes``. The basin input file is a text file that describes the boundary of the basin. The format of the basin input file is described in the section :ref:`Basin Input File`.
 
 
 ``basin_origin_latitude_deg``
@@ -69,7 +69,7 @@ Basin velocity model
     * Description: The longitude of the basin origin (in degree). Note that the origin is the left bottom corner of the domain of the basin. This parameter is required when ``basin_velocity_model`` is set to ``yes``.
 
 
-Basin input file
+Basin Input File
 ----------------
 
 The basin input file should be a text file (the extension is not important) that describes the boundary of the basin. The format of the basin input file is described below.
@@ -125,9 +125,9 @@ Unfortunately, we don't have a universal way to read a text file to define the e
 Note that you should re-compile Hercules after modifying ``basin.c``.
 
 
-3D velocity model
+3D Velocity Model
 =========================
-Contrast to the Istanbul velocity model, the 3D velocity model is a general velocity model that covers any interested regions. Users need to provide the velocity model in the designated format. The format of the 3D velocity model is described in the section :ref:`3D velocity model input files`.
+Contrast to the Istanbul Velocity Model, the 3D Velocity Model is a general velocity model that covers any interested regions. Users need to provide the velocity model in the designated format. The format of the 3D Velocity Model is described in the section :ref:`3D Velocity Model Input Files`.
 
 ``3D_velocity_model``
     * Optional: Yes
@@ -145,7 +145,7 @@ Contrast to the Istanbul velocity model, the 3D velocity model is a general velo
     * Description: The longitude of the origin of the 3D velocity model (in degree). Note that the origin is the left bottom corner of the domain of the 3D velocity model. This parameter is required when ``3D_velocity_model`` is set to ``yes``.
 
 
-3D velocity model input files
+3D Velocity Model Input Files
 -----------------------------
 To make it easier to understand the format of the 3D velocity model input files, here is an example before we convert it to the format that Hercules can read:
 

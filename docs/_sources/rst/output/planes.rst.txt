@@ -1,8 +1,8 @@
 =============
-Plane outputs
+Plane Outputs
 =============
 
-Once the parameter ``number_output_planes`` is set to a positive integer, Hercules will generate displacement history at grid points defined by ``output_planes``. For the definition of the related parameters, see the section :ref:`Output for planes`.
+Once the parameter ``number_output_planes`` is set to a positive integer, Hercules will generate displacement history at grid points defined by ``output_planes``. For the definition of the related parameters, see the section :ref:`Output for Planes`.
 
 In the folder defined by ``output_planes_directory``, Hercules will create files with the name ``planedisplacements.X`` where ``X`` is the number of the plane. ``planedisplacements.X`` is a binary file.
 

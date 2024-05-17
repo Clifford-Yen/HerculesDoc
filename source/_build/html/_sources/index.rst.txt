@@ -13,8 +13,9 @@ Welcome to Hercules' documentation!
    rst/overview
    rst/compiling
    rst/running
-   rst/input/inputFile
-   rst/output/outputFile
+   rst/folderStructure
+   rst/input/inputFiles
+   rst/output/outputFiles
    rst/references
    rst/miscellaneous
 
