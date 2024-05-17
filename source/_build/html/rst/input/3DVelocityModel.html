@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3D Velocity Model Input Files &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/classic.css?v=514cf933" />
+    
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Topography Input File" href="topographyInputFile.html" />
+    <link rel="prev" title="Source Input File" href="source/sourceInputFile.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="topographyInputFile.html" title="Topography Input File"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="source/sourceInputFile.html" title="Source Input File"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" accesskey="U">Input Files</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">3D Velocity Model Input Files</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="d-velocity-model-input-files">
+<h1>3D Velocity Model Input Files<a class="headerlink" href="#d-velocity-model-input-files" title="Link to this heading">¶</a></h1>
+<p>To make it easier to understand the format of the 3D velocity model input files, here is an example before we convert it to the format that Hercules can read:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">1709.769</span><span class="p">,</span><span class="mf">4188.062</span><span class="p">,</span><span class="mf">1.85</span>
+<span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mf">1894.495</span><span class="p">,</span><span class="mf">4640.546</span><span class="p">,</span><span class="mf">1.898</span>
+<span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">3000</span><span class="p">,</span><span class="mf">2430.156</span><span class="p">,</span><span class="mf">5952.642</span><span class="p">,</span><span class="mf">2.02</span>
+<span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">17400</span><span class="p">,</span><span class="mf">3400.0</span><span class="p">,</span><span class="mf">8328.265</span><span class="p">,</span><span class="mf">2.197</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">1743.876</span><span class="p">,</span><span class="mf">4271.606</span><span class="p">,</span><span class="mf">1.859</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mf">1920.505</span><span class="p">,</span><span class="mf">4704.257</span><span class="p">,</span><span class="mf">1.905</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mf">2625.958</span><span class="p">,</span><span class="mf">6432.257</span><span class="p">,</span><span class="mf">2.06</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">17400</span><span class="p">,</span><span class="mf">3400.0</span><span class="p">,</span><span class="mf">8328.265</span><span class="p">,</span><span class="mf">2.197</span>
+<span class="mf">0.0</span><span class="p">,</span><span class="mf">500.0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">1577.978</span><span class="p">,</span><span class="mf">3865.241</span><span class="p">,</span><span class="mf">1.814</span>
+<span class="mf">0.0</span><span class="p">,</span><span class="mf">500.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mf">1840.914</span><span class="p">,</span><span class="mf">4509.3</span><span class="p">,</span><span class="mf">1.885</span>
+<span class="mf">0.0</span><span class="p">,</span><span class="mf">500.0</span><span class="p">,</span><span class="mi">6000</span><span class="p">,</span><span class="mf">2714.21</span><span class="p">,</span><span class="mf">6648.43</span><span class="p">,</span><span class="mf">2.077</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">500.0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">1609.918</span><span class="p">,</span><span class="mf">3943.478</span><span class="p">,</span><span class="mf">1.823</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">500.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mf">1861.275</span><span class="p">,</span><span class="mf">4559.174</span><span class="p">,</span><span class="mf">1.89</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">500.0</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mf">2712.018</span><span class="p">,</span><span class="mf">6643.06</span><span class="p">,</span><span class="mf">2.076</span>
+<span class="mf">500.0</span><span class="p">,</span><span class="mf">500.0</span><span class="p">,</span><span class="mi">17400</span><span class="p">,</span><span class="mf">3400.0</span><span class="p">,</span><span class="mf">8328.265</span><span class="p">,</span><span class="mf">2.197</span>
+</pre></div>
+</div>
+<p>The meanings of each column are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>x (in meter, along the north-south direction with north being positive)</p></li>
+<li><p>y (in meter, along the east-west direction with east being positive)</p></li>
+<li><p>z (in meter, positive downward)</p></li>
+<li><p>Vs (in meter/second)</p></li>
+<li><p>Vp (in meter/second)</p></li>
+<li><p>density (in kg/meter <sup>3</sup>)</p></li>
+</ul>
+</div></blockquote>
+<p>The order of the columns is not important since this file has to be converted into multiple files which will be explained later. Note that the increments of x and y can be different, but they have to be consistent (i.e. the increment of x has to be the same for all lines, so does the increment of y). The increment of z can also be different, and it can varies from point to point. The number layers can be different for different points, too.</p>
+<p>Some rules have to be followed when writing the 3D velocity model input file:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The x coordinates should be written in ascending order</p></li>
+<li><p>The y coordinates should be written in ascending order</p></li>
+<li><p>Finish writing all points with the same y coordinate before moving to the next y coordinate.</p></li>
+<li><p>For each x-y coordinate, the z coordinates should be written in ascending order and should be unique.</p></li>
+</ul>
+</div></blockquote>
+<p>The file above should be converted into multiple files. The required files include: <code class="docutils literal notranslate"><span class="pre">x.in</span></code>, <code class="docutils literal notranslate"><span class="pre">y.in</span></code>, <code class="docutils literal notranslate"><span class="pre">z.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vs.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vp.in</span></code>, <code class="docutils literal notranslate"><span class="pre">rho.in</span></code>, and <code class="docutils literal notranslate"><span class="pre">index.in</span></code>.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">x.in</span></code> contains the x coordinates of all points. The following is the content of <code class="docutils literal notranslate"><span class="pre">x.in</span></code> for the example above:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
+<span class="mf">0.0</span>
+<span class="mf">500.0</span>
+</pre></div>
+</div>
+<p>The first line of the file is the number of points along the x direction (same as the number of following lines in the file). The following lines are the x coordinates of all points. Note that the x coordinates should be written in ascending order and should be unique. The same rule applies to <code class="docutils literal notranslate"><span class="pre">y.in</span></code>. In this case, the content of <code class="docutils literal notranslate"><span class="pre">y.in</span></code> would be the same as <code class="docutils literal notranslate"><span class="pre">x.in</span></code>. But if the increment of y or/and the number of points of y are different from x, the content of <code class="docutils literal notranslate"><span class="pre">y.in</span></code> will be different.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">z.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vs.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vp.in</span></code>, and <code class="docutils literal notranslate"><span class="pre">rho.in</span></code>, the content in each of these files is simply the corresponding column in the original file. For example, the content of <code class="docutils literal notranslate"><span class="pre">z.in</span></code> for the example above is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">15</span>
+<span class="mi">0</span>
+<span class="mi">1000</span>
+<span class="mi">3000</span>
+<span class="mi">17400</span>
+<span class="mi">0</span>
+<span class="mi">1000</span>
+<span class="mi">5000</span>
+<span class="mi">17400</span>
+<span class="mi">0</span>
+<span class="mi">1000</span>
+<span class="mi">6000</span>
+<span class="mi">0</span>
+<span class="mi">1000</span>
+<span class="mi">5000</span>
+<span class="mi">17400</span>
+</pre></div>
+</div>
+<p>Again, the first line is the total number of the data (same as the number of following lines in the file). The following lines are the z coordinates of all points. The same rule applies to <code class="docutils literal notranslate"><span class="pre">vs.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vp.in</span></code>, and <code class="docutils literal notranslate"><span class="pre">rho.in</span></code>.</p>
+<p>The file <code class="docutils literal notranslate"><span class="pre">index.in</span></code> is a special file that includes the starting indices for all points. For example, the content of <code class="docutils literal notranslate"><span class="pre">index.in</span></code> for the example above is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span>
+<span class="mi">0</span>
+<span class="mi">4</span>
+<span class="mi">8</span>
+<span class="mi">11</span>
+</pre></div>
+</div>
+<p>The first line is the total number of the x-y coordinates (same as the number of the following lines. It’s also the same as the multiplication of the number of x points and the number of y points). The following lines are the starting indices for all points.</p>
+<p>For example, the first point (0.0, 0.0) has the starting index of 0 and the second point (500.0, 0.0) has the starting index of 4, which means the first (index 0) to the fourth (index 3) line in <code class="docutils literal notranslate"><span class="pre">z.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vs.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vp.in</span></code>, and <code class="docutils literal notranslate"><span class="pre">rho.in</span></code> are the data for the first point. Similarly, the second point (500.0, 0.0) has the starting index of 4 and the third point (0.0, 500.0) has the starting index of 8, which means the fifth (index 4) to the eighth (index 7) line in <code class="docutils literal notranslate"><span class="pre">z.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vs.in</span></code>, <code class="docutils literal notranslate"><span class="pre">vp.in</span></code>, and <code class="docutils literal notranslate"><span class="pre">rho.in</span></code> are the data for the second point. So on and so forth.</p>
+<p>The conversion can be done easily with the help of Pandas, a Python library. For your convenience, here is a working Python script that can convert the original file to the required files:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="k">def</span> <span class="nf">convertToHerculesVelocityModel</span><span class="p">(</span><span class="n">fileName</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;z&#39;</span><span class="p">,</span> <span class="s1">&#39;vs&#39;</span><span class="p">,</span> <span class="s1">&#39;vp&#39;</span><span class="p">,</span> <span class="s1">&#39;rho&#39;</span><span class="p">]:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="s1">&#39;.in&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">])])</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">])</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+    <span class="n">indexSeries</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">to_series</span><span class="p">()</span>
+    <span class="n">indexSeries</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;index.in&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">indexSeries</span><span class="p">)])</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">]:</span>
+        <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">col</span><span class="o">+</span><span class="s1">&#39;.in&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">())])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">convertToHerculesVelocityModel</span><span class="p">(</span><span class="s1">&#39;herculesVelocityModel.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>All the converted files should be placed in <code class="docutils literal notranslate"><span class="pre">./inputfiles/materialfiles</span></code> in order to let Hercules find them. The original file is not necessary, but it is recommended to keep it to easily understand the meaning of each converted file.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="source/sourceInputFile.html"
+                          title="previous chapter">Source Input File</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="topographyInputFile.html"
+                          title="next chapter">Topography Input File</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../_sources/rst/input/3DVelocityModel.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="topographyInputFile.html" title="Topography Input File"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="source/sourceInputFile.html" title="Source Input File"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" >Input Files</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">3D Velocity Model Input Files</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2021-2024, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
