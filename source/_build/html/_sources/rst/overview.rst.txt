@@ -14,7 +14,7 @@ As the maintainer of this project, I, Clifford Yen, am not the owner nor the ori
 
 .. _GitHub: https://github.com/Clifford-Yen/hercules
 
-Octree dimension
+Octree Dimension
 ================
 Since Hercules is an octree-based finite element simulator. All the dimensions in Hercules have to be "octree dimension." That means all dimensions are related to the largest dimension of the domain. Specifically, dimensions have to be 
 

@@ -1,8 +1,8 @@
 ===============
-Station outputs
+Station Outputs
 ===============
 
-When ``number_output_stations`` is set to a positive integer, Hercules will generate responses at the stations (observation points) specified by the parameter ``output_stations``. For the definition of the related parameters, see the section :ref:`Output for stations`.
+When ``number_output_stations`` is set to a positive integer, Hercules will generate responses at the stations (observation points) specified by the parameter ``output_stations``. For the definition of the related parameters, see the section :ref:`Output for Stations`.
 
 In the folder defined by the parameter ``output_stations_directory``, Hercules will create files with the name ``station.X`` where ``X`` is the station number. For example, if ``number_output_stations`` is set to 3 and ``output_stations`` are properly defined, Hercules will create files ``station.0``, ``station.1`` and ``station.2``. Where ``station.0`` contains the responses at the first station defined in ``output_stations`` (the first line after ``output_stations``), ``station.1`` contains the responses at the second station defined in ``output_stations`` and so on. All the ``station.X`` files are ASCII files. Below is an example of a ``station.X`` file with both ``print_station_velocities`` and ``print_station_accelerations`` set to ``yes``:
 

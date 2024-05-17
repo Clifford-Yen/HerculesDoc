@@ -26,8 +26,6 @@ Topography
     * Type: Float
     * Description: The base z coordinate of the topography. It should be a floating number bigger than ``0`` that satisfy the condition :math:`z_b = \frac{\text{(The largest dimension of the domain)}}{2^n} > e_h`, where :math:`z_b` is ``topographybase_zcoord`` and :math:`e_h` is the highest elevation in the domain. This parameter is required if ``include_topography`` is set to ``yes``. 
 
-.. TODO ``topographybase_zcoord`` should be able to be calculated automatically?
-
 ``type_of_etree``
     * Optional: Conditional
     * Type: String
@@ -39,3 +37,10 @@ Topography
     * Optional: Yes
     * Type: Path
     * Description: The path to the directory where the topography information is stored. This is an optional parameter and the default value is ``inputfiles/topography``.
+
+
+topography.in
+=============
+The only file needed in ``topography_directory`` is ``topography.in``. This file contains the elevation across the whole simulation domain. The first line is the spacing between the points in both x and y directions. For the rest of lines, each line contains the elevation of the corresponding point in the domain. 
+
+The first point is the bottom left corner of the domain and the points are ordered from south to north (x direction in Hercules) and from west to east (y direction in Hercules). In other words, you should finish writing elevations from all points with the same y coordinate before moving to the next y coordinate. The elevation should be in meters.

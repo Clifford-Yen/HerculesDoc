@@ -32,7 +32,7 @@
           <a href="time.html" title="Time and Frequency"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" accesskey="U">Input Files</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Topography</a></li> 
       </ul>
     </div>  
@@ -73,8 +73,6 @@
 <li><p>Description: The base z coordinate of the topography. It should be a floating number bigger than <code class="docutils literal notranslate"><span class="pre">0</span></code> that satisfy the condition <span class="math notranslate nohighlight">\(z_b = \frac{\text{(The largest dimension of the domain)}}{2^n} &gt; e_h\)</span>, where <span class="math notranslate nohighlight">\(z_b\)</span> is <code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code> and <span class="math notranslate nohighlight">\(e_h\)</span> is the highest elevation in the domain. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
 </ul>
 </dd>
-</dl>
-<dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">type_of_etree</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
 <li><p>Type: String</p></li>
@@ -90,6 +88,11 @@
 </ul>
 </dd>
 </dl>
+<section id="topography-in">
+<h2>topography.in<a class="headerlink" href="#topography-in" title="Link to this heading">¶</a></h2>
+<p>The only file needed in <code class="docutils literal notranslate"><span class="pre">topography_directory</span></code> is <code class="docutils literal notranslate"><span class="pre">topography.in</span></code>. This file contains the elevation across the whole simulation domain. The first line is the spacing between the points in both x and y directions. For the rest of lines, each line contains the elevation of the corresponding point in the domain.</p>
+<p>The first point is the bottom left corner of the domain and the points are ordered from south to north (x direction in Hercules) and from west to east (y direction in Hercules). In other words, you should finish writing elevations from all points with the same y coordinate before moving to the next y coordinate. The elevation should be in meters.</p>
+</section>
 </section>
 
 
@@ -99,6 +102,16 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Topography</a><ul>
+<li><a class="reference internal" href="#topography-in">topography.in</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
   <div>
     <h4>Previous topic</h4>
     <p class="topless"><a href="time.html"
@@ -143,7 +156,7 @@
           <a href="time.html" title="Time and Frequency"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" >Input Files</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Topography</a></li> 
       </ul>
     </div>

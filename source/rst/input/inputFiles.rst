@@ -1,8 +1,8 @@
-==========
-Input file
-==========
+===========
+Input Files
+===========
 
-Basic rules
+Basic Rules
 ===========
 When you open a Hercules' parameter input file, you will see lines like
 

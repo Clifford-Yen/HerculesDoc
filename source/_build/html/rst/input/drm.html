@@ -16,7 +16,7 @@
     
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Output file" href="../output/outputFile.html" />
+    <link rel="next" title="Output Files" href="../output/outputFiles.html" />
     <link rel="prev" title="Analysis" href="analysis.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -26,13 +26,13 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../output/outputFile.html" title="Output file"
+          <a href="../output/outputFiles.html" title="Output Files"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="analysis.html" title="Analysis"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" accesskey="U">Input Files</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Domain Reduction Method (DRM) Implementation</a></li> 
       </ul>
     </div>  
@@ -73,7 +73,7 @@
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">implement_drm</span> <span class="pre">=</span> <span class="pre">yes</span></code>, all the DRM parameters, except <code class="docutils literal notranslate"><span class="pre">which_drm_part</span></code>, should be the same for all three parts.</p>
 <section id="part-0-part-1-and-part-2">
-<h2>Part 0, part 1, and part 2<a class="headerlink" href="#part-0-part-1-and-part-2" title="Link to this heading">¶</a></h2>
+<h2>Part 0, Part 1, and Part 2<a class="headerlink" href="#part-0-part-1-and-part-2" title="Link to this heading">¶</a></h2>
 <section id="part-0">
 <h3>Part 0<a class="headerlink" href="#part-0" title="Link to this heading">¶</a></h3>
 <p>In part 0, the information of the coordinates of the DRM box would be generated.</p>
@@ -105,9 +105,9 @@
 </section>
 </section>
 <section id="other-parameters">
-<h2>Other parameters<a class="headerlink" href="#other-parameters" title="Link to this heading">¶</a></h2>
+<h2>Other Parameters<a class="headerlink" href="#other-parameters" title="Link to this heading">¶</a></h2>
 <section id="defining-the-element-size">
-<h3>Defining the element size<a class="headerlink" href="#defining-the-element-size" title="Link to this heading">¶</a></h3>
+<h3>Defining the Element Size<a class="headerlink" href="#defining-the-element-size" title="Link to this heading">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_edgesize</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
@@ -116,10 +116,10 @@
 </ul>
 </dd>
 </dl>
-<p>Note that all the dimensions in Hercules have to be “octree dimension.” For more information, please refer to <a class="reference internal" href="../overview.html#octree-dimension"><span class="std std-ref">Octree dimension</span></a></p>
+<p>Note that all the dimensions in Hercules have to be “octree dimension.” For more information, please refer to <a class="reference internal" href="../overview.html#octree-dimension"><span class="std std-ref">Octree Dimension</span></a></p>
 </section>
 <section id="delta-t-and-simulation-time-for-part-1">
-<h3><span class="math notranslate nohighlight">\(\Delta t\)</span> and simulation time for part 1<a class="headerlink" href="#delta-t-and-simulation-time-for-part-1" title="Link to this heading">¶</a></h3>
+<h3><span class="math notranslate nohighlight">\(\Delta t\)</span> and Simulation Time for Part 1<a class="headerlink" href="#delta-t-and-simulation-time-for-part-1" title="Link to this heading">¶</a></h3>
 <p>These parameters only used for part 2 analysis.</p>
 <p>You should set the same values for these two parameters, <code class="docutils literal notranslate"><span class="pre">part1_delta_t</span></code> and <code class="docutils literal notranslate"><span class="pre">part1_simulation_time</span></code>, to <code class="docutils literal notranslate"><span class="pre">simulation_delta_time_sec</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_end_time_sec</span></code>, respectively. You can do so by setting the following lines in the input file.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">part1_delta_t</span> <span class="o">=</span> <span class="n">delta_t_used_in_part1_in_second</span>
@@ -129,7 +129,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">delta_t_used_in_part1_in_second</span></code> and <code class="docutils literal notranslate"><span class="pre">simulation_time_used_in_part1_in_second</span></code> mentioned above should be replaced with the <span class="math notranslate nohighlight">\(\Delta t\)</span> and the simulation end time that are used in part 1.</p>
 </section>
 <section id="print-rate">
-<h3>Print rate<a class="headerlink" href="#print-rate" title="Link to this heading">¶</a></h3>
+<h3>Print Rate<a class="headerlink" href="#print-rate" title="Link to this heading">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_print_rate</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
@@ -140,7 +140,7 @@
 </dl>
 </section>
 <section id="drm-offsets">
-<h3>DRM offsets<a class="headerlink" href="#drm-offsets" title="Link to this heading">¶</a></h3>
+<h3>DRM Offsets<a class="headerlink" href="#drm-offsets" title="Link to this heading">¶</a></h3>
 <p>DRM offsets are the distances (in meter) from the origin that is defined by parameters <code class="docutils literal notranslate"><span class="pre">region_origin_latitude_deg</span></code> and <code class="docutils literal notranslate"><span class="pre">region_origin_longitude_deg</span></code>. You can define these parameters by setting the following parameters.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_offset_x</span></code></dt><dd><ul class="simple">
@@ -156,11 +156,11 @@
 </ul>
 </dd>
 </dl>
-<p>Note that x direction is north-south direction (north is positive), while y direction is east-west direction (east is positive). And both offsets are still <a class="reference internal" href="../overview.html#octree-dimension"><span class="std std-ref">Octree dimension</span></a>.</p>
+<p>Note that x direction is north-south direction (north is positive), while y direction is east-west direction (east is positive). And both offsets are still <a class="reference internal" href="../overview.html#octree-dimension"><span class="std std-ref">Octree Dimension</span></a>.</p>
 <p>DRM offsets create a box bigger than the DRM boundary. The space between these two boundaries is used for the absorbing boundary conditions (ABCs).</p>
 </section>
 <section id="drm-boundary">
-<h3>DRM boundary<a class="headerlink" href="#drm-boundary" title="Link to this heading">¶</a></h3>
+<h3>DRM Boundary<a class="headerlink" href="#drm-boundary" title="Link to this heading">¶</a></h3>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">drm_boundary</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
@@ -185,18 +185,18 @@
     <h3><a href="../../index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Domain Reduction Method (DRM) Implementation</a><ul>
-<li><a class="reference internal" href="#part-0-part-1-and-part-2">Part 0, part 1, and part 2</a><ul>
+<li><a class="reference internal" href="#part-0-part-1-and-part-2">Part 0, Part 1, and Part 2</a><ul>
 <li><a class="reference internal" href="#part-0">Part 0</a></li>
 <li><a class="reference internal" href="#part-1">Part 1</a></li>
 <li><a class="reference internal" href="#part-2">Part 2</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#other-parameters">Other parameters</a><ul>
-<li><a class="reference internal" href="#defining-the-element-size">Defining the element size</a></li>
-<li><a class="reference internal" href="#delta-t-and-simulation-time-for-part-1"><span class="math notranslate nohighlight">\(\Delta t\)</span> and simulation time for part 1</a></li>
-<li><a class="reference internal" href="#print-rate">Print rate</a></li>
-<li><a class="reference internal" href="#drm-offsets">DRM offsets</a></li>
-<li><a class="reference internal" href="#drm-boundary">DRM boundary</a></li>
+<li><a class="reference internal" href="#other-parameters">Other Parameters</a><ul>
+<li><a class="reference internal" href="#defining-the-element-size">Defining the Element Size</a></li>
+<li><a class="reference internal" href="#delta-t-and-simulation-time-for-part-1"><span class="math notranslate nohighlight">\(\Delta t\)</span> and Simulation Time for Part 1</a></li>
+<li><a class="reference internal" href="#print-rate">Print Rate</a></li>
+<li><a class="reference internal" href="#drm-offsets">DRM Offsets</a></li>
+<li><a class="reference internal" href="#drm-boundary">DRM Boundary</a></li>
 </ul>
 </li>
 </ul>
@@ -211,8 +211,8 @@
   </div>
   <div>
     <h4>Next topic</h4>
-    <p class="topless"><a href="../output/outputFile.html"
-                          title="next chapter">Output file</a></p>
+    <p class="topless"><a href="../output/outputFiles.html"
+                          title="next chapter">Output Files</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
@@ -242,13 +242,13 @@
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../output/outputFile.html" title="Output file"
+          <a href="../output/outputFiles.html" title="Output Files"
              >next</a> |</li>
         <li class="right" >
           <a href="analysis.html" title="Analysis"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" >Input Files</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Domain Reduction Method (DRM) Implementation</a></li> 
       </ul>
     </div>

@@ -18,7 +18,7 @@ Nonlinear Analysis
 
 (This section is under construction.)
 
-The current version of Hercules can only perform nonlinear analysis with :ref:`Istanbul velocity model` enabled.
+The current version of Hercules can only perform nonlinear analysis with :ref:`Istanbul Velocity Model` enabled.
 
 ``include_nonlinear_analysis``
     * Optional: Yes

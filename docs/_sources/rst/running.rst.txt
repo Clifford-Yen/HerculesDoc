@@ -2,7 +2,7 @@
 Running
 =======
 
-Basic usage
+Basic Usage
 ===========
 To run Hercules, the basic usage is
 

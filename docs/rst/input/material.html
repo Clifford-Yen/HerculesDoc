@@ -17,7 +17,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Dimension" href="dimension.html" />
-    <link rel="prev" title="Input file" href="inputFile.html" /> 
+    <link rel="prev" title="Input Files" href="inputFiles.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -29,10 +29,10 @@
           <a href="dimension.html" title="Dimension"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="inputFile.html" title="Input file"
+          <a href="inputFiles.html" title="Input Files"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="inputFile.html" accesskey="U">Input file</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" accesskey="U">Input Files</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Material</a></li> 
       </ul>
     </div>  
@@ -45,7 +45,7 @@
   <section id="material">
 <h1>Material<a class="headerlink" href="#material" title="Link to this heading">¶</a></h1>
 <section id="one-dimensional-layered-profile">
-<h2>One-dimensional layered profile<a class="headerlink" href="#one-dimensional-layered-profile" title="Link to this heading">¶</a></h2>
+<h2>One-Dimensional Layered Profile<a class="headerlink" href="#one-dimensional-layered-profile" title="Link to this heading">¶</a></h2>
 <dl>
 <dt><code class="docutils literal notranslate"><span class="pre">cvmdb_input_file</span></code></dt><dd><ul class="simple">
 <li><p>Type: Path/profile</p></li>
@@ -72,7 +72,7 @@
 </dl>
 </section>
 <section id="istanbul-velocity-model">
-<h2>Istanbul velocity model<a class="headerlink" href="#istanbul-velocity-model" title="Link to this heading">¶</a></h2>
+<h2>Istanbul Velocity Model<a class="headerlink" href="#istanbul-velocity-model" title="Link to this heading">¶</a></h2>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">Istanbul_velocity_model</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Yes</p></li>
@@ -83,7 +83,7 @@
 </dl>
 </section>
 <section id="basin-velocity-model">
-<h2>Basin velocity model<a class="headerlink" href="#basin-velocity-model" title="Link to this heading">¶</a></h2>
+<h2>Basin Velocity Model<a class="headerlink" href="#basin-velocity-model" title="Link to this heading">¶</a></h2>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">basin_velocity_model</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Yes</p></li>
@@ -94,7 +94,7 @@
 <dt><code class="docutils literal notranslate"><span class="pre">basin_input_file</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Conditional</p></li>
 <li><p>Type: Path</p></li>
-<li><p>Description: The path to the basin input file. This parameter is required when <code class="docutils literal notranslate"><span class="pre">basin_velocity_model</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>. The basin input file is a text file that describes the boundary of the basin. The format of the basin input file is described in the section <a class="reference internal" href="#basin-input-file"><span class="std std-ref">Basin input file</span></a>.</p></li>
+<li><p>Description: The path to the basin input file. This parameter is required when <code class="docutils literal notranslate"><span class="pre">basin_velocity_model</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>. The basin input file is a text file that describes the boundary of the basin. The format of the basin input file is described in the section <a class="reference internal" href="#basin-input-file"><span class="std std-ref">Basin Input File</span></a>.</p></li>
 </ul>
 </dd>
 <dt><code class="docutils literal notranslate"><span class="pre">basin_origin_latitude_deg</span></code></dt><dd><ul class="simple">
@@ -111,7 +111,7 @@
 </dd>
 </dl>
 <section id="basin-input-file">
-<h3>Basin input file<a class="headerlink" href="#basin-input-file" title="Link to this heading">¶</a></h3>
+<h3>Basin Input File<a class="headerlink" href="#basin-input-file" title="Link to this heading">¶</a></h3>
 <p>The basin input file should be a text file (the extension is not important) that describes the boundary of the basin. The format of the basin input file is described below.</p>
 <blockquote>
 <div><ul class="simple">
@@ -163,8 +163,8 @@
 </section>
 </section>
 <section id="d-velocity-model">
-<h2>3D velocity model<a class="headerlink" href="#d-velocity-model" title="Link to this heading">¶</a></h2>
-<p>Contrast to the Istanbul velocity model, the 3D velocity model is a general velocity model that covers any interested regions. Users need to provide the velocity model in the designated format. The format of the 3D velocity model is described in the section <a class="reference internal" href="#d-velocity-model-input-files"><span class="std std-ref">3D velocity model input files</span></a>.</p>
+<h2>3D Velocity Model<a class="headerlink" href="#d-velocity-model" title="Link to this heading">¶</a></h2>
+<p>Contrast to the Istanbul Velocity Model, the 3D Velocity Model is a general velocity model that covers any interested regions. Users need to provide the velocity model in the designated format. The format of the 3D Velocity Model is described in the section <a class="reference internal" href="#d-velocity-model-input-files"><span class="std std-ref">3D Velocity Model Input Files</span></a>.</p>
 <dl class="simple">
 <dt><code class="docutils literal notranslate"><span class="pre">3D_velocity_model</span></code></dt><dd><ul class="simple">
 <li><p>Optional: Yes</p></li>
@@ -186,7 +186,7 @@
 </dd>
 </dl>
 <section id="d-velocity-model-input-files">
-<h3>3D velocity model input files<a class="headerlink" href="#d-velocity-model-input-files" title="Link to this heading">¶</a></h3>
+<h3>3D Velocity Model Input Files<a class="headerlink" href="#d-velocity-model-input-files" title="Link to this heading">¶</a></h3>
 <p>To make it easier to understand the format of the 3D velocity model input files, here is an example before we convert it to the format that Hercules can read:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">1709.769</span><span class="p">,</span><span class="mf">4188.062</span><span class="p">,</span><span class="mf">1.85</span>
 <span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mf">1894.495</span><span class="p">,</span><span class="mf">4640.546</span><span class="p">,</span><span class="mf">1.898</span>
@@ -314,15 +314,15 @@
     <h3><a href="../../index.html">Table of Contents</a></h3>
     <ul>
 <li><a class="reference internal" href="#">Material</a><ul>
-<li><a class="reference internal" href="#one-dimensional-layered-profile">One-dimensional layered profile</a></li>
-<li><a class="reference internal" href="#istanbul-velocity-model">Istanbul velocity model</a></li>
-<li><a class="reference internal" href="#basin-velocity-model">Basin velocity model</a><ul>
-<li><a class="reference internal" href="#basin-input-file">Basin input file</a></li>
+<li><a class="reference internal" href="#one-dimensional-layered-profile">One-Dimensional Layered Profile</a></li>
+<li><a class="reference internal" href="#istanbul-velocity-model">Istanbul Velocity Model</a></li>
+<li><a class="reference internal" href="#basin-velocity-model">Basin Velocity Model</a><ul>
+<li><a class="reference internal" href="#basin-input-file">Basin Input File</a></li>
 <li><a class="reference internal" href="#basin-c">basin.c</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#d-velocity-model">3D velocity model</a><ul>
-<li><a class="reference internal" href="#d-velocity-model-input-files">3D velocity model input files</a></li>
+<li><a class="reference internal" href="#d-velocity-model">3D Velocity Model</a><ul>
+<li><a class="reference internal" href="#d-velocity-model-input-files">3D Velocity Model Input Files</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#misc">Misc</a></li>
@@ -333,8 +333,8 @@
   </div>
   <div>
     <h4>Previous topic</h4>
-    <p class="topless"><a href="inputFile.html"
-                          title="previous chapter">Input file</a></p>
+    <p class="topless"><a href="inputFiles.html"
+                          title="previous chapter">Input Files</a></p>
   </div>
   <div>
     <h4>Next topic</h4>
@@ -372,10 +372,10 @@
           <a href="dimension.html" title="Dimension"
              >next</a> |</li>
         <li class="right" >
-          <a href="inputFile.html" title="Input file"
+          <a href="inputFiles.html" title="Input Files"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../../index.html">HerculesDoc  documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="inputFile.html" >Input file</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="inputFiles.html" >Input Files</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Material</a></li> 
       </ul>
     </div>

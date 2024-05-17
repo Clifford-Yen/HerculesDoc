@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Folder Structure &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Input Files" href="input/inputFiles.html" />
+    <link rel="prev" title="Running" href="running.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="input/inputFiles.html" title="Input Files"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="running.html" title="Running"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Folder Structure</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="folder-structure">
+<h1>Folder Structure<a class="headerlink" href="#folder-structure" title="Link to this heading">¶</a></h1>
+<p>Although many input and output paths in Hercules are configurable, the suggested (default) folder structure is as follows:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>working_directory/
+├── inputfiles/
+│   ├── materialfiles/
+│   │   └── ...
+│   ├── sourcefiles/
+│   │   ├── source.in
+│   │   └── ...
+│   ├── topography/
+│   │   └── topography.in
+│   └── parameters.in
+├── outputfiles/
+│   ├── checkpoints/
+│   │   ├── checkpoint.out0
+│   │   └── checkpoint.out1
+│   ├── DRM/
+│   │   ├── part0/
+│   │   ├── part1/
+│   │   └── part2/
+│   ├── For_Matlab/
+│   │   ├── mesh_coordinates.0
+│   │   ├── mesh_coordinates.1
+│   │   ├── ...
+│   │   ├── mesh_data.0
+│   │   ├── mesh_data.1
+│   │   └── ...
+│   ├── planes/
+│   │   ├── planedisplacements.0
+│   │   ├── planedisplacements.1
+│   │   └── ...
+│   ├── srctmp/
+│   └── stations/
+│       ├── station.0
+│       ├── station.1
+│       └── ...
+├── monitor.txt
+├── stat-mesh.txt
+├── stat-sched.txt
+└── stat-topo.txt
+</pre></div>
+</div>
+<section id="folder-structure-for-input-files">
+<h2>Folder Structure for Input Files<a class="headerlink" href="#folder-structure-for-input-files" title="Link to this heading">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">materialfiles/</span></code> folder contains the input files for the 3D Velocity Model. For 1D layered soil profile, you will define the profile in the parameter input file, and you don’t need this folder.</p>
+<p>The structure of this folder is shown below. For more information on the format of these files, see the <a class="reference internal" href="input/material.html#d-velocity-model-input-files"><span class="std std-ref">3D Velocity Model Input Files</span></a> section.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>materialfiles/
+├── index.in
+├── rho.in
+├── vp.in
+├── vs.in
+├── x.in
+├── y.in
+└── z.in
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">sourcefiles/</span></code> folder contains the input files for the source. The structure of this folder is shown below. The <code class="docutils literal notranslate"><span class="pre">source.in</span></code> is a mandatory file, while other files are optional depends on the source type.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sourcefiles/
+├── source.in
+├── area.in
+├── coords.in
+├── dip.in
+├── rake.in
+├── slip.in
+├── slipfunction.in
+└── strike.in
+</pre></div>
+</div>
+<p>The only needed file in the <code class="docutils literal notranslate"><span class="pre">topography/</span></code> folder is <code class="docutils literal notranslate"><span class="pre">topography.in</span></code> file. This file contains the topography data. For more information, see the <a class="reference internal" href="input/topography.html#topography"><span class="std std-ref">Topography</span></a> section.</p>
+</section>
+<section id="folder-structure-for-output-files">
+<h2>Folder Structure for Output Files<a class="headerlink" href="#folder-structure-for-output-files" title="Link to this heading">¶</a></h2>
+<p>All the folders used to store the output files will be created by Hercules automatically if they don’t exist. For more information on the format of these files, see the <a class="reference internal" href="output/outputFiles.html#output-files"><span class="std std-ref">Output Files</span></a> section.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Folder Structure</a><ul>
+<li><a class="reference internal" href="#folder-structure-for-input-files">Folder Structure for Input Files</a></li>
+<li><a class="reference internal" href="#folder-structure-for-output-files">Folder Structure for Output Files</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="running.html"
+                          title="previous chapter">Running</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="input/inputFiles.html"
+                          title="next chapter">Input Files</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/rst/folderStructure.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="input/inputFiles.html" title="Input Files"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="running.html" title="Running"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">HerculesDoc  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Folder Structure</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2021-2024, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

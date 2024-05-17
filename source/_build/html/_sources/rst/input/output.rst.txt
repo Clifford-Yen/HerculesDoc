@@ -1,5 +1,5 @@
 ===============
-Output settings
+Output Settings
 ===============
 
 ``output_mesh``
@@ -73,7 +73,7 @@ Output settings
     * Description: Whether Hercules should print the stiffness matrix to the standard output (usually the command line window running Hercules). This is an optional parameter and the default value is ``no``.
 
 
-Output mesh coordinates for a subdomain
+Output Mesh Coordinates for A Subdomain
 =======================================
 You can ask Hercules to store another mesh coordinates database which includes the information only within a specified subdomain. Here are the parameters you will need to set up if you want.
 
@@ -93,10 +93,10 @@ You can ask Hercules to store another mesh coordinates database which includes t
     * Format: ``min_x min_y max_x max_y min_z max_z``
     * Description: Values used to define the boundaries of the subdomain. Note that X is in the vertical direction of the plan view. This parameter is required if ``mesh_coordinates_for_matlab`` is set to ``yes``.
 
-To better understand the format of the output files for mesh coordinates, refer to the section :ref:`Mesh coordinates output for a subdomain`.
+To better understand the format of the output files for mesh coordinates, refer to the section :ref:`Mesh Coordinates Output for A Subdomain`.
 
 
-Output for stations
+Output for Stations
 ===================
 The following parameters are used for the output for stations (observation points).
 
@@ -133,10 +133,10 @@ The following parameters are used for the output for stations (observation point
 
     .. TODO: The difference between engineering depth and bedrock depth needs to be explained.
 
-To better understand the format of the station output files, refer to the section :ref:`Station outputs`.
+To better understand the format of the station output files, refer to the section :ref:`Station Outputs`.
 
 
-Output for planes
+Output for Planes
 =================
 A plane contains multiple grid points storing displacements on them.
 
@@ -166,7 +166,7 @@ A plane contains multiple grid points storing displacements on them.
     * Format: ``x_lat y_lon z_depth dx nx dy ny strk dp``
     * Description: Values used to define the planes. ``x_lat``, ``y_lon``, and ``z_depth`` define the origin of a plane. ``dx`` and ``dy`` are the spacing along X and Y directions. ``nx`` and ``ny`` are the number of grid points along X and Y directions. ``strk`` is the strike angle (in degree) measured from the true north clockwise, and ``dp`` is the dip angle (in degree). This parameter is required if ``number_output_planes`` is bigger than ``0``. Note that if the number of listed ``output_planes`` is more than ``number_output_planes``, Hercules will only use the first ``number_output_planes`` planes.
 
-To better understand the format of the plane output files, refer to the section :ref:`Plane outputs`.
+To better understand the format of the plane output files, refer to the section :ref:`Plane Outputs`.
 
 
 Checkpoint
