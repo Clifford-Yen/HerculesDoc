@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Topography &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/classic.css?v=514cf933" />
+    
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Building" href="building.html" />
+    <link rel="prev" title="Time and Frequency" href="time.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="building.html" title="Building"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="time.html" title="Time and Frequency"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../inputFiles.html" >Input Files</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="parameterInputFile.html" accesskey="U">Parameter Input File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Topography</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="topography">
+<h1>Topography<a class="headerlink" href="#topography" title="Link to this heading">¶</a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include_topography</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to consider topography in the simulation. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">computation_method</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">vt</span></code> and <code class="docutils literal notranslate"><span class="pre">fem</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">maximum_octant_level</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Integer</p></li>
+<li><p>Description: The maximum octant level allowed. It can be a integer between 1 and 30. As mentioned in <a class="reference internal" href="time.html#time-and-frequency"><span class="std std-ref">Time and Frequency</span></a>, the minimum element size is calculated as <span class="math notranslate nohighlight">\(h_{min} = \frac{V_{S, min}}{N_p f_{max}}\)</span>. A proper value for <code class="docutils literal notranslate"><span class="pre">maximum_octant_level</span></code> should satisfy the condition <span class="math notranslate nohighlight">\(\frac{\text{(The largest dimension of the domain)}}{2^n} &lt; h_{min}\)</span>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: The base z coordinate of the topography. It should be a floating number bigger than <code class="docutils literal notranslate"><span class="pre">0</span></code> that satisfy the condition <span class="math notranslate nohighlight">\(z_b = \frac{\text{(The largest dimension of the domain)}}{2^n} &gt; e_h\)</span>, where <span class="math notranslate nohighlight">\(z_b\)</span> is <code class="docutils literal notranslate"><span class="pre">topographybase_zcoord</span></code> and <span class="math notranslate nohighlight">\(e_h\)</span> is the highest elevation in the domain. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">type_of_etree</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: String</p></li>
+<li><p>Description: Possible options include <code class="docutils literal notranslate"><span class="pre">sqd</span></code> and <code class="docutils literal notranslate"><span class="pre">full</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_topography</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">topography_directory</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Path</p></li>
+<li><p>Description: The path to the directory where the topography information is stored. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">inputfiles/topography</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="time.html"
+                          title="previous chapter">Time and Frequency</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="building.html"
+                          title="next chapter">Building</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/rst/input/parameters/topography.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="building.html" title="Building"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="time.html" title="Time and Frequency"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../inputFiles.html" >Input Files</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="parameterInputFile.html" >Parameter Input File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Topography</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2021-2024, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

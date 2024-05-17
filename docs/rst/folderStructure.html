@@ -43,7 +43,7 @@
   <section id="folder-structure">
 <h1>Folder Structure<a class="headerlink" href="#folder-structure" title="Link to this heading">¶</a></h1>
 <p>Although many input and output paths in Hercules are configurable, the suggested (default) folder structure is as follows:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>working_directory/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>working_directory/
 ├── inputfiles/
 │   ├── materialfiles/
 │   │   └── ...
@@ -85,9 +85,10 @@
 </div>
 <section id="folder-structure-for-input-files">
 <h2>Folder Structure for Input Files<a class="headerlink" href="#folder-structure-for-input-files" title="Link to this heading">¶</a></h2>
+<p>All files under the <code class="docutils literal notranslate"><span class="pre">inputfiles/</span></code> folder should be prepared by the user. The <code class="docutils literal notranslate"><span class="pre">parameters.in</span></code> and <code class="docutils literal notranslate"><span class="pre">source.in</span></code> files are mandatory, while the other files are optional depending on the simulation setup. This section focuses on the structure of the <code class="docutils literal notranslate"><span class="pre">inputfiles/</span></code> folder. For more information on the format of these files, see the <a class="reference internal" href="input/inputFiles.html#input-files"><span class="std std-ref">Input Files</span></a> section.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">materialfiles/</span></code> folder contains the input files for the 3D Velocity Model. For 1D layered soil profile, you will define the profile in the parameter input file, and you don’t need this folder.</p>
-<p>The structure of this folder is shown below. For more information on the format of these files, see the <a class="reference internal" href="input/material.html#d-velocity-model-input-files"><span class="std std-ref">3D Velocity Model Input Files</span></a> section.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>materialfiles/
+<p>The structure of this folder is shown below. For more information on the format of these files, see the <a class="reference internal" href="input/3DVelocityModel.html#d-velocity-model-input-files"><span class="std std-ref">3D Velocity Model Input Files</span></a> section.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>materialfiles/
 ├── index.in
 ├── rho.in
 ├── vp.in
@@ -98,7 +99,7 @@
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">sourcefiles/</span></code> folder contains the input files for the source. The structure of this folder is shown below. The <code class="docutils literal notranslate"><span class="pre">source.in</span></code> is a mandatory file, while other files are optional depends on the source type.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>sourcefiles/
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>sourcefiles/
 ├── source.in
 ├── area.in
 ├── coords.in
@@ -109,11 +110,11 @@
 └── strike.in
 </pre></div>
 </div>
-<p>The only needed file in the <code class="docutils literal notranslate"><span class="pre">topography/</span></code> folder is <code class="docutils literal notranslate"><span class="pre">topography.in</span></code> file. This file contains the topography data. For more information, see the <a class="reference internal" href="input/topography.html#topography"><span class="std std-ref">Topography</span></a> section.</p>
+<p>The only needed file in the <code class="docutils literal notranslate"><span class="pre">topography/</span></code> folder is <code class="docutils literal notranslate"><span class="pre">topography.in</span></code> file. This file contains the topography data. For more information, see the <a class="reference internal" href="input/topographyInputFile.html#topography-input-file"><span class="std std-ref">Topography Input File</span></a> section.</p>
 </section>
 <section id="folder-structure-for-output-files">
 <h2>Folder Structure for Output Files<a class="headerlink" href="#folder-structure-for-output-files" title="Link to this heading">¶</a></h2>
-<p>All the folders used to store the output files will be created by Hercules automatically if they don’t exist. For more information on the format of these files, see the <a class="reference internal" href="output/outputFiles.html#output-files"><span class="std std-ref">Output Files</span></a> section.</p>
+<p>All the folders and files used to store the output will be created by Hercules automatically if they don’t exist, including <code class="docutils literal notranslate"><span class="pre">monitor.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">stat-mesh.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">stat-sched.txt</span></code>, and <code class="docutils literal notranslate"><span class="pre">stat-topo.txt</span></code>, and everything under the <code class="docutils literal notranslate"><span class="pre">outputfiles/</span></code> folder. For more information on the format of these files, see the <a class="reference internal" href="output/outputFiles.html#output-files"><span class="std std-ref">Output Files</span></a> section.</p>
 </section>
 </section>
 

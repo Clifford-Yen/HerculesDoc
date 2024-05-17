@@ -9,7 +9,7 @@ For some reason, functions in Hercules' source code that return a boolean or yes
 
 This inconsistency is not a problem for users who are not intended to modify the Hercules' source code. But for uses who are, be aware of this inconsistency.
 
-Parameter Input File
-====================
+Multiple Parameter Input Files
+==============================
 
-Hercules used to take more than one input file. As a result, when digging into Hercules' source code, you may find some comments about "physics.in", "numerical.in", etc. Nevertheless, Hercules now usually only takes one parameter input file.
+Hercules used to take more than one ``paramters.in``-like input files. As a result, when digging into Hercules' source code, you may find some comments about "physics.in", "numerical.in", etc. Nevertheless, they are pointing the same and only one parameter input file now.

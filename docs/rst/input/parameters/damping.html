@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Damping &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/classic.css?v=514cf933" />
+    
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Source" href="source.html" />
+    <link rel="prev" title="Plane Waves" href="planewaves.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="source.html" title="Source"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="planewaves.html" title="Plane Waves"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../inputFiles.html" >Input Files</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="parameterInputFile.html" accesskey="U">Parameter Input File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Damping</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="damping">
+<h1>Damping<a class="headerlink" href="#damping" title="Link to this heading">¶</a></h1>
+<p>(This section is under construction.)</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code></dt><dd><ul class="simple">
+<li><p>Type: String</p></li>
+<li><p>Description: The type of damping Hercules should use. Possible options include <code class="docutils literal notranslate"><span class="pre">rayleigh</span></code>, <code class="docutils literal notranslate"><span class="pre">mass</span></code>, <code class="docutils literal notranslate"><span class="pre">none</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, and <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">simulation_velocity_profile_freq_hz</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is only effective when <code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code> is set to <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, or <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>. It can be a floating number from <code class="docutils literal notranslate"><span class="pre">0.0</span></code> to <code class="docutils literal notranslate"><span class="pre">simulation_wave_max_freq_hz</span></code>. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code> is set to <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, or <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">use_infinite_qk</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">type_of_damping</span></code> is set to <code class="docutils literal notranslate"><span class="pre">bkt</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt2</span></code>, <code class="docutils literal notranslate"><span class="pre">bkt3</span></code>, or <code class="docutils literal notranslate"><span class="pre">bkt3f</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_constant</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_alpha</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">parametric_q_factor_beta</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">use_parametric_q_factor</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">the_threshold_damping</span></code></dt><dd><ul class="simple">
+<li><p>Type: Float</p></li>
+<li><p>Description: The threshold to limit the <span class="math notranslate nohighlight">\(\zeta\)</span> damping ratio. If the computed <span class="math notranslate nohighlight">\(\zeta\)</span> is larger than this threshold, it will be set to this threshold.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">do_damping_statistics</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Boolean</p></li>
+<li><p>Description: Whether Hercules should print damping statistics to the standard output (usually the command line window running Hercules). This is an optional parameter and the default value is False (<code class="docutils literal notranslate"><span class="pre">do_damping_statistics</span> <span class="pre">=</span> <span class="pre">0</span></code>).</p></li>
+</ul>
+</dd>
+</dl>
+<section id="rayleigh-damping">
+<h2>Rayleigh Damping<a class="headerlink" href="#rayleigh-damping" title="Link to this heading">¶</a></h2>
+<p>In Hercules, two frequencies used to calculate the Rayleigh damping coefficients are <span class="math notranslate nohighlight">\(0.2 f\)</span> and <span class="math notranslate nohighlight">\(f\)</span>, where <span class="math notranslate nohighlight">\(f\)</span> is the maximum frequency of the simulation (defined by <code class="docutils literal notranslate"><span class="pre">simulation_wave_max_freq_hz</span></code>). The Rayleigh damping coefficients are calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\alpha}{\zeta} = \frac{\omega_1 \omega_2 [ (2(\omega_1^2+\omega_2^2) + 2 \omega_1 \omega_2)(\ln(\omega_1) - \ln(\omega_2)) + 3(\omega_2^2 - \omega_1^2)]}{\omega_1^3 - \omega_2^3 + 3 \omega_2^2 \omega_1 - 3 \omega_1^2 \omega_2}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\beta}{\zeta} = \frac{3 [2 \omega_1 \omega_2 (\ln(\omega_2) - \ln(\omega_1)) + \omega_1^2 - \omega_2^2]}{\omega_1^3 - \omega_2^3 + 3 \omega_2^2 \omega_1 - 3 \omega_1^2 \omega_2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega_1 = 2 \pi (0.2 f)\)</span> and <span class="math notranslate nohighlight">\(\omega_2 = 2 \pi f\)</span>. The damping ratio (<span class="math notranslate nohighlight">\(\zeta\)</span>) is calculated as follows element by element:</p>
+<div class="math notranslate nohighlight">
+\[\zeta = \frac{25.0}{V_S}\]</div>
+<p>where <span class="math notranslate nohighlight">\(V_S\)</span> is the shear wave velocity of the element in meters per second. Note that the damping ratio is limited by the threshold damping value (<code class="docutils literal notranslate"><span class="pre">the_threshold_damping</span></code>). Once the damping ratio exceeds this threshold, it will be set to this threshold.</p>
+</section>
+<section id="mass-damping">
+<h2>Mass Damping<a class="headerlink" href="#mass-damping" title="Link to this heading">¶</a></h2>
+<p>Similar to Rayleigh damping, there are also two frequencies used to calculate the mass damping coefficients: <span class="math notranslate nohighlight">\(0.1 f\)</span> and <span class="math notranslate nohighlight">\(8 f\)</span>. The mass damping is only proportional to the mass matrix. As a result, the damping coefficients are calculated as follows:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\alpha}{\zeta} = 1.3 \frac{2 \omega_1 \omega_2 \ln(\frac{\omega_2}{\omega_1})}{\omega_2 - \omega_1}\]</div>
+<div class="math notranslate nohighlight">
+\[\frac{\beta}{\zeta} = 0\]</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Damping</a><ul>
+<li><a class="reference internal" href="#rayleigh-damping">Rayleigh Damping</a></li>
+<li><a class="reference internal" href="#mass-damping">Mass Damping</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="planewaves.html"
+                          title="previous chapter">Plane Waves</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="source.html"
+                          title="next chapter">Source</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/rst/input/parameters/damping.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="source.html" title="Source"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="planewaves.html" title="Plane Waves"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../inputFiles.html" >Input Files</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="parameterInputFile.html" >Parameter Input File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Damping</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2021-2024, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

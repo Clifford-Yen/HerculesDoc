@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Building &#8212; HerculesDoc  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/classic.css?v=514cf933" />
+    
+    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Analysis" href="analysis.html" />
+    <link rel="prev" title="Topography" href="topography.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="analysis.html" title="Analysis"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="topography.html" title="Topography"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../inputFiles.html" >Input Files</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="parameterInputFile.html" accesskey="U">Parameter Input File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Building</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="building">
+<h1>Building<a class="headerlink" href="#building" title="Link to this heading">¶</a></h1>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">include_buildings</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Yes</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: Whether to consider buildings in the simulation. This is an optional parameter and the default value is <code class="docutils literal notranslate"><span class="pre">no</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">number_of_buildings</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Integer</p></li>
+<li><p>Description: How many buildings are the parameter <code class="docutils literal notranslate"><span class="pre">building_properties</span></code> defines. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_buildings</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">min_octant_size_m</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: The minimum octant size for buildings. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_buildings</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">surface_shift_m</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: The surface shift for buildings. It can be any floating number not less than 0. This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_buildings</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">consider_fixed_base</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Yes or No</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">include_buildings</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_dt</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Float</p></li>
+<li><p>Description: This parameter is required if <code class="docutils literal notranslate"><span class="pre">consider_fixed_base</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_dir</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Path</p></li>
+<li><p>Description: The directory where the fixed-base input files are located. This parameter is required if <code class="docutils literal notranslate"><span class="pre">consider_fixed_base</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_sufix</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: String</p></li>
+<li><p>Description: The file name of the fixed-base inputs. This parameter is required if <code class="docutils literal notranslate"><span class="pre">consider_fixed_base</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">fixedbase_input_startindex</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Integer</p></li>
+<li><p>Description: The starting index of the fixed-base input files. For example, if <code class="docutils literal notranslate"><span class="pre">fixedbase_input_sufix</span> <span class="pre">=</span> <span class="pre">station</span></code> and <code class="docutils literal notranslate"><span class="pre">fixedbase_input_startindex</span> <span class="pre">=</span> <span class="pre">448</span></code>, then Hercules will read the fixed-base input files as <code class="docutils literal notranslate"><span class="pre">station.448</span></code>, <code class="docutils literal notranslate"><span class="pre">station.449</span></code>, <code class="docutils literal notranslate"><span class="pre">station.450</span></code>, etc. from the directory <code class="docutils literal notranslate"><span class="pre">fixedbase_input_dir</span></code>. This parameter is required if <code class="docutils literal notranslate"><span class="pre">consider_fixed_base</span></code> is set to <code class="docutils literal notranslate"><span class="pre">yes</span></code>.</p></li>
+</ul>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">building_properties</span></code></dt><dd><ul class="simple">
+<li><p>Optional: Conditional</p></li>
+<li><p>Type: Multiple numbers</p></li>
+<li><p>Format: <code class="docutils literal notranslate"><span class="pre">min_x</span> <span class="pre">max_x</span> <span class="pre">min_y</span> <span class="pre">max_y</span> <span class="pre">depth</span> <span class="pre">height</span> <span class="pre">Vp_building</span> <span class="pre">Vs_building</span> <span class="pre">Rho_building</span> <span class="pre">Vp_foundation</span> <span class="pre">Vs_foundation</span> <span class="pre">Rho_foundation</span></code></p></li>
+<li><p>Description: Material properties for buildings. The data should be written as many lines as parameter <code class="docutils literal notranslate"><span class="pre">number_of_buildings</span></code> defines. This parameter is required if <code class="docutils literal notranslate"><span class="pre">number_of_buildings</span></code> is bigger than <code class="docutils literal notranslate"><span class="pre">0</span></code>. Note that if the number of listed <code class="docutils literal notranslate"><span class="pre">building_properties</span></code> is more than <code class="docutils literal notranslate"><span class="pre">number_of_buildings</span></code>, Hercules will only use the first <code class="docutils literal notranslate"><span class="pre">number_of_buildings</span></code> stations.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="topography.html"
+                          title="previous chapter">Topography</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="analysis.html"
+                          title="next chapter">Analysis</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../../../_sources/rst/input/parameters/building.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="analysis.html" title="Analysis"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="topography.html" title="Topography"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">HerculesDoc  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../inputFiles.html" >Input Files</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="parameterInputFile.html" >Parameter Input File</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Building</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2021-2024, Clifford Yen, University of California, Los Angeles.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>

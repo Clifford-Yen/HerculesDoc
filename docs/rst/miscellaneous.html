@@ -43,9 +43,9 @@
 <p>For some reason, functions in Hercules’ source code that return a boolean or yes/no value do not always use the consistent convention. While some functions return 0 for false and 1 for true, other functions return 0 for true and -1 (or any non-zero value) for false. To make it even more confusing, some functions return 1 as yes and -1 as no.</p>
 <p>This inconsistency is not a problem for users who are not intended to modify the Hercules’ source code. But for uses who are, be aware of this inconsistency.</p>
 </section>
-<section id="parameter-input-file">
-<h2>Parameter Input File<a class="headerlink" href="#parameter-input-file" title="Link to this heading">¶</a></h2>
-<p>Hercules used to take more than one input file. As a result, when digging into Hercules’ source code, you may find some comments about “physics.in”, “numerical.in”, etc. Nevertheless, Hercules now usually only takes one parameter input file.</p>
+<section id="multiple-parameter-input-files">
+<h2>Multiple Parameter Input Files<a class="headerlink" href="#multiple-parameter-input-files" title="Link to this heading">¶</a></h2>
+<p>Hercules used to take more than one <code class="docutils literal notranslate"><span class="pre">paramters.in</span></code>-like input files. As a result, when digging into Hercules’ source code, you may find some comments about “physics.in”, “numerical.in”, etc. Nevertheless, they are pointing the same and only one parameter input file now.</p>
 </section>
 </section>
 
@@ -61,7 +61,7 @@
     <ul>
 <li><a class="reference internal" href="#">Miscellaneous</a><ul>
 <li><a class="reference internal" href="#boolean-handling-in-hercules-source-code">Boolean Handling in Hercules’ Source Code</a></li>
-<li><a class="reference internal" href="#parameter-input-file">Parameter Input File</a></li>
+<li><a class="reference internal" href="#multiple-parameter-input-files">Multiple Parameter Input Files</a></li>
 </ul>
 </li>
 </ul>
