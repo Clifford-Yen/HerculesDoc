@@ -108,8 +108,6 @@ If you are installing Hercules on ARM-based Macs, which are equipped with M1/M2/
 
     LDFLAGS += -lgslcblas -lgsl
 
-Although there will be some warnings, things will work as intended.
-
 And yes, you can combine this section with the ``user.mk`` for Intel-based Macs. Just make sure you set the correct :code:`SYSTEM` variable. Alternatively, you can use :code:`uname -s` to determine the system type and :code:`uname -m` to determine the system architecture, and set the :code:`SYSTEM` and :code:`ARCH` variables accordingly. Here is an example:
 
 .. code-block::
