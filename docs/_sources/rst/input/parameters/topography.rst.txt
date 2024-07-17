@@ -24,7 +24,7 @@ Topography
 ``topographybase_zcoord``
     * Optional: Conditional
     * Type: Float
-    * Description: The base z coordinate of the topography. It should be a floating number bigger than ``0`` that satisfy the condition :math:`z_b = \frac{\text{(The largest dimension of the domain)}}{2^n} > e_h`, where :math:`z_b` is ``topographybase_zcoord`` and :math:`e_h` is the highest elevation in the domain. This parameter is required if ``include_topography`` is set to ``yes``. 
+    * Description: The base z coordinate of the topography. It should be a floating number bigger than ``0`` that satisfy the condition :math:`z_b = \frac{\text{(The largest dimension of the domain)}}{2^n} > e_h`, where :math:`z_b` is ``topographybase_zcoord``, :math:`e_h` is the highest elevation in the domain, and ``n`` is an integer that satisfies the condition. This parameter is required if ``include_topography`` is set to ``yes``. 
 
 ``type_of_etree``
     * Optional: Conditional
