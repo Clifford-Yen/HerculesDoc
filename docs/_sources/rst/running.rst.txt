@@ -10,7 +10,7 @@ To run Hercules, the basic usage is
 
     psolve inputFile.in
 
-The ``inputFile.in`` mentioned above should be changed to your actual input file. The :code:`psolve` executable file is located in ``quake/forward/`` under the Hercules folder. Assuming your working directory is already changed to the Hercules folder, then the proper way to call :code:`psolve` is
+The ``inputFile.in`` mentioned above should be changed to your actual input file (default: ``parameters.in``). The :code:`psolve` executable file is located in ``quake/forward/`` under the Hercules folder. Assuming your working directory is already changed to the Hercules folder, then the proper way to call :code:`psolve` is
 
 .. code-block:: shell
 
