@@ -46,9 +46,10 @@ Note that all these dimensions have to be :ref:`Octree Dimension` and integer.
 Domain Surface Corners
 ======================
 ``domain_surface_corners``
+    * Optional: Conditional
     * Type: Multiple numbers
     * Format: ``longitude latitude``
-    * Description: The coordinates (latitudes and longitudes) of four corners of the domain. The data should be written as many as four lines. The first line contains the same information as parameters ``region_origin_longitude_deg`` and ``region_origin_latitude_deg`` define. And the rest of three corners should be defined clockwise. Note: These information are also contained in the source file. As a result, it might be deprecated in the future.
+    * Description: The coordinates (latitudes and longitudes) of four corners of the domain. This parameter is required when Hercules is not compiled with :ref:`PROJ Support`. The data should be written as many as four lines. The first line contains the same information as parameters ``region_origin_longitude_deg`` and ``region_origin_latitude_deg`` define. And the rest of three corners should be defined clockwise.
 
 
 DRM Dimensions
