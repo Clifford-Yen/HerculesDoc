@@ -6,7 +6,7 @@ Hercules is an octree-based finite element earthquake simulator originally devel
 
 .. _Hercules' GitHub page: https://github.com/CMU-Quake/hercules
 
-However, there is nowhere to find a usable documentation of Hercules, which makes it really hard to understand and test. This project is aimed to finally document everything on how to use Hercules. The background knowledge and theories used in Hercules are not the priority in this documentation.
+However, there is nowhere to find usable documentation for Hercules, which makes it really hard to understand and test. This project is aimed to finally document everything on how to use Hercules. The background knowledge and theories used in Hercules are not the priority in this documentation.
 
 Disclaimer
 ==========

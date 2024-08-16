@@ -54,6 +54,28 @@ For example, the following lines can be written into ``user.mk`` and used for In
 
 Note that the indentation used in a makefile should be tabs, not spaces. If you copy the code block above, make sure to replace all spaces with tabs.
 
+PROJ Support
+============
+Hercules supports `PROJ`_. The easiest way to install PROJ is via Homebrew by running the following command in the terminal.
+
+.. code-block:: shell
+
+    brew install proj
+
+If you want to use PROJ in Hercules, you must add the following lines to your ``user.mk``.
+
+.. code-block::
+
+    CPPFLAGS += -DPROJ # Define the PROJ macro
+    CFLAGS += -I/opt/homebrew/Cellar/proj/9.4.1/include
+    LDFLAGS += -L/opt/homebrew/Cellar/proj/9.4.1/lib -lproj
+
+The path to the PROJ library and include directory might be different on your machine. Make sure to replace them with the correct path.
+
+Although PROJ is optional, it is highly recommended to compile Hercules with PROJ support to get a more accurate simulation result.
+
+.. _PROJ: https://proj.org/
+
 Compiling Procedure
 ===================
 To compile Hercules, make sure to :code:`cd` into Hercules' folder and simply run the following lines in the terminal one by one.
