@@ -68,6 +68,16 @@
 </div>
 <p>Then for each entity in the array <code class="docutils literal notranslate"><span class="pre">data</span></code>, the first number is the global element ID, and the second, third, and fourth numbers are the <span class="math notranslate nohighlight">\(V_s\)</span>, <span class="math notranslate nohighlight">\(V_p\)</span>, and <span class="math notranslate nohighlight">\(\rho\)</span> of the element, respectively. The first entity is the velocity profile of the first element, the next entity is the velocity profile of the second element, and so on.</p>
 </section>
+<section id="plotmesh-m">
+<h2>plotmesh.m<a class="headerlink" href="#plotmesh-m" title="Link to this heading">¶</a></h2>
+<p>In addition to the Python code above, you can also plot the mesh and the velocity profile of each element in the subdomain with the MATLAB script <code class="docutils literal notranslate"><span class="pre">plotmesh.m</span></code>. The script is located in the Hercules folder under the <code class="docutils literal notranslate"><span class="pre">matlab-utils/scripts/</span></code> directory.</p>
+<p>To run the script, you also need another input file. An example input file for this script is provided in the Hercules folder under the <code class="docutils literal notranslate"><span class="pre">matlab-utils/examples/</span></code> directory with the name <code class="docutils literal notranslate"><span class="pre">plotmeshinput.in</span></code>.</p>
+<p>Once you set up the input file, the easiest way to use them is to copy the script and the input file to your working directory and run the script as a function in MATLAB with the following command:</p>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">plotmesh</span><span class="p">(</span><span class="s">&#39;plotmeshinput.in&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Note that it is not recommended to plot a large number of elements as it may take a long time to plot them all.</p>
+</section>
 </section>
 
 
@@ -83,6 +93,7 @@
 <li><a class="reference internal" href="#">Mesh Coordinates Output for A Subdomain</a><ul>
 <li><a class="reference internal" href="#mesh-coordinates-x">mesh_coordinates.X</a></li>
 <li><a class="reference internal" href="#mesh-data-x">mesh_data.X</a></li>
+<li><a class="reference internal" href="#plotmesh-m">plotmesh.m</a></li>
 </ul>
 </li>
 </ul>

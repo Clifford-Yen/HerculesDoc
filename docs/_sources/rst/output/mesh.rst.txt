@@ -34,3 +34,18 @@ To read the file ``mesh_data.X`` (``mesh_data.0``, for example), you can use the
         data = np.fromfile(f, dtype=[('geid', np.int64), ('Vs', np.float32), ('Vp', np.float32), ('rho', np.float32)])
 
 Then for each entity in the array ``data``, the first number is the global element ID, and the second, third, and fourth numbers are the :math:`V_s`, :math:`V_p`, and :math:`\rho` of the element, respectively. The first entity is the velocity profile of the first element, the next entity is the velocity profile of the second element, and so on.
+
+
+plotmesh.m
+----------
+In addition to the Python code above, you can also plot the mesh and the velocity profile of each element in the subdomain with the MATLAB script ``plotmesh.m``. The script is located in the Hercules folder under the ``matlab-utils/scripts/`` directory. 
+
+To run the script, you also need another input file. An example input file for this script is provided in the Hercules folder under the ``matlab-utils/examples/`` directory with the name ``plotmeshinput.in``.
+
+Once you set up the input file, the easiest way to use them is to copy the script and the input file to your working directory and run the script as a function in MATLAB with the following command:
+
+.. code-block:: matlab
+
+    plotmesh('plotmeshinput.in')
+
+Note that it is not recommended to plot a large number of elements as it may take a long time to plot them all.
