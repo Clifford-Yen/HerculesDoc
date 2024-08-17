@@ -52,8 +52,12 @@ brew<span class="w"> </span>install<span class="w"> </span>gsl
 </section>
 <section id="compiling-with-user-mk">
 <h2>Compiling with <code class="docutils literal notranslate"><span class="pre">user.mk</span></code><a class="headerlink" href="#compiling-with-user-mk" title="Link to this heading">¶</a></h2>
-<p>Although there are some predefined system configurations in <code class="docutils literal notranslate"><span class="pre">system.mk</span></code>, it’s very likely you will find that it’s insufficient. As a result, it’s recommended to write your own <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> next to <code class="docutils literal notranslate"><span class="pre">system.mk</span></code> before you compile.</p>
-<p>For example, the following lines can be written into <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> and used for Intel-based Macs.</p>
+<p>There are some predefined system configurations in <code class="docutils literal notranslate"><span class="pre">systemdef.mk</span></code>. On some well-defined systems, you only need to create a <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> as simple as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SYSTEM</span> <span class="o">=</span> <span class="n">Frontera</span>
+</pre></div>
+</div>
+<p>Replace <code class="docutils literal notranslate"><span class="pre">Frontera</span></code> with the system name defined in <code class="docutils literal notranslate"><span class="pre">systemdef.mk</span></code> that you are using, place <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> next to <code class="docutils literal notranslate"><span class="pre">systemdef.mk</span></code> in the same directory, and you are good to go. However, it’s very likely you will find that it’s insufficient, especially when you are building Hercules on your own machine.</p>
+<p>The following is an example of a more complex <code class="docutils literal notranslate"><span class="pre">user.mk</span></code> file used for Intel-based Macs. Your might need to modify it according to your system configuration, but it should give you a good starting point.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span># System definition
 # -----------------
 

@@ -15,9 +15,15 @@ To compile Hercules, you need to have Open-MPI and GNU Scientific Library (GSL) 
 
 Compiling with ``user.mk``
 ==========================
-Although there are some predefined system configurations in ``system.mk``, it's very likely you will find that it's insufficient. As a result, it's recommended to write your own ``user.mk`` next to ``system.mk`` before you compile.
+There are some predefined system configurations in ``systemdef.mk``. On some well-defined systems, you only need to create a ``user.mk`` as simple as
 
-For example, the following lines can be written into ``user.mk`` and used for Intel-based Macs.
+.. code-block:: 
+
+    SYSTEM = Frontera
+
+Replace ``Frontera`` with the system name defined in ``systemdef.mk`` that you are using, place ``user.mk`` next to ``systemdef.mk`` in the same directory, and you are good to go. However, it's very likely you will find that it's insufficient, especially when you are building Hercules on your own machine. 
+
+The following is an example of a more complex ``user.mk`` file used for Intel-based Macs. Your might need to modify it according to your system configuration, but it should give you a good starting point.
 
 .. code-block::
 
