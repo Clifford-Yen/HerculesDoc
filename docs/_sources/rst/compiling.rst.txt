@@ -95,7 +95,7 @@ Now, you are all set.
 
 Side Notes for Apple Silicon Macs
 =================================
-If you are installing Hercules on ARM-based Macs, which are equipped with M1/M2/M3 SoC (the Apple Silicon), here are some notes for you to install Hercules successfully.
+If you are installing Hercules on ARM-based Macs, which are equipped with M-series SoC (the Apple Silicon), here are some notes for you to install Hercules successfully.
 
 * Install Open-MPI and GSL with native Apple Silicon support using natively supported Homebrew. The installed Open-MPI and GSL should be located under :code:`/opt/homebrew/`
 * Change ``user.mk`` accordingly

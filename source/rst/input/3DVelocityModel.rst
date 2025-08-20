@@ -28,7 +28,7 @@ The meanings of each column are:
     * z (in meter, positive downward)
     * Vs (in meter/second)
     * Vp (in meter/second)
-    * density (in kg/meter :superscript:`3`)
+    * density (in ton/meter :superscript:`3`)
 
 The order of the columns is not important since this file has to be converted into multiple files which will be explained later. Note that the increments of x and y can be different, but they have to be consistent (i.e. the increment of x has to be the same for all lines, so does the increment of y). The increment of z can also be different, and it can varies from point to point. The number layers can be different for different points, too.
 
