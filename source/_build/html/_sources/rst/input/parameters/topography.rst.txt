@@ -37,3 +37,8 @@ Topography
     * Optional: Yes
     * Type: Path
     * Description: The path to the directory where the topography information is stored. This is an optional parameter and the default value is ``inputfiles/topography``.
+
+``consider_nonlinear_topography``
+    * Optional: Yes
+    * Type: Yes or No
+    * Description: Whether to consider topography in a nonlinear analysis. This is an optional parameter and the default value is ``no``.
