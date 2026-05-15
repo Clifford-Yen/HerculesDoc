@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this documentation or its examples in your work, please cite it as below."
+title: "Documentation for the Hercules Finite Element Solver"
+authors:
+  - family-names: "Yen"
+    given-names: "Clifford (Chu-Han)"
+    affiliation: "University of California, Los Angeles (UCLA)"
+date-released: 2021-03-05
+url: "https://github.com/Clifford-Yen/HerculesDoc"
+repository-code: "https://github.com/Clifford-Yen/HerculesDoc"
+keywords:
+  - earthquake-simulation
+  - high-performance-computing
+  - finite-element-analysis
+  - documentation
+  - user-guide
